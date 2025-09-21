@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "chaosmod",
+  "version": "1.0.0",
+  "name": "Chaos Mod 1.21",
+  "description": "All mobs aggressive + on-hit debuffs + reflects + damage routing + dragon tweaks + shield nerf + food poison + heal lock.",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.example.ChaosModInit"
+    ]
+  },
+  "mixins": [
+    "chaosmod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "fabric": "*"
+  }
+}

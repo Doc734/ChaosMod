@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "package": "com.example.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "GoalSelectorAccessor",
+    "MobEntityInitGoalsMixin",
+    "MobEntityTickMixin",
+    "LivingEntityDamageHeadMixin",
+    "LivingEntityDamageMixin",
+    "LivingEntityHealMixin",
+    "LivingEntityEatFoodMixin",
+    "PlayerEntityTickMixin",
+    "PlayerDamageTailMixin",
+    "EnderDragonDeathMixin",
+    "ServerWorldAggroTickMixin"
+  ],
+  "client": []
+}
