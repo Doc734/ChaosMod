@@ -1,4 +1,4 @@
-# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡
+# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.2.0-Release
 
 **Language**: [🇺🇸 English](README.md) | [🇨🇳 中文](README_CN.md)
 
@@ -72,7 +72,7 @@ This is a **ultimate torture mod specifically designed to work with DG_LAB X Min
 
 ### 👹 Evil Commands
 ```
-/chaos menu     # Open torture menu (cowards don't click)
+Press 'P' Key   # Open config GUI (Admin only)
 /chaos toggle <effect_name>  # Enable specific hell mode
 ```
 
@@ -314,6 +314,15 @@ When multiple people play together with shock devices:
 ---
 
 ## 📝 Update Log
+
+### v1.2.0-Release - "GUI Revolution: Admin Interface Upgrade!" 🖥️👑⚡
+- 🎮 **NEW: Professional GUI Menu**! Replaced `/chaos menu` with modern interface accessible via 'P' key
+- 🔒 **Enhanced Permission System**: Server-side validation with `hasPermissionLevel(4)` checks
+- 🎨 **Transparent Interface**: Clean Minecraft-style pagination with no text overlap
+- ⚡ **Real-time Configuration**: Instant updates with C2S packet validation
+- 🛡️ **Security Enhancement**: Prevents client-side permission bypassing
+- 🗑️ **Command Cleanup**: Removed legacy `/chaos menu` - GUI is the future!
+- 😈 **User Experience**: From scary command-line to user-friendly interface!
 
 ### v1.1.0-hotfix - "Emergency Fix: End Death Drop!" 🚨🔧⚡
 - 🔧 **HOTFIX: End Death Drop Logic**! Fixed "End death drops/Other dimensions keep items" not working
