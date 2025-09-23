@@ -315,6 +315,14 @@ When multiple people play together with shock devices:
 
 ## 📝 Update Log
 
+### v1.1.0-hotfix - "Emergency Fix: End Death Drop!" 🚨🔧⚡
+- 🔧 **HOTFIX: End Death Drop Logic**! Fixed "End death drops/Other dimensions keep items" not working
+- 💀 **End Force Drop**: Injects PlayerEntity#dropInventory with @Inject(HEAD, cancellable=true), forces LivingEntity logic
+- 🌍 **Other Dimensions Vanilla**: Maintains vanilla behavior - respects GameRules.KEEP_INVENTORY setting
+- ⚡ **No GameRule Override**: End dimension ignores KEEP_INVENTORY value, always drops items
+- 🎯 **Direct Mixin**: Cancels PlayerEntity.dropInventory() in End, executes copied LivingEntity.dropInventory() code
+- 😈 **Precise Control**: End deaths guarantee drops, other dimensions follow vanilla rules!
+
 ### v1.1.0 - "Admin Control: Security Lock!" 🔐👑⚡
 - 🔒 **NEW: Admin Permission System**! Commands now require Permission Level 4 (OP/Admin)!
 - 🛡️ **Brigadier Security Integration**: Parse-time permission enforcement prevents unauthorized access

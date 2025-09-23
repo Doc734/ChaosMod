@@ -315,6 +315,14 @@
 
 ## 📝 更新日志
 
+### v1.1.0-hotfix - "紧急修复：末地死亡掉落！" 🚨🔧⚡
+- 🔧 **热修复：末地死亡掉落逻辑**！修复了"末地死亡掉落/其他维度保留物品"功能无效问题
+- 💀 **末地强制掉落**：在PlayerEntity#dropInventory注入@Inject(HEAD, cancellable=true)，强制执行LivingEntity逻辑
+- 🌍 **其他维度原版**：保持原版行为 - 遵守GameRules.KEEP_INVENTORY设置
+- ⚡ **无游戏规则覆盖**：末地维度忽略KEEP_INVENTORY值，总是掉落物品
+- 🎯 **直接Mixin**：在末地取消PlayerEntity.dropInventory()，执行复制的LivingEntity.dropInventory()代码
+- 😈 **精确控制**：末地死亡保证掉落，其他维度遵循原版规则！
+
 ### v1.1.0 - "管理员控制：安全锁！" 🔐👑⚡
 - 🔒 **新增：管理员权限系统**！指令现在需要权限等级4（OP/管理员）！
 - 🛡️ **Brigadier安全集成**：解析时权限强制执行，防止未授权访问
