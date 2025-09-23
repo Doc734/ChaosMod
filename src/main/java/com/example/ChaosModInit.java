@@ -2,6 +2,8 @@ package com.example;
 
 import com.example.config.ChaosModConfig;
 import com.mojang.brigadier.arguments.StringArgumentType;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
@@ -30,6 +32,10 @@ import java.util.Map;
 public class ChaosModInit implements ModInitializer {
     public static ChaosModConfig config = new ChaosModConfig();
     
+    // 权限异常类型
+    private static final SimpleCommandExceptionType NO_PERMISSION_EXCEPTION = 
+        new SimpleCommandExceptionType(Text.literal("🚫 权限不足！只有管理员才能使用 ChaosMod 指令！")
+            .formatted(Formatting.RED, Formatting.BOLD));
 
     private static final Map<String, String> LABELS = new LinkedHashMap<>();
     static {
@@ -63,10 +69,11 @@ public class ChaosModInit implements ModInitializer {
     @Override
     public void onInitialize() {
         
-        // Commands
+        // Commands with Admin Permission Check
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
             dispatcher.register(
                 CommandManager.literal("chaos")
+                    .requires(source -> source.hasPermissionLevel(4))
                     .then(CommandManager.literal("menu").executes(ctx -> { showMenu(ctx.getSource()); return 1; }))
                     .then(CommandManager.literal("toggle")
                         .then(CommandManager.argument("key", StringArgumentType.word())

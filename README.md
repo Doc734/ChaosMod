@@ -66,11 +66,21 @@ This is a **ultimate torture mod specifically designed to work with DG_LAB X Min
 
 ## 🎮 Usage (If You Dare)
 
+### 🔐 Permission Requirements
+> ⚠️ **ADMIN ONLY**: All ChaosMod commands require **Administrator privileges (Permission Level 4)**!
+> Only server operators and players with OP status can access these commands.
+
 ### 👹 Evil Commands
 ```
 /chaos menu     # Open torture menu (cowards don't click)
 /chaos toggle <effect_name>  # Enable specific hell mode
 ```
+
+**Permission Check Details:**
+- **Required Level**: 4 (Administrator/OP)
+- **Access Control**: Brigadier command framework enforces permissions at parse-time
+- **Error Handling**: Non-admin players receive automatic permission denial
+- **Security**: Commands are completely hidden from unauthorized users
 
 ### ⚙️ Configuration Guide
 - **Default State**: All effects are **disabled** (we're merciful)
@@ -304,6 +314,14 @@ When multiple people play together with shock devices:
 ---
 
 ## 📝 Update Log
+
+### v1.1.0 - "Admin Control: Security Lock!" 🔐👑⚡
+- 🔒 **NEW: Admin Permission System**! Commands now require Permission Level 4 (OP/Admin)!
+- 🛡️ **Brigadier Security Integration**: Parse-time permission enforcement prevents unauthorized access
+- ⚠️ **Auto Permission Denial**: Non-admin players receive clear error messages
+- 👨‍💼 **Server Security**: Only administrators can control the chaos and torture settings
+- 🚫 **Command Hiding**: ChaosMod commands completely invisible to regular players
+- 😈 **Admin Power**: True evil requires true authority!
 
 ### v1.0.0 - "Evil Descent: Official Release!" 🔥👹⚡
 - 🎉 **First Official Release**! After countless tests, finally achieved perfect evil level!
