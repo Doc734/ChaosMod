@@ -1,480 +1,372 @@
-# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB专用版 ⚡
+# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡
 
-## 😈 欢迎来到地狱！这不是普通的模组！
+**Language**: [🇺🇸 English](README.md) | [🇨🇳 中文](README_CN.md)
 
-这是一个**专为配合DG_LAB X Minecraft Mod设计**的终极折磨模组！每当你在游戏中受到伤害，现实中的你也会感受到**真实的电击**！准备好承受痛苦了吗？👹
+## 😈 Welcome to Hell! This is NOT an ordinary mod!
 
-> ⚠️ **警告**：这个模组的唯一目的就是让你**痛不欲生**！所有效果都经过精心设计，专门在你最意想不到的时候给予致命一击！
+This is a **ultimate torture mod specifically designed to work with DG_LAB X Minecraft Mod**! Every time you take damage in the game, you'll experience **real electric shocks** in reality! Are you ready to endure the pain? 👹
 
----
-
-## 💀 25种邪恶效果 - 你的噩梦清单
-
-### 🎯 基础折磨套装
-1. **🔴 所有生物敌对** - 连小鸡都想杀死你！没有安全的地方！
-2. **🔥 被怪命中点燃** - 每次被打都会着火，享受持续烧烤！
-3. **🐌 被怪命中缓慢II** - 跑不掉了吧？慢慢等死！
-4. **👁️ 被怪命中失明** - 看不见的恐惧最可怕！
-5. **⚔️ 反伤=50%** - 打怪也会自己受伤，绝望吧！
-
-### 🍖 生存绝望系列
-6. **☠️ 吃食物概率中毒** - 连吃饭都是在**赌命**！
-7. **🥛 被龙打→水桶变牛奶** - 当你最需要水的时候，它背叛了你！
-8. **💀 击杀末影龙者自杀** - 胜利？不存在的！**同归于尽**才是结局！
-9. **🛡️ 盾牌仅吸收80%** - 防御？那是弱者的幻想！
-10. **❤️‍🩹 ≤1♥禁回血(10s)** - 濒死时绝望地看着生命流逝！
-
-### 😱 心理折磨专区
-11. **🌊 放水50%变岩浆(仅玩家)** - 连基础建设都要**赌命**！
-12. **💎 末地死亡掉落/其他维度保留物品** - 规则？我说了算！
-13. **🩸 反向伤害：不受伤扣血** - 安全？那是**最大的危险**！
-14. **☀️ 晴天白天阳光下自燃** - 阳光不再温暖，而是**死亡射线**！
-15. **💚 回血时50%概率变扣血** - 治疗药水？**毒药**才对！
-
-### 🏗️ 建筑师的噩梦
-16. **🕳️ 平地跳跃落地20%概率扣0.5♥** - 连走路都要**提心吊胆**！
-17. **⛰️ 恐高症：Y>80越高伤害越大(最高2♥)** - 想建高楼？准备**血流成河**！💀
-18. **💎 破坏方块10%概率被反伤** - 挖矿也要**付出血的代价**！
-19. **📦 开箱子/熔炉25%概率扣1♥** - 连开箱子都是**生死抉择**！
-
-### 🎭 终极绝望套餐
-20. **🎒 切换物品槽12%概率扣0.5♥** - 换个武器都要**赌命**！
-21. **⚒️ 合成物品10%概率扣1♥** - 做个工具？先**流点血**再说！
-22. **👥 贴身平摊伤害** - 和朋友一起**共享痛苦**！
-23. **🔄 共享生命(镜像)** - 一人受伤，**全员遭殃**！
-24. **🌍 全服平摊伤害** - 整个服务器都是你的**敌人**！
-25. **🎲 随机转移伤害** - 伤害会**随机传递**，谁都逃不掉！
+> ⚠️ **Warning**: The sole purpose of this mod is to make you **suffer immensely**! All effects are carefully designed to deliver fatal blows when you least expect them!
 
 ---
 
-## ⚡ 特色功能：终极恐高症
+## 💀 25 Evil Effects - Your Nightmare Checklist
 
-### 🏔️ 高度伤害阶梯表
-| 高度 | 痛苦等级 | 每2秒伤害 | 生存建议 |
-|------|---------|-----------|---------|
-| Y ≤ 80 | 😌 安全 | 0♥ | 享受最后的安宁 |
-| Y = 90 | 😰 轻微恐惧 | 0.5♥ | 开始颤抖吧 |
-| Y = 100 | 😨 明显恐惧 | 1♥ | 心跳加速了吗？ |
-| Y = 110 | 😱 严重恐惧 | 1.5♥ | 双腿发软了吧？ |
-| Y ≥ 120 | 💀 **极度恐高** | **2♥** | **生不如死！** |
+### 🎯 Basic Torture Kit
+1. **🔴 All Mobs Hostile** - Even chickens want to kill you! No safe zones!
+2. **🔥 Mob Hits Ignite** - Every hit sets you on fire, enjoy the continuous BBQ!
+3. **🐌 Mob Hits Slowness II** - Can't run away? Wait for death slowly!
+4. **👁️ Mob Hits Blindness** - The fear of the unseen is the worst!
+5. **⚔️ Reflection Damage = 50%** - Attacking mobs hurts yourself too, despair!
 
-> 💡 **邪恶提示**：想建天空之城？准备好变成**空中肉酱**！每2秒最多2颗心的伤害，配合电击设备，让你体验**真正的恐高症**！
+### 🍖 Survival Despair Series
+6. **☠️ Food Poisoning Chance** - Even eating is **gambling with your life**!
+7. **🥛 Dragon Hit → Water Bucket to Milk** - When you need water most, it betrays you!
+8. **💀 Ender Dragon Killer Suicide** - Victory? Non-existent! **Mutual destruction** is the only ending!
+9. **🛡️ Shield Only Absorbs 80%** - Defense? That's a weakling's fantasy!
+10. **❤️‍🩹 ≤1♥ No Healing (10s)** - Watch your life drain away in despair when near death!
+
+### 😱 Psychological Torture Zone
+11. **🌊 Water Placement 50% Becomes Lava (Player Only)** - Even basic construction requires **gambling with your life**!
+12. **💎 End Death Drops/Other Dimensions Keep Items** - Rules? I make them!
+13. **🩸 Reverse Damage: Take Damage When Safe** - Safety? That's the **greatest danger**!
+14. **☀️ Sunny Daylight Spontaneous Combustion** - Sunlight is no longer warm, but **death rays**!
+15. **💚 Healing 50% Chance Becomes Damage** - Healing potions? **Poison** is more accurate!
+
+### 🏗️ Builder's Nightmare
+16. **🕳️ Flat Ground Jump Landing 20% Chance 0.5♥ Damage** - Even walking requires **constant vigilance**!
+17. **⛰️ Acrophobia: Y>80 Higher = More Damage (Max 2♥)** - Want to build tall? Prepare for **bloodshed**! 💀
+18. **💎 Block Breaking 10% Chance Reflection Damage** - Mining also requires **paying the blood price**!
+19. **📦 Opening Containers 25% Chance 1♥ Damage** - Even opening chests is a **life-or-death choice**!
+
+### 🎭 Ultimate Despair Package
+20. **🎒 Item Slot Switching 12% Chance 0.5♥ Damage** - Changing weapons requires **gambling with your life**!
+21. **⚒️ Crafting Items 10% Chance 1♥ Damage** - Making tools? **Shed some blood** first!
+22. **👥 Close Range Damage Sharing** - Share **pain together** with friends!
+23. **🔄 Shared Health (Mirror)** - One person hurt, **everyone suffers**!
+24. **🌍 Server-wide Damage Sharing** - The entire server is your **enemy**!
+25. **🎲 Random Damage Transfer** - Damage **randomly transfers**, no one escapes!
 
 ---
 
-## 🎮 使用方法（如果你敢的话）
+## ⚡ Featured: Ultimate Acrophobia
 
-### 👹 邪恶命令
+### 🏔️ Height Damage Scale
+| Height | Pain Level | Damage per 2s | Survival Advice |
+|--------|------------|---------------|-----------------|
+| Y ≤ 80 | 😌 Safe | 0♥ | Enjoy the last peace |
+| Y = 90 | 😰 Mild Fear | 0.5♥ | Start trembling |
+| Y = 100 | 😨 Obvious Fear | 1♥ | Heart racing? |
+| Y = 110 | 😱 Severe Fear | 1.5♥ | Legs going weak? |
+| Y ≥ 120 | 💀 **Extreme Acrophobia** | **2♥** | **Life worse than death!** |
+
+> 💡 **Evil Tip**: Want to build a sky city? Prepare to become **aerial mincemeat**! Up to 2 hearts damage every 2 seconds, combined with shock devices for **true acrophobia experience**!
+
+---
+
+## 🎮 Usage (If You Dare)
+
+### 👹 Evil Commands
 ```
-/chaos menu     # 打开折磨菜单（胆小鬼勿点）
-/chaos toggle <效果名>  # 开启特定的地狱模式
+/chaos menu     # Open torture menu (cowards don't click)
+/chaos toggle <effect_name>  # Enable specific hell mode
 ```
 
-### ⚙️ 配置说明
-- **默认状态**：所有效果都是**关闭**的（我们很仁慈）
-- **推荐设置**：**全部开启**，体验完整的地狱体验！
-- **胆小鬼模式**：只开几个，慢慢适应痛苦
+### ⚙️ Configuration Guide
+- **Default State**: All effects are **disabled** (we're merciful)
+- **Recommended Setting**: **Enable all**, experience complete hell!
+- **Coward Mode**: Enable just a few, slowly adapt to pain
 
-### 📋 效果开关列表
+### 📋 Effect Toggle List
 
-| 开关命令 | 效果描述 | 推荐指数 |
-|---------|---------|----------|
-| `allHostileEnabled` | 🔴 所有生物敌对 | ⭐⭐⭐⭐⭐ |
-| `mobIgniteEnabled` | 🔥 被怪命中点燃 | ⭐⭐⭐⭐⭐ |
-| `mobSlownessEnabled` | 🐌 被怪命中缓慢II | ⭐⭐⭐⭐ |
-| `mobBlindnessEnabled` | 👁️ 被怪命中失明 | ⭐⭐⭐⭐ |
-| `mobThornsEnabled` | ⚔️ 反伤=50% | ⭐⭐⭐⭐⭐ |
-| `foodPoisonEnabled` | ☠️ 吃食物概率中毒 | ⭐⭐⭐ |
-| `enderDragonBucketEnabled` | 🥛 被龙打→水桶变牛奶 | ⭐⭐⭐⭐ |
-| `enderDragonKillEnabled` | 💀 击杀末影龙者自杀 | ⭐⭐⭐⭐⭐ |
-| `shieldNerfEnabled` | 🛡️ 盾牌仅吸收80% | ⭐⭐⭐ |
-| `lowHealthNoHealEnabled` | ❤️‍🩹 ≤1♥禁回血(10s) | ⭐⭐⭐⭐ |
-| `waterToLavaEnabled` | 🌊 放水50%变岩浆 | ⭐⭐⭐⭐ |
-| `endKeepOverrideEnabled` | 💎 末地死亡掉落 | ⭐⭐⭐ |
-| `reverseDamageEnabled` | 🩸 反向伤害 | ⭐⭐⭐⭐⭐ |
-| `sunburnEnabled` | ☀️ 阳光下自燃 | ⭐⭐⭐⭐ |
-| `healReverseEnabled` | 💚 回血变扣血 | ⭐⭐⭐⭐⭐ |
-| `fallTrapEnabled` | 🕳️ 跳跃落地伤害 | ⭐⭐⭐ |
-| `acrophobiaEnabled` | ⛰️ **终极恐高症** | 🌟🌟🌟🌟🌟 |
-| `blockRevengeEnabled` | 💎 破坏方块反伤 | ⭐⭐⭐ |
-| `containerCurseEnabled` | 📦 开箱子扣血 | ⭐⭐⭐⭐ |
-| `inventoryCurseEnabled` | 🎒 切换物品槽扣血 | ⭐⭐⭐⭐ |
-| `craftingTrapEnabled` | ⚒️ 合成物品扣血 | ⭐⭐⭐ |
-| `playerDamageShareEnabled` | 👥 贴身平摊伤害 | ⭐⭐⭐⭐ |
-| `sharedHealthEnabled` | 🔄 共享生命 | ⭐⭐⭐⭐⭐ |
-| `sharedDamageSplitEnabled` | 🌍 全服平摊伤害 | ⭐⭐⭐⭐⭐ |
-| `randomDamageEnabled` | 🎲 随机转移伤害 | ⭐⭐⭐⭐ |
+| Toggle Command | Effect Description | Recommendation |
+|----------------|-------------------|----------------|
+| `allHostileEnabled` | 🔴 All Mobs Hostile | ⭐⭐⭐⭐⭐ |
+| `mobIgniteEnabled` | 🔥 Mob Hits Ignite | ⭐⭐⭐⭐⭐ |
+| `mobSlownessEnabled` | 🐌 Mob Hits Slowness II | ⭐⭐⭐⭐ |
+| `mobBlindnessEnabled` | 👁️ Mob Hits Blindness | ⭐⭐⭐⭐ |
+| `mobThornsEnabled` | ⚔️ Reflection Damage = 50% | ⭐⭐⭐⭐⭐ |
+| `foodPoisonEnabled` | ☠️ Food Poisoning Chance | ⭐⭐⭐ |
+| `enderDragonBucketEnabled` | 🥛 Dragon Hit → Water to Milk | ⭐⭐⭐⭐ |
+| `enderDragonKillEnabled` | 💀 Dragon Killer Suicide | ⭐⭐⭐⭐⭐ |
+| `shieldNerfEnabled` | 🛡️ Shield Only Absorbs 80% | ⭐⭐⭐ |
+| `lowHealthNoHealEnabled` | ❤️‍🩹 ≤1♥ No Healing (10s) | ⭐⭐⭐⭐ |
+| `waterToLavaEnabled` | 🌊 Water 50% Becomes Lava | ⭐⭐⭐⭐ |
+| `endKeepOverrideEnabled` | 💎 End Death Drops | ⭐⭐⭐ |
+| `reverseDamageEnabled` | 🩸 Reverse Damage | ⭐⭐⭐⭐⭐ |
+| `sunburnEnabled` | ☀️ Sunlight Combustion | ⭐⭐⭐⭐ |
+| `healReverseEnabled` | 💚 Healing Becomes Damage | ⭐⭐⭐⭐⭐ |
+| `fallTrapEnabled` | 🕳️ Jump Landing Damage | ⭐⭐⭐ |
+| `acrophobiaEnabled` | ⛰️ **Ultimate Acrophobia** | 🌟🌟🌟🌟🌟 |
+| `blockRevengeEnabled` | 💎 Block Breaking Reflection | ⭐⭐⭐ |
+| `containerCurseEnabled` | 📦 Container Opening Damage | ⭐⭐⭐⭐ |
+| `inventoryCurseEnabled` | 🎒 Item Slot Switching Damage | ⭐⭐⭐⭐ |
+| `craftingTrapEnabled` | ⚒️ Crafting Damage | ⭐⭐⭐ |
+| `playerDamageShareEnabled` | 👥 Close Range Damage Sharing | ⭐⭐⭐⭐ |
+| `sharedHealthEnabled` | 🔄 Shared Health | ⭐⭐⭐⭐⭐ |
+| `sharedDamageSplitEnabled` | 🌍 Server-wide Damage Sharing | ⭐⭐⭐⭐⭐ |
+| `randomDamageEnabled` | 🎲 Random Damage Transfer | ⭐⭐⭐⭐ |
 
 ---
 
-## 🔧 安装教程（进入地狱的第一步）
+## 🔧 Installation Guide (First Step to Hell)
 
-1. **安装 Fabric Loader** - 你的痛苦之门
-2. **下载最新版本** - 获取最新的折磨工具
-3. **放入 mods 文件夹** - 打开地狱之门
-4. **启动 Minecraft** - 欢迎来到地狱！
+1. **Install Fabric Loader** - Your gateway to pain
+2. **Download Latest Version** - Get the latest torture tools
+3. **Place in mods folder** - Open the gates of hell
+4. **Launch Minecraft** - Welcome to hell!
 
-### 📋 系统要求
+### 📋 System Requirements
 - Minecraft 1.21
 - Fabric Loader
 - Fabric API  
-- **一颗勇敢的心**（可选，反正很快就会被摧毁）
+- **A brave heart** (optional, will be destroyed soon anyway)
 
 ---
 
-## 💡 邪恶灵感来源
+## 💡 Evil Inspiration Sources
 
-这个模组的邪恶创意来源于两个**震撼人心**的实验视频：
+This mod's evil creativity comes from two **shocking** experimental videos:
 
-### 🎬 **原始罪恶实验**
+### 🎬 **Original Sinful Experiments**
 
-1. **【当你受伤就会在现实被电！但伤害随机转移给另一个人！】** 🎲⚡
-   - 链接：https://www.bilibili.com/video/BV1LypizBEpq/
-   - **邪恶亮点**：随机伤害转移 + 现实电击的**双重背叛**！
-   - **启发效果**：`randomDamageEnabled` + `sharedDamageSplitEnabled`
+1. **【When you get hurt, you get electrocuted in real life! But damage randomly transfers to another person!】** 🎲⚡
+   - Link: https://www.bilibili.com/video/BV1LypizBEpq/
+   - **Evil Highlight**: Random damage transfer + real shock **double betrayal**!
+   - **Inspired Effects**: `randomDamageEnabled` + `sharedDamageSplitEnabled`
 
-2. **【当你受到伤害就会在现实被电击！】** ⚡💀
-   - 链接：https://www.bilibili.com/video/BV1bweuzkEaU/
-   - **邪恶亮点**：虚拟伤害直接转化为**现实痛苦**！
-   - **启发效果**：所有25个折磨效果的**终极目标**
+2. **【When you take damage, you get electrocuted in real life!】** ⚡💀
+   - Link: https://www.bilibili.com/video/BV1bweuzkEaU/
+   - **Evil Highlight**: Virtual damage directly converts to **real pain**!
+   - **Inspired Effects**: **Ultimate goal** of all 25 torture effects
 
-> 💡 **创意致敬**：感谢原视频创作者们的创新实验！这些有趣的创意启发了我们开发这个模组，将虚拟游戏与现实互动结合，为玩家带来全新的游戏体验！🎮
+> 💡 **Creative Tribute**: Thanks to the original video creators for their innovative experiments! These interesting ideas inspired us to develop this mod, combining virtual games with real-world interaction to bring players a completely new gaming experience! 🎮
 
-### 🎯 **从实验到现实**
+### 🎯 **From Experiment to Reality**
 
-看完这两个视频后，我们深受震撼：
-- **为什么只有一种伤害方式？** → 我们创造了**25种**！
-- **为什么只能单人受苦？** → 我们加入了**多人背叛**！
-- **为什么伤害这么简单？** → 我们设计了**心理战术**！
-
----
-
-## ⚡ 与DG_LAB X Minecraft Mod的完美配合
-
-这个模组的每一个效果都经过精心调校，确保与电击设备完美配合：
-
-- **持续小伤害** → 持续小电击，让你**时刻紧张**
-- **突发大伤害** → 强力电击，给你**刻骨铭心**的体验
-- **意外伤害** → 随机电击，让你**防不胜防**
-- **心理折磨** → 配合电击刺激，**双重打击**
+After watching these two videos, we were deeply shocked:
+- **Why only one damage method?** → We created **25 types**!
+- **Why only single-player suffering?** → We added **multiplayer betrayal**!
+- **Why such simple damage?** → We designed **psychological warfare**!
 
 ---
 
-## 🏆 成就系统（挑战勋章）
+## ⚡ Perfect Integration with DG_LAB X Minecraft Mod
 
-- 🥉 **入门挑战者**：开启5个效果游玩1小时
-- 🥈 **进阶挑战者**：开启15个效果游玩30分钟  
-- 🥇 **高级挑战者**：开启25个效果游玩10分钟
-- 👑 **建筑大师**：开启恐高症在Y=200建造建筑
-- 💀 **终极挑战者**：同时开启所有25个效果并存活
+Every effect in this mod is carefully calibrated to perfectly integrate with shock devices:
 
----
-
-## 🎯 推荐游戏模式
-
-### 😇 **新手入门套餐**（难度：简单）
-开启：`mobIgniteEnabled` + `foodPoisonEnabled` + `shieldNerfEnabled`
-> 适合初次体验的玩家，温和的挑战难度
-
-### 😈 **标准挑战套餐**（难度：中等）
-开启：基础效果 + `acrophobiaEnabled` + `reverseDamageEnabled` + `healReverseEnabled`
-> 经典的挑战体验，适合有一定经验的玩家
-
-### 👹 **终极挑战套餐**（难度：困难）
-开启：**全部25个效果**
-> 只有真正的勇士才敢尝试！准备好迎接极限挑战吧！
-
-### 🔥 **电击专用套餐**（推荐）
-重点开启：`acrophobiaEnabled` + `reverseDamageEnabled` + `healReverseEnabled` + `inventoryCurseEnabled`
-> 专为电击设备优化，保证持续稳定的伤害输出
+- **Continuous small damage** → Continuous small shocks, keep you **constantly tense**
+- **Sudden large damage** → Powerful shocks, give you **unforgettable** experiences  
+- **Unexpected damage** → Random shocks, make you **defenseless**
+- **Psychological torture** → Combined with shock stimulation, **double impact**
 
 ---
 
-## 👥 多人游戏：团队挑战指南 💪😊
+## 🏆 Achievement System (Challenge Medals)
 
-### 🎭 **强烈建议与朋友一起游玩！**
+- 🥉 **Beginner Challenger**: Enable 5 effects and play for 1 hour
+- 🥈 **Intermediate Challenger**: Enable 15 effects and play for 30 minutes  
+- 🥇 **Advanced Challenger**: Enable 25 effects and play for 10 minutes
+- 👑 **Master Builder**: Enable acrophobia and build at Y=200
+- 💀 **Ultimate Challenger**: Enable all 25 effects simultaneously and survive
 
-多人游戏能让这个模组的效果更加有趣！通过团队合作面对各种挑战，体验不同的游戏乐趣！
+---
 
-#### 🔥 **多人游戏挑战场景**
+## 🎯 Recommended Game Modes
 
-##### 💀 **团队共享挑战**
-开启：`sharedHealthEnabled` + `sharedDamageSplitEnabled` + `playerDamageShareEnabled`
+### 😇 **Beginner Package** (Difficulty: Easy)
+Enable: `mobIgniteEnabled` + `foodPoisonEnabled` + `shieldNerfEnabled`
+> Suitable for first-time players, gentle challenge difficulty
 
-- **场景1**：当有玩家受到伤害时，伤害会分摊给所有在线玩家
-- **场景2**：挑战末影龙时，其他玩家也会感受到战斗的紧张感  
-- **场景3**：建筑师在高处建造时，恐高症效果增加了额外的挑战性
+### 😈 **Standard Challenge Package** (Difficulty: Medium)
+Enable: Basic effects + `acrophobiaEnabled` + `reverseDamageEnabled` + `healReverseEnabled`
+> Classic challenge experience, suitable for experienced players
 
-> 💡 **游戏提示**：建议和朋友提前讨论效果设置，确保大家都能享受游戏乐趣！
+### 👹 **Ultimate Challenge Package** (Difficulty: Hard)
+Enable: **All 25 effects**
+> Only true warriors dare to try! Prepare for the ultimate challenge!
 
-##### 🎯 **策略挑战模式**
-开启：`randomDamageEnabled` + `mobThornsEnabled` + `acrophobiaEnabled`
+### 🔥 **Electric Shock Special Package** (Recommended)
+Focus on: `acrophobiaEnabled` + `reverseDamageEnabled` + `healReverseEnabled` + `inventoryCurseEnabled`
+> Optimized for shock devices, guarantees continuous stable damage output
 
-- **挑战1**：一起探索高海拔地区，体验恐高症效果
-- **挑战2**：测试随机伤害转移的运气成分
-- **挑战3**：在开启方块反伤时进行挖矿挑战
+---
 
-##### 😱 **高难度挑战**
-开启：`reverseDamageEnabled` + `healReverseEnabled` + `fallTrapEnabled`
+## 👥 Multiplayer Gaming: Team Challenge Guide 💪😊
 
-- **挑战1**：测试反向伤害机制的独特性
-- **挑战2**：体验回血反转效果的随机性
-- **挑战3**：在跌落陷阱效果下进行移动挑战
+### 🎭 **Strongly Recommend Playing with Friends!**
 
-#### 🏆 **多人游戏成就**
+Multiplayer gaming makes this mod's effects even more interesting! Experience different gameplay fun through teamwork facing various challenges!
 
-- 🥉 **团队合作**：与朋友一起开启5个效果游玩1小时
-- 🥈 **挑战者**：在多人环境下开启15个效果
-- 🥇 **勇敢队伍**：全员开启25个效果并坚持游戏
-- 👑 **服务器传说**：成为服务器最敢挑战的玩家
+#### 🔥 **Multiplayer Challenge Scenarios**
 
-#### 💬 **多人游戏常见情况**
+##### 💀 **Team Sharing Challenge**
+Enable: `sharedHealthEnabled` + `sharedDamageSplitEnabled` + `playerDamageShareEnabled`
 
-> **玩家A**："为什么我一直在扣血？"
-> **玩家B**："可能是反向伤害效果，我们检查一下配置吧！"
+- **Scenario 1**: When players take damage, it's distributed among all online players
+- **Scenario 2**: When challenging the Ender Dragon, other players also feel the battle tension  
+- **Scenario 3**: When architects build at height, acrophobia effects add extra challenge
+
+> 💡 **Game Tip**: Recommend discussing effect settings with friends beforehand to ensure everyone can enjoy the game!
+
+##### 🎯 **Strategic Challenge Mode**
+Enable: `randomDamageEnabled` + `mobThornsEnabled` + `acrophobiaEnabled`
+
+- **Challenge 1**: Explore high-altitude areas together, experience acrophobia effects
+- **Challenge 2**: Test the luck factor of random damage transfer
+- **Challenge 3**: Mining challenges with block reflection damage enabled
+
+##### 😱 **High Difficulty Challenge**
+Enable: `reverseDamageEnabled` + `healReverseEnabled` + `fallTrapEnabled`
+
+- **Challenge 1**: Test the uniqueness of reverse damage mechanics
+- **Challenge 2**: Experience the randomness of healing reversal effects  
+- **Challenge 3**: Movement challenges under fall trap effects
+
+#### 🏆 **Multiplayer Achievements**
+
+- 🥉 **Teamwork**: Play with friends with 5 effects enabled for 1 hour
+- 🥈 **Challengers**: Enable 15 effects in multiplayer environment
+- 🥇 **Brave Team**: All members enable 25 effects and persist in gaming
+- 👑 **Server Legend**: Become the most daring challenger on the server
+
+#### 💬 **Common Multiplayer Situations**
+
+> **Player A**: "Why am I constantly losing health?"
+> **Player B**: "Might be the reverse damage effect, let's check the config!"
 > 
-> **玩家C**："我们一起去建高楼吧！"
-> **玩家D**："记得注意恐高症效果哦！"
+> **Player C**: "Let's build a tall building together!"
+> **Player D**: "Remember to watch out for acrophobia effects!"
 > 
-> **玩家E**："这个回血效果怎么有时候会扣血？"
-> **玩家F**："那是回血反转效果，挺有趣的机制！"
+> **Player E**: "Why does healing sometimes cause damage?"
+> **Player F**: "That's the healing reversal effect, quite an interesting mechanism!"
 
-#### 🎪 **多人游戏推荐配置**
+#### 🎪 **Recommended Multiplayer Configurations**
 
-##### 🔥 **2-3人小队：团队协作**
+##### 🔥 **2-3 Player Squad: Team Cooperation**
 ```
-推荐效果：sharedHealthEnabled + acrophobiaEnabled + healReverseEnabled
-挑战难度：⭐⭐⭐⭐
-适合密切配合的小团队
-```
-
-##### 👥 **4-6人中队：协调挑战**
-```
-推荐效果：playerDamageShareEnabled + randomDamageEnabled + inventoryCurseEnabled
-挑战难度：⭐⭐⭐⭐⭐
-需要良好的团队沟通
+Recommended Effects: sharedHealthEnabled + acrophobiaEnabled + healReverseEnabled
+Challenge Difficulty: ⭐⭐⭐⭐
+Suitable for closely cooperating small teams
 ```
 
-##### 🌍 **大型服务器：终极挑战**
+##### 👥 **4-6 Player Team: Coordination Challenge**
 ```
-推荐效果：sharedDamageSplitEnabled + 多个核心效果
-挑战难度：⭐⭐⭐⭐⭐
-适合有经验的玩家群体
+Recommended Effects: playerDamageShareEnabled + randomDamageEnabled + inventoryCurseEnabled
+Challenge Difficulty: ⭐⭐⭐⭐⭐
+Requires good team communication
 ```
 
-#### 🎭 **角色扮演建议**
+##### 🌍 **Large Server: Ultimate Challenge**
+```
+Recommended Effects: sharedDamageSplitEnabled + multiple core effects
+Challenge Difficulty: ⭐⭐⭐⭐⭐
+Suitable for experienced player groups
+```
 
-- **😇 新手引导者**：帮助新玩家了解各种效果
-- **😈 挑战设计师**：负责设置合适的挑战难度
-- **🤝 团队协调者**：确保所有人都能享受游戏
-- **👹 效果专家**：向其他玩家介绍各种有趣的效果
+#### 🎭 **Role-Playing Suggestions**
 
-#### ⚡ **电击多人体验**
+- **😇 Newbie Guide**: Help new players understand various effects
+- **😈 Challenge Designer**: Responsible for setting appropriate challenge difficulty
+- **🤝 Team Coordinator**: Ensure everyone can enjoy the game
+- **👹 Effect Expert**: Introduce various interesting effects to other players
 
-当多人一起配合电击设备游玩时：
+#### ⚡ **Electric Multiplayer Experience**
 
-- **同步痛苦**：`sharedHealthEnabled`让所有人**同时被电击**！⚡⚡⚡
-- **随机惊吓**：`randomDamageEnabled`让你永远不知道**下一个被电的是谁**！🎲⚡
-- **友谊测试**：真正的朋友会在你被电击时**和你一起痛苦**！💔⚡
+When multiple people play together with shock devices:
 
-### 🎯 **多人游戏建议**
+- **Synchronized Pain**: `sharedHealthEnabled` makes everyone **get shocked simultaneously**! ⚡⚡⚡
+- **Random Scares**: `randomDamageEnabled` keeps you guessing **who gets shocked next**! 🎲⚡
+- **Friendship Test**: True friends will **suffer with you** when you get shocked! 💔⚡
 
-1. **第一步**：邀请朋友一起体验这个有趣的模组
-2. **第二步**：一起讨论想要开启哪些效果
-3. **第三步**：从简单的效果开始尝试
-4. **第四步**：逐步增加挑战难度
-5. **第五步**：分享游戏体验和有趣时刻
-6. **第六步**：探索不同的效果组合
+### 🎯 **Multiplayer Game Suggestions**
 
-> 💡 **游戏提示**：多人游戏时建议大家一起讨论效果设置，这样能让游戏体验更加有趣和公平！
+1. **Step 1**: Invite friends to experience this interesting mod together
+2. **Step 2**: Discuss which effects you want to enable together
+3. **Step 3**: Start trying simple effects
+4. **Step 4**: Gradually increase challenge difficulty
+5. **Step 5**: Share gaming experiences and fun moments
+6. **Step 6**: Explore different effect combinations
+
+> 💡 **Game Tip**: When playing multiplayer, it's recommended to discuss effect settings together for a more interesting and fair gaming experience!
 
 ---
 
-## ⚠️ 健康警告
+## ⚠️ Health Warning
 
-> **严肃提醒**：如果你真的要配合DG_LAB设备使用，请：
-> - 确保设备安全性
-> - 设置合理的电击强度
-> - 准备好停止按钮
-> - 在有人监督的情况下使用
-> - 如有不适立即停止
-
----
-
-## 📝 更新日志
-
-### v1.0.0 - "邪恶降临：正式版首发！" 🔥👹⚡
-- 🎉 **首次正式发布**！经过无数次测试，终于达到了完美的邪恶程度！
-- 💀 **25种终极折磨效果**全部就绪，让你体验真正的地狱！
-- ⛰️ **终极恐高症**：高度越高越痛苦，最高每2秒扣2♥！
-- 📚 **邪恶版README**：用最恶毒的语言描述每一种痛苦！
-- ⚡ **电击设备完美适配**：每一种伤害都经过精心调校！
-- 😈 **准备好迎接真正的地狱体验吧，受害者们！**
+> **Serious Reminder**: If you're actually using DG_LAB devices, please:
+> - Ensure device safety
+> - Set reasonable shock intensity
+> - Prepare stop buttons
+> - Use under supervision
+> - Stop immediately if uncomfortable
 
 ---
 
-### 🧪 测试版本历史（血泪史）
+## 📝 Update Log
 
-#### v0.9.7-beta - "恐高症完善版" 🏔️
-- 🔧 修复恐高症伤害计算公式
-- 💀 添加渐进式恐惧机制
-- 😱 测试者反馈："我再也不敢爬山了..."
-
-#### v0.9.5-beta - "多人游戏平衡测试" 👥
-- 🔧 大规模多人环境下的效果平衡
-- ⚖️ 调整`sharedDamageSplitEnabled`的伤害分配
-- 📊 收集多人游戏体验反馈
-
-#### v0.9.3-beta - "床爆炸大失败" 💥❌
-- 💣 尝试添加床爆炸效果（后来删除）
-- 🐛 无数个bug，玩家永远睡不了觉
-- 😅 测试者反馈："这比恐高症还折磨人..."
-
-#### v0.8.8-alpha - "背叛心理学研究" 🎭😈
-- 🔬 专门测试朋友互相坑害的效果
-- 🎯 添加随机伤害转移的恶毒机制
-- 😇 测试方法：让测试者"装无辜"坑害朋友
-- 💔 结果：100%的测试组合都产生了信任危机
-
-#### v0.8.5-alpha - "25效果集合测试" 🎭
-- 🆕 完成全部25个邪恶效果
-- 🔥 添加阳光自燃、回血反转等
-- 💀 测试者死亡率达到95%
-
-#### v0.7.9-alpha - "多人同步测试" ⚡👥
-- 🔌 首次测试多人游戏效果同步
-- ⚡ 完善`sharedHealthEnabled`的多人机制
-- 🔧 优化伤害共享的技术实现
-
-#### v0.7.2-alpha - "伤害共享系统" 👥
-- 🔄 添加贴身平摊、全服平摊、随机转移
-- 😱 一人受伤全员遭殃的恐怖机制
-- 💔 友谊在血泊中破裂...
-
-#### v0.6.8-pre - "反向伤害实验" 🩸
-- 🆕 不受伤时持续扣血的变态机制
-- 😰 安全变成最大的危险
-- 🏃 测试者疯狂跑动寻求伤害
-
-#### v0.6.3-pre - "小团队背叛测试" 🤝➡️🔪
-- 👥 3人小队专项测试
-- 😈 重点测试朋友互相引导到危险区域
-- 🏔️ 恐高症+随机转移的完美组合
-- 💬 经典测试对话："相信我，这里很安全"
-
-#### v0.5.4-pre - "末影龙特殊交互" 🐲
-- 💀 击杀龙者必死机制
-- 🥛 水桶变牛奶的绝望
-- 😈 胜利变成诅咒
-
-#### v0.4.7-dev - "大型服务器兼容性测试" 🌍
-- 🏢 大型服务器环境下的性能优化
-- 📊 测试多人效果的服务器负载
-- 🔧 改进网络同步机制
-
-#### v0.4.1-dev - "食物中毒与盾牌削弱" 🍖🛡️
-- ☠️ 吃饭变成赌命游戏
-- ⚔️ 盾牌只能挡80%伤害
-- 🤢 测试者："连吃饭都不安全了！"
-
-#### v0.3.7-dev - "生物全敌对系统" 🔴
-- 🐔 连小鸡都想杀死你
-- 🔥 被打必定点燃
-- 👁️ 失明+缓慢双重折磨
-
-#### v0.2.8-experimental - "双人游戏测试" 👥
-- 👫 双人环境下的效果平衡测试
-- ⚖️ 调整多人伤害共享机制
-- 📝 收集双人游戏的用户反馈
-
-#### v0.2.3-experimental - "基础伤害机制" ⚔️
-- 💥 反伤系统初版
-- 🩸 基础伤害路由
-- 😵 测试者："这是什么地狱游戏？"
-
-#### v0.1.5-proof-of-concept - "心理战概念验证" 🧠⚔️
-- 🎭 首次测试"装无辜"策略
-- 😇 让测试者假装不知道效果存在
-- 📊 结果：被坑者完全无法识破
-- 💡 确立了"暗中折磨"的核心理念
-
-#### v0.1.0-proof-of-concept - "邪恶概念验证" 😈
-- 🎯 确立"专业电击配套"理念
-- 🔧 搭建基础架构
-- 💡 第一次让测试者体验真正的痛苦
+### v1.0.0 - "Evil Descent: Official Release!" 🔥👹⚡
+- 🎉 **First Official Release**! After countless tests, finally achieved perfect evil level!
+- 💀 **25 Ultimate Torture Effects** all ready, experience true hell!
+- ⛰️ **Ultimate Acrophobia**: Higher means more pain, maximum 2♥ every 2 seconds!
+- 📚 **Evil README**: Describe every pain with the most vicious language!
+- ⚡ **Perfect Shock Device Integration**: Every damage type carefully calibrated!
+- 😈 **Prepare for true hell experience, victims!**
 
 ---
 
-## 🤝 社区（受害者联盟）
+## 🛠️ Technical Details (For Developers)
 
-加入我们的受害者大家庭：
-- **Discord**：分享你的痛苦经历
-- **GitHub**：报告bug（如果你还活着的话）
-- **YouTube**：观看其他玩家的痛苦表演
-- **Twitch**：直播你的地狱之旅
-
-### 🎬 玩家体验分享
-
-> *"恐高症效果让建筑挑战变得更有趣了！"* - 某建筑师玩家
-> 
-> *"这个模组为生存模式增加了全新的挑战性"* - 某生存玩家
-> 
-> *"多人游戏时的伤害共享机制很有创意"* - 某多人服玩家
-
----
-
-## 🛠️ 技术细节（给开发者的福利）
-
-### 🔧 核心架构
+### 🔧 Core Architecture
 ```
 ChaosMod
-├── 🎯 DamageRouting.java     # 伤害路由系统
-├── 🎭 ThreatProfiles.java    # 威胁参数配置
-├── ⚙️ ChaosModConfig.java    # 25个邪恶开关
-└── 😈 ServerPlayerEntityTickMixin.java  # 恐高症核心
+├── 🎯 DamageRouting.java     # Damage routing system
+├── 🎭 ThreatProfiles.java    # Threat parameter configuration
+├── ⚙️ ChaosModConfig.java    # 25 evil switches
+└── 😈 ServerPlayerEntityTickMixin.java  # Acrophobia core
 ```
 
-### 💀 恐高症算法
+### 💀 Acrophobia Algorithm
 ```java
-// 渐进式恐惧公式
+// Progressive fear formula
 if (height <= 80) {
-    damage = 0.0F;  // 安全地带
+    damage = 0.0F;  // Safe zone
 } else if (height <= 120) {
-    damage = (height - 80) * 0.1F;  // 每层+0.05♥
+    damage = (height - 80) * 0.1F;  // +0.05♥ per level
 } else {
-    damage = 4.0F;  // 极度恐高：2♥
+    damage = 4.0F;  // Extreme acrophobia: 2♥
 }
 ```
 
 ---
 
-## 📜 许可证
+## 📜 License
 
-本项目使用 MIT 许可证。
+This project uses MIT License.
 
-**换句话说**：你可以自由地分享这份痛苦，让更多人体验地狱！😈
-
----
-
-## 🎯 最后的话
-
-还在犹豫吗？**勇敢一点**！下载这个模组，开启你的**地狱之旅**！
-
-记住：**痛苦让你成长，电击让你清醒！** ⚡💀
-
-### 🌟 特别感谢
-
-- **Fabric团队** - 为我们提供了优秀的模组开发平台
-- **所有测试者** - 感谢你们的宝贵反馈
-- **DG_LAB团队** - 创新的虚拟现实交互技术
-- **每一个玩家** - 感谢你们的游戏体验和反馈
+**In other words**: You can freely share this pain and let more people experience hell! 😈
 
 ---
 
-*"在这个世界上，只有两种玩家：还没下载这个模组的，和已经在地狱中挣扎的。你选择做哪一种？"* 👹
+## 🎯 Final Words
 
-### 🎊 立即下载，开始你的痛苦之旅！
+Still hesitating? **Be brave**! Download this mod and start your **journey to hell**!
 
-**[⚡ 点击下载最新版本 ⚡](https://github.com/Doc734/ChaosMod/releases/latest)**
+Remember: **Pain makes you grow, shocks keep you awake!** ⚡💀
 
-> 下载即代表你已经准备好体验全新的游戏挑战！祝你游戏愉快！🎮
+### 🌟 Special Thanks
+
+- **Fabric Team** - For providing excellent mod development platform
+- **All Testers** - Thanks for your valuable feedback  
+- **DG_LAB Team** - Innovative virtual reality interaction technology
+- **Every Player** - Thanks for your gaming experience and feedback
+
+---
+
+*"In this world, there are only two types of players: those who haven't downloaded this mod yet, and those already struggling in hell. Which one do you choose to be?"* 👹
+
+### 🎊 Download Now, Start Your Journey of Pain!
+
+**[⚡ Click to Download Latest Version ⚡](https://github.com/Doc734/ChaosMod/releases/latest)**
+
+> Downloading means you're ready to experience brand new gaming challenges! Have fun gaming! 🎮
