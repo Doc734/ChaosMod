@@ -1,4 +1,4 @@
-# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.2.0-Release
+# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.3.0-Release
 
 **Language**: [🇺🇸 English](README.md) | [🇨🇳 中文](README_CN.md)
 
@@ -72,9 +72,15 @@ This is a **ultimate torture mod specifically designed to work with DG_LAB X Min
 
 ### 👹 Evil Commands
 ```
-Press 'P' Key   # Open config GUI (Admin only)
+Press 'P' Key   # Open bilingual config GUI (Admin only)
 /chaos toggle <effect_name>  # Enable specific hell mode
 ```
+
+### 🌐 **Language Support (v1.3.0)**
+- **🇺🇸 English**: Full English interface and effect descriptions
+- **🇨🇳 中文**: Complete Chinese localization for all features
+- **🎛️ In-Game Toggle**: Switch languages instantly via GUI button
+- **💾 Auto-Save**: Language preference saved automatically
 
 **Permission Check Details:**
 - **Required Level**: 4 (Administrator/OP)
@@ -314,6 +320,15 @@ When multiple people play together with shock devices:
 ---
 
 ## 📝 Update Log
+
+### v1.3.0-Release - "Bilingual Revolution: Global Language Support!" 🌐🔥⚡
+- 🌍 **NEW: Dual Language Support**! Full English and Chinese interface translations
+- 🎛️ **NEW: In-Game Language Switch**! Toggle between languages with GUI button
+- 🔤 **NEW: Complete Localization**! All 25 effects and UI elements translated
+- 💾 **NEW: Language Persistence**! Settings automatically saved and restored
+- 🎨 **IMPROVED: Clean Transparent UI**! No more text overlap or grey backgrounds
+- 🎮 **ENHANCED: Professional Interface**! Minecraft-style pagination with language toggle
+- 🌐 **Global Ready**: Perfect for international servers and communities!
 
 ### v1.2.0-Release - "GUI Revolution: Admin Interface Upgrade!" 🖥️👑⚡
 - 🎮 **NEW: Professional GUI Menu**! Replaced `/chaos menu` with modern interface accessible via 'P' key

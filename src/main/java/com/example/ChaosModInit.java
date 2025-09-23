@@ -67,6 +67,9 @@ public class ChaosModInit implements ModInitializer {
     @Override
     public void onInitialize() {
         
+        // v1.3.0: Initialize language system
+        com.example.config.LanguageManager.loadLanguageFromConfig();
+        
         // Register network packet receiver with proper permission checks
         ConfigToggleC2SPacket.registerServerReceiver();
         

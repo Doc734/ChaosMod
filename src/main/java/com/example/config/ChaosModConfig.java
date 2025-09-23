@@ -29,6 +29,9 @@ public class ChaosModConfig {
     public boolean inventoryCurseEnabled = false;      // 物品栏诅咒：切换物品槽12%概率扣0.5♥
     public boolean craftingTrapEnabled = false;        // 合成陷阱：合成物品10%概率扣1♥
 
+    // v1.3.0: Language setting
+    public String language = "zh_cn";                  // 默认中文，可选: "en_us", "zh_cn"
+
     // === Legacy-visible flags ===
     public boolean noHealActive = false;
     public long noHealEndTime = 0L;
@@ -94,6 +97,16 @@ public class ChaosModConfig {
             case "craftingTrapEnabled": craftingTrapEnabled = value; break;
             default: break;
         }
+        markDirty();
+    }
+    
+    // Language configuration methods
+    public String getLanguage() {
+        return language;
+    }
+    
+    public void setLanguage(String language) {
+        this.language = language;
         markDirty();
     }
 }

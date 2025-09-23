@@ -1,6 +1,7 @@
 package com.example.gui;
 
 import com.example.ChaosMod;
+import com.example.config.LanguageManager;
 import com.example.network.ConfigToggleC2SPacket;
 import com.example.screen.ChaosModScreenHandler;
 // import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking; // Simplified
@@ -17,38 +18,9 @@ import java.util.List;
 import java.util.Map;
 
 public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
-    private static final Map<String, String> LABELS = new LinkedHashMap<>();
     private static final int BUTTON_WIDTH = 200;
     private static final int BUTTON_HEIGHT = 20;
     private static final int BUTTON_SPACING = 24; // MC 标准间距
-    
-    static {
-        LABELS.put("allHostileEnabled", "所有生物敌对");
-        LABELS.put("mobIgniteEnabled", "被怪命中点燃");
-        LABELS.put("mobSlownessEnabled", "被怪命中缓慢II");
-        LABELS.put("mobBlindnessEnabled", "被怪命中失明");
-        LABELS.put("mobThornsEnabled", "反伤=50%");
-        LABELS.put("foodPoisonEnabled", "吃食物概率中毒");
-        LABELS.put("enderDragonBucketEnabled", "被龙打→水桶变牛奶");
-        LABELS.put("enderDragonKillEnabled", "击杀末影龙者自杀");
-        LABELS.put("playerDamageShareEnabled", "贴身平摊伤害");
-        LABELS.put("sharedHealthEnabled", "共享生命(镜像)");
-        LABELS.put("sharedDamageSplitEnabled", "全服平摊伤害");
-        LABELS.put("randomDamageEnabled", "随机转移伤害");
-        LABELS.put("shieldNerfEnabled", "盾牌仅吸收80%");
-        LABELS.put("lowHealthNoHealEnabled", "≤1♥禁回血(10s)");
-        LABELS.put("waterToLavaEnabled", "放水50%变岩浆(仅玩家)");
-        LABELS.put("endKeepOverrideEnabled", "末地死亡掉落/其他维度保留物品");
-        LABELS.put("reverseDamageEnabled", "反向伤害：不受伤扣血");
-        LABELS.put("sunburnEnabled", "晴天白天阳光下自燃");
-        LABELS.put("healReverseEnabled", "回血时50%概率变扣血");
-        LABELS.put("fallTrapEnabled", "平地跳跃落地20%概率扣0.5♥");
-        LABELS.put("acrophobiaEnabled", "恐高症：Y>80越高伤害越大(最高2♥)");
-        LABELS.put("blockRevengeEnabled", "破坏方块10%概率被反伤");
-        LABELS.put("containerCurseEnabled", "开箱子/熔炉25%概率扣1♥");
-        LABELS.put("inventoryCurseEnabled", "切换物品槽12%概率扣0.5♥");
-        LABELS.put("craftingTrapEnabled", "合成物品10%概率扣1♥");
-    }
     
     private final List<ButtonWidget> configButtons = new ArrayList<>();
     private final boolean hasPermission;
@@ -85,31 +57,40 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
         
         // 权限不足提示 - MC 风格居中
         this.addDrawableChild(ButtonWidget.builder(
-            Text.literal("权限不足").formatted(Formatting.RED),
+            Text.literal(LanguageManager.getUI("gui.permission_denied")).formatted(Formatting.RED),
             btn -> {}
         ).dimensions(centerX - 100, startY, 200, 20).build());
         
         this.addDrawableChild(ButtonWidget.builder(
-            Text.literal("需要管理员权限").formatted(Formatting.YELLOW),
+            Text.literal(LanguageManager.getUI("gui.admin_required")).formatted(Formatting.YELLOW),
             btn -> {}
         ).dimensions(centerX - 100, startY + 30, 200, 20).build());
         
         // 返回按钮
         this.addDrawableChild(ButtonWidget.builder(
-            Text.literal("返回"),
+            Text.literal(LanguageManager.getUI("gui.back")),
             btn -> this.close()
         ).dimensions(centerX - 100, startY + 80, 200, 20).build());
     }
     
     private void initMainMenuStyle() {
         int centerX = this.width / 2;
-        int startY = 30; // 提高起始位置，因为没有标题了
+        int startY = 50; // 提高起始位置，因为没有标题了，但为语言按钮留出空间
+        
+        // 语言切换按钮
+        this.addDrawableChild(ButtonWidget.builder(
+            Text.literal(LanguageManager.getUI("gui.language") + ": " + LanguageManager.getCurrentLanguage().displayName),
+            btn -> toggleLanguage()
+        ).dimensions(centerX - 100, 20, 200, 20).build());
+        
+        // 获取所有配置项的键值对
+        Map<String, String> currentLabels = getCurrentLabels();
         
         // 计算总页数
-        totalPages = (LABELS.size() + itemsPerPage - 1) / itemsPerPage;
+        totalPages = (currentLabels.size() + itemsPerPage - 1) / itemsPerPage;
         
         // 按照 MC 主菜单风格排列当前页的配置按钮
-        List<Map.Entry<String, String>> entries = new ArrayList<>(LABELS.entrySet());
+        List<Map.Entry<String, String>> entries = new ArrayList<>(currentLabels.entrySet());
         int startIndex = currentPage * itemsPerPage;
         int endIndex = Math.min(startIndex + itemsPerPage, entries.size());
         
@@ -140,7 +121,7 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
         // 分页按钮（如果需要的话）
         if (totalPages > 1) {
             this.addDrawableChild(ButtonWidget.builder(
-                Text.literal("< 上一页"),
+                Text.literal(LanguageManager.getUI("gui.previous_page")),
                 btn -> previousPage()
             ).dimensions(centerX - 150, bottomY, 80, 20).build());
             
@@ -151,7 +132,7 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
             ).dimensions(centerX - 30, bottomY, 60, 20).build());
             
             this.addDrawableChild(ButtonWidget.builder(
-                Text.literal("下一页 >"),
+                Text.literal(LanguageManager.getUI("gui.next_page")),
                 btn -> nextPage()
             ).dimensions(centerX + 70, bottomY, 80, 20).build());
             
@@ -160,19 +141,53 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
         
         // 批量操作按钮
         this.addDrawableChild(ButtonWidget.builder(
-            Text.literal("全部启用"),
+            Text.literal(LanguageManager.getUI("gui.enable_all")),
             btn -> toggleAllConfigs(true)
         ).dimensions(centerX - 150, bottomY, 80, 20).build());
         
         this.addDrawableChild(ButtonWidget.builder(
-            Text.literal("全部禁用"),
+            Text.literal(LanguageManager.getUI("gui.disable_all")),
             btn -> toggleAllConfigs(false)
         ).dimensions(centerX - 40, bottomY, 80, 20).build());
         
         this.addDrawableChild(ButtonWidget.builder(
-            Text.literal("完成"),
+            Text.literal(LanguageManager.getUI("gui.close")),
             btn -> this.close()
         ).dimensions(centerX + 70, bottomY, 80, 20).build());
+    }
+    
+    private Map<String, String> getCurrentLabels() {
+        Map<String, String> labels = new LinkedHashMap<>();
+        
+        // 获取所有配置键
+        String[] keys = {
+            "allHostileEnabled", "mobIgniteEnabled", "mobSlownessEnabled", 
+            "mobBlindnessEnabled", "mobThornsEnabled", "foodPoisonEnabled",
+            "enderDragonBucketEnabled", "enderDragonKillEnabled", "playerDamageShareEnabled",
+            "sharedHealthEnabled", "sharedDamageSplitEnabled", "randomDamageEnabled",
+            "shieldNerfEnabled", "lowHealthNoHealEnabled", "waterToLavaEnabled",
+            "endKeepOverrideEnabled", "reverseDamageEnabled", "sunburnEnabled",
+            "healReverseEnabled", "fallTrapEnabled", "acrophobiaEnabled",
+            "blockRevengeEnabled", "containerCurseEnabled", "inventoryCurseEnabled",
+            "craftingTrapEnabled"
+        };
+        
+        for (String key : keys) {
+            labels.put(key, LanguageManager.getLabel(key));
+        }
+        
+        return labels;
+    }
+    
+    private void toggleLanguage() {
+        LanguageManager.Language current = LanguageManager.getCurrentLanguage();
+        LanguageManager.Language newLang = current == LanguageManager.Language.ENGLISH ? 
+            LanguageManager.Language.CHINESE : LanguageManager.Language.ENGLISH;
+        
+        LanguageManager.setLanguage(newLang);
+        
+        // 重新初始化界面以更新所有文本
+        this.clearAndInit();
     }
     
     private void previousPage() {
@@ -191,10 +206,10 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
     
     private Text getButtonText(String key, String label) {
         boolean enabled = ChaosMod.config.get(key);
-        String state = enabled ? "✓" : "✗";
+        String state = enabled ? LanguageManager.getUI("gui.enabled") : LanguageManager.getUI("gui.disabled");
         Formatting color = enabled ? Formatting.GREEN : Formatting.WHITE;
         
-        return Text.literal(state + " " + label).formatted(color);
+        return Text.literal(label + " [" + state + "]").formatted(color);
     }
     
     private void toggleConfig(String key) {
@@ -213,7 +228,8 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
     }
     
     private void toggleAllConfigs(boolean enable) {
-        for (String key : LABELS.keySet()) {
+        Map<String, String> currentLabels = getCurrentLabels();
+        for (String key : currentLabels.keySet()) {
             // 立即更新本地配置
             ChaosMod.config.set(key, enable);
             
@@ -227,7 +243,8 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
     }
     
     private void updateButtonTexts() {
-        List<Map.Entry<String, String>> entries = new ArrayList<>(LABELS.entrySet());
+        Map<String, String> currentLabels = getCurrentLabels();
+        List<Map.Entry<String, String>> entries = new ArrayList<>(currentLabels.entrySet());
         int startIndex = currentPage * itemsPerPage;
         int endIndex = Math.min(startIndex + itemsPerPage, entries.size());
         

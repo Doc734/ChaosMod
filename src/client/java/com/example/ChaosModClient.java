@@ -17,6 +17,9 @@ public class ChaosModClient implements ClientModInitializer {
 	
 	@Override
 	public void onInitializeClient() {
+		// v1.3.0: Initialize language system on client
+		com.example.config.LanguageManager.loadLanguageFromConfig();
+		
 		// 注册客户端屏幕处理器
 		HandledScreens.register(ChaosMod.CHAOS_MOD_SCREEN_HANDLER_TYPE, ChaosModConfigScreen::new);
 		
