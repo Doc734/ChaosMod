@@ -333,6 +333,98 @@ When multiple people play together with shock devices:
 
 ---
 
+### 🧪 Beta Version History (Bloodbath Chronicles)
+
+#### v0.9.7-beta - "Acrophobia Enhancement" 🏔️
+- 🔧 Fixed acrophobia damage calculation formula
+- 💀 Added progressive fear mechanism
+- 😱 Tester feedback: "I never dare to climb mountains again..."
+
+#### v0.9.5-beta - "Multiplayer Balance Testing" 👥
+- 🔧 Effect balancing in large-scale multiplayer environments
+- ⚖️ Adjusted `sharedDamageSplitEnabled` damage distribution
+- 📊 Collected multiplayer gaming experience feedback
+
+#### v0.9.3-beta - "Bed Explosion Epic Fail" 💥❌
+- 💣 Attempted to add bed explosion effect (later removed)
+- 🐛 Countless bugs, players could never sleep
+- 😅 Tester feedback: "This is more torturous than acrophobia..."
+
+#### v0.8.8-alpha - "Betrayal Psychology Research" 🎭😈
+- 🔬 Specialized testing of friend mutual sabotage effects
+- 🎯 Added random damage transfer malicious mechanism
+- 😇 Testing method: Let testers "act innocent" while sabotaging friends
+- 💔 Result: 100% of test groups developed trust crises
+
+#### v0.8.5-alpha - "25 Effects Collection Test" 🎭
+- 🆕 Completed all 25 evil effects
+- 🔥 Added sunlight combustion, healing reversal, etc.
+- 💀 Tester mortality rate reached 95%
+
+#### v0.7.9-alpha - "Multiplayer Sync Testing" ⚡👥
+- 🔌 First testing of multiplayer effect synchronization
+- ⚡ Enhanced `sharedHealthEnabled` multiplayer mechanism
+- 🔧 Optimized damage sharing technical implementation
+
+#### v0.7.2-alpha - "Damage Sharing System" 👥
+- 🔄 Added close-range splitting, server-wide splitting, random transfer
+- 😱 Terrifying mechanism where one person hurt, everyone suffers
+- 💔 Friendships shattered in bloodshed...
+
+#### v0.6.8-pre - "Reverse Damage Experiment" 🩸
+- 🆕 Perverted mechanism of continuous damage when not hurt
+- 😰 Safety becomes the greatest danger
+- 🏃 Testers frantically running seeking damage
+
+#### v0.6.3-pre - "Small Team Betrayal Testing" 🤝➡️🔪
+- 👥 3-person squad specialized testing
+- 😈 Focus on testing friends leading each other to dangerous areas
+- 🏔️ Perfect combination of acrophobia + random transfer
+- 💬 Classic test dialogue: "Trust me, it's safe here"
+
+#### v0.5.4-pre - "Ender Dragon Special Interactions" 🐲
+- 💀 Dragon killer mandatory death mechanism
+- 🥛 Water bucket to milk despair
+- 😈 Victory becomes curse
+
+#### v0.4.7-dev - "Large Server Compatibility Testing" 🌍
+- 🏢 Performance optimization in large server environments
+- 📊 Testing server load under multiplayer effects
+- 🔧 Improved network synchronization mechanism
+
+#### v0.4.1-dev - "Food Poisoning & Shield Weakening" 🍖🛡️
+- ☠️ Eating becomes gambling with life
+- ⚔️ Shield only blocks 80% damage
+- 🤢 Tester: "Even eating isn't safe anymore!"
+
+#### v0.3.7-dev - "All Mobs Hostile System" 🔴
+- 🐔 Even chickens want to kill you
+- 🔥 Getting hit guarantees ignition
+- 👁️ Blindness + slowness double torture
+
+#### v0.2.8-experimental - "Two-Player Game Testing" 👥
+- 👫 Effect balance testing in dual-player environment
+- ⚖️ Adjusted multiplayer damage sharing mechanism
+- 📝 Collected dual-player user feedback
+
+#### v0.2.3-experimental - "Basic Damage Mechanism" ⚔️
+- 💥 Reflection system initial version
+- 🩸 Basic damage routing
+- 😵 Tester: "What kind of hell game is this?"
+
+#### v0.1.5-proof-of-concept - "Psychological Warfare Concept Validation" 🧠⚔️
+- 🎭 First testing of "act innocent" strategy
+- 😇 Let testers pretend they don't know effects exist
+- 📊 Result: Victims completely unable to detect deception
+- 💡 Established core concept of "secret torture"
+
+#### v0.1.0-proof-of-concept - "Evil Concept Validation" 😈
+- 🎯 Established "professional shock compatibility" concept
+- 🔧 Built basic architecture
+- 💡 First time making testers experience true pain
+
+---
+
 ## 🛠️ Technical Details (For Developers)
 
 ### 🔧 Core Architecture
