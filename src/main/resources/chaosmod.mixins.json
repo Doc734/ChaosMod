@@ -13,7 +13,15 @@
     "PlayerEntityTickMixin",
     "PlayerDamageTailMixin",
     "EnderDragonDeathMixin",
-    "ServerWorldAggroTickMixin"
+    "ServerWorldAggroTickMixin",
+    "ServerPlayerKeepInventoryMixin",
+    "PlayerEntityDropInventoryMixin",
+    "PlayerJumpingAccessor",
+        "ServerPlayerEntityTickMixin",
+    "ServerPlayerInteractionManagerMixin",
+    "ServerPlayerScreenHandlerMixin",
+    "UpdateSelectedSlotMixin",
+    "CraftingResultSlotMixin"
   ],
   "client": []
 }

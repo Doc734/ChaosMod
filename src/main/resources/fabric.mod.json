@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "chaosmod",
-  "version": "1.0.0",
+  "version": "1.2.0-dev",
   "name": "Chaos Mod 1.21",
   "description": "All mobs aggressive + on-hit debuffs + reflects + damage routing + dragon tweaks + shield nerf + food poison + heal lock.",
   "environment": "*",

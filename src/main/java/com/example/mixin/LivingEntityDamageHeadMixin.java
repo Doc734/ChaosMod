@@ -17,6 +17,14 @@ public abstract class LivingEntityDamageHeadMixin {
         LivingEntity self = (LivingEntity)(Object)this;
         if (self.getWorld().isClient()) return;
         if (self instanceof PlayerEntity player) {
+            // Check reverse damage system first
+            if (DamageRouting.shouldBlockDamageForReverse(player, source)) {
+                cir.setReturnValue(false);
+                cir.cancel();
+                return;
+            }
+            
+            // Then check other damage routing
             if (DamageRouting.routePlayerDamage(player, source, amount)) {
                 cir.setReturnValue(false);
                 cir.cancel();

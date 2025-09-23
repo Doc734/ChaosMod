@@ -19,5 +19,9 @@ public abstract class PlayerEntityTickMixin {
         // Then detect downward crossing and maybe start the 10s window
         boolean crossed = DamageRouting.updateAndCheckCrossing(p);
         DamageRouting.maybeStartNoHeal(p, crossed);
+        // Tick reverse damage system
+        DamageRouting.tickReverseDamage(p);
+        // Tick sunburn system
+        DamageRouting.tickSunburn(p);
     }
 }

@@ -1,27 +1,47 @@
-
 package com.example.util;
 
 import com.example.ChaosMod;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.util.math.BlockPos;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
+/**
+ * Extend routing: if original victim is burning (on fire), mirrored/split/transfer recipients
+ * also get a short on-fire effect so the visuals are consistent with the source of damage.
+ * (Still no knockback for environmental sources.)
+ */
 public final class DamageRouting {
     private DamageRouting(){}
 
     private static final Map<Entity, Integer> CONTACT_CD = new WeakHashMap<>();
     private static final ThreadLocal<Boolean> REENTRY = ThreadLocal.withInitial(() -> Boolean.FALSE);
-
-    // no-heal 10s window storage (ticks)
     private static final Map<PlayerEntity, Integer> NO_HEAL = new WeakHashMap<>();
-    // remember previous tick threshold state
     private static final Map<PlayerEntity, Boolean> BELOW_THRESHOLD = new WeakHashMap<>();
+    
+    // === Reverse Damage System ===
+    private static final Map<PlayerEntity, Long> LAST_DAMAGE_TIME = new WeakHashMap<>();
+    private static final Map<PlayerEntity, Integer> REVERSE_DAMAGE_COUNTER = new WeakHashMap<>();
+    private static final int REVERSE_DAMAGE_INTERVAL = 12; // ticks, same as hand attack speed
+    private static final int DAMAGE_IMMUNITY_DURATION = 40; // 2 seconds in ticks
+    
+    // === Fall Trap System (Legacy - now using precise mixin methods) ===
+    
+    // === Sunburn System ===
+    private static final Map<PlayerEntity, Long> LAST_SUNBURN_DAMAGE_TIME = new WeakHashMap<>();
+    private static final int SUNBURN_COOLDOWN_TICKS = 20; // 1 second cooldown for helmet damage
 
     public static boolean contactOnCooldown(Entity e) {
         Integer v = CONTACT_CD.get(e);
@@ -31,6 +51,10 @@ public final class DamageRouting {
         return true;
     }
     public static void armContactCooldown(Entity e, int ticks) { CONTACT_CD.put(e, ticks); }
+
+    public static boolean shouldBlockRouting(PlayerEntity p) {
+        return p.hasStatusEffect(StatusEffects.POISON) || p.hasStatusEffect(StatusEffects.WITHER);
+    }
 
     public static void applyOnHitEffects(PlayerEntity player, LivingEntity attacker) {
         if (player.isCreative() || player.isSpectator()) return;
@@ -43,35 +67,71 @@ public final class DamageRouting {
         }
     }
 
+    private static boolean shouldApplyKnockbackForSource(DamageSource source) {
+        try {
+            return source.getAttacker() instanceof LivingEntity;
+        } catch (Throwable ignored) {
+            return false;
+        }
+    }
+
+    /** Propagate environmental visuals: if victim is burning, light up recipient briefly as well. */
+    private static void propagateOnFireIfNeeded(PlayerEntity victim, PlayerEntity recipient) {
+        if (victim.isOnFire()) {
+            // Keep it short to avoid grief, just for feedback/visuals
+            recipient.setOnFireFor(2); // 2s overlay
+        }
+    }
+
     public static boolean routePlayerDamage(PlayerEntity victim, DamageSource source, float amount) {
         if (REENTRY.get()) return false;
-        ServerWorld sw = (ServerWorld) victim.getWorld();
-        java.util.List<ServerPlayerEntity> online = new java.util.ArrayList<>(sw.getPlayers());
+        if (shouldBlockRouting(victim)) return false;
 
-        if (ChaosMod.config.sharedDamageSplitEnabled && !online.isEmpty()) {
-            int n = online.size();
+        ServerWorld sw = (ServerWorld) victim.getWorld();
+        List<ServerPlayerEntity> online = new ArrayList<>(sw.getPlayers());
+
+        List<ServerPlayerEntity> participants = new ArrayList<>();
+        for (ServerPlayerEntity p : online) if (!shouldBlockRouting(p)) participants.add(p);
+
+        boolean kbAllowed = shouldApplyKnockbackForSource(source);
+
+        // Full split
+        if (ChaosMod.config.sharedDamageSplitEnabled && !participants.isEmpty()) {
+            int n = participants.size();
             float each = Math.max(0.0f, amount / n);
             boolean anyDead = false;
             try {
                 REENTRY.set(Boolean.TRUE);
-                for (ServerPlayerEntity p : online) p.damage(source, each);
-                for (ServerPlayerEntity p : online) if (p.isDead() || p.getHealth() <= 0f) { anyDead = true; break; }
-                if (anyDead) for (ServerPlayerEntity p : online) if (!p.isDead()) p.kill();
+                for (ServerPlayerEntity p : participants) {
+                    p.damage(source, each);
+                    if (kbAllowed && p != victim) routedKnockback(p, source, victim);
+                    if (p != victim) propagateOnFireIfNeeded(victim, p);
+                }
+                for (ServerPlayerEntity p : participants) {
+                    if (p.isDead() || p.getHealth() <= 0f) { anyDead = true; break; }
+                }
+                if (anyDead) for (ServerPlayerEntity p : participants) if (!p.isDead()) p.kill();
             } finally { REENTRY.set(Boolean.FALSE); }
             return true;
         }
 
-        if (ChaosMod.config.randomDamageEnabled && !online.isEmpty()) {
-            ServerPlayerEntity pick = online.get(java.util.concurrent.ThreadLocalRandom.current().nextInt(online.size()));
-            try { REENTRY.set(Boolean.TRUE); pick.damage(source, amount); }
-            finally { REENTRY.set(Boolean.FALSE); }
+        // Random transfer (may pick victim)
+        if (ChaosMod.config.randomDamageEnabled && !participants.isEmpty()) {
+            ServerPlayerEntity pick = participants.get(ThreadLocalRandom.current().nextInt(participants.size()));
+            try {
+                REENTRY.set(Boolean.TRUE);
+                pick.damage(source, amount);
+                if (kbAllowed && pick != victim) routedKnockback(pick, source, victim);
+                if (pick != victim) propagateOnFireIfNeeded(victim, pick);
+            } finally { REENTRY.set(Boolean.FALSE); }
             return true;
         }
 
+        // Nearby split
         if (ChaosMod.config.playerDamageShareEnabled) {
             final double R = 2.0;
-            java.util.List<ServerPlayerEntity> group = new java.util.ArrayList<>();
-            for (ServerPlayerEntity p : online) {
+            List<ServerPlayerEntity> group = new ArrayList<>();
+            for (ServerPlayerEntity p : participants) {
                 if (p == victim) continue;
                 if (p.squaredDistanceTo(victim) <= R*R) group.add(p);
             }
@@ -82,24 +142,72 @@ public final class DamageRouting {
                 boolean anyDead = false;
                 try {
                     REENTRY.set(Boolean.TRUE);
-                    for (ServerPlayerEntity p : group) p.damage(source, each);
-                    for (ServerPlayerEntity p : group) if (p.isDead() || p.getHealth() <= 0f) { anyDead = true; break; }
+                    for (ServerPlayerEntity p : group) {
+                        p.damage(source, each);
+                        if (kbAllowed && p != victim) routedKnockback(p, source, victim);
+                        if (p != victim) propagateOnFireIfNeeded(victim, p);
+                    }
+                    for (ServerPlayerEntity p : group) {
+                        if (p.isDead() || p.getHealth() <= 0f) { anyDead = true; break; }
+                    }
                     if (anyDead) for (ServerPlayerEntity p : group) if (!p.isDead()) p.kill();
                 } finally { REENTRY.set(Boolean.FALSE); }
                 return true;
             }
         }
 
-        if (ChaosMod.config.sharedHealthEnabled && !online.isEmpty()) {
-            try { REENTRY.set(Boolean.TRUE); for (ServerPlayerEntity p : online) if (p != victim) p.damage(source, amount); }
-            finally { REENTRY.set(Boolean.FALSE); }
+        // Shared health (mirror others; don't cancel original)
+        if (ChaosMod.config.sharedHealthEnabled && !participants.isEmpty()) {
+            try {
+                REENTRY.set(Boolean.TRUE);
+                for (ServerPlayerEntity p : participants) {
+                    if (p != victim) {
+                        p.damage(source, amount);
+                        if (kbAllowed) routedKnockback(p, source, victim);
+                        propagateOnFireIfNeeded(victim, p);
+                    }
+                }
+            } finally { REENTRY.set(Boolean.FALSE); }
             return false;
         }
 
         return false;
     }
 
-    /** Return true iff we CROSS from (>1♥) to (<=1♥) this tick; then update stored state. */
+    private static void routedKnockback(PlayerEntity target, DamageSource source, PlayerEntity originalVictim) {
+        Entity attacker = source.getAttacker();
+        double dx, dz;
+        float strength = 0.4f;
+        double kbV = 0.0;
+
+        if (attacker instanceof LivingEntity le) {
+            dx = target.getX() - le.getX();
+            dz = target.getZ() - le.getZ();
+            try {
+                double kbAttr = le.getAttributeValue(EntityAttributes.GENERIC_ATTACK_KNOCKBACK);
+                strength = (float)(0.4f + Math.max(0.0, kbAttr));
+            } catch (Throwable ignored) {}
+            EntityType<?> t = le.getType();
+            if (t == EntityType.IRON_GOLEM) kbV = 0.50;
+            else if (t == EntityType.RAVAGER) kbV = 0.20;
+            else if (t == EntityType.WARDEN) kbV = 0.10;
+        } else {
+            Entity ref = originalVictim != null ? originalVictim : target;
+            dx = target.getX() - ref.getX();
+            dz = target.getZ() - ref.getZ();
+        }
+
+        double len = Math.sqrt(dx*dx + dz*dz);
+        if (len > 1.0E-4) {
+            double nx = dx/len, nz = dz/len;
+            target.takeKnockback(strength, -nx, -nz);
+            if (kbV > 0) {
+                target.addVelocity(0, Math.min(0.9, kbV), 0);
+                target.velocityDirty = true;
+            }
+        }
+    }
+
     public static boolean updateAndCheckCrossing(PlayerEntity p) {
         boolean prev = BELOW_THRESHOLD.getOrDefault(p, Boolean.FALSE);
         boolean now = p.getHealth() <= 2.0f;
@@ -107,7 +215,6 @@ public final class DamageRouting {
         return (!prev && now);
     }
 
-    /** Count down the 10s no-heal window. */
     public static void tickNoHeal(PlayerEntity p) {
         Integer left = NO_HEAL.get(p);
         if (left == null) return;
@@ -121,7 +228,6 @@ public final class DamageRouting {
         }
     }
 
-    /** Maybe start a 10s window; only on downward crossing. */
     public static void maybeStartNoHeal(PlayerEntity p, boolean crossedDown) {
         if (!ChaosMod.config.lowHealthNoHealEnabled) return;
         if (!crossedDown) return;
@@ -137,4 +243,130 @@ public final class DamageRouting {
         Integer left = NO_HEAL.get(p);
         return left != null && left > 0;
     }
+
+    // === Reverse Damage System Methods ===
+    
+    /** Record when a player takes damage to reset the reverse damage timer */
+    public static void recordPlayerDamage(PlayerEntity player) {
+        if (!ChaosMod.config.reverseDamageEnabled) return;
+        long currentTime = player.getWorld().getTime();
+        LAST_DAMAGE_TIME.put(player, currentTime);
+        REVERSE_DAMAGE_COUNTER.remove(player); // Reset counter when taking damage
+    }
+    
+    /** Check if player should take reverse damage (not damaged recently) */
+    public static boolean shouldApplyReverseDamage(PlayerEntity player) {
+        if (!ChaosMod.config.reverseDamageEnabled) return false;
+        if (player.isCreative() || player.isSpectator()) return false;
+        
+        long currentTime = player.getWorld().getTime();
+        Long lastDamageTime = LAST_DAMAGE_TIME.get(player);
+        
+        // If never damaged, start applying reverse damage immediately
+        if (lastDamageTime == null) return true;
+        
+        // Check if immunity period (2 seconds) has passed
+        return (currentTime - lastDamageTime) >= DAMAGE_IMMUNITY_DURATION;
+    }
+    
+    /** Tick reverse damage system for a player */
+    public static void tickReverseDamage(PlayerEntity player) {
+        if (!shouldApplyReverseDamage(player)) return;
+        
+        Integer counter = REVERSE_DAMAGE_COUNTER.getOrDefault(player, 0);
+        counter++;
+        
+        if (counter >= REVERSE_DAMAGE_INTERVAL) {
+            // Apply reverse damage (1 heart, same as hand punch)
+            try {
+                REENTRY.set(Boolean.TRUE);
+                // Create a generic damage source for reverse damage
+                DamageSource reverseSource = player.getDamageSources().generic();
+                player.damage(reverseSource, 1.0f);
+            } finally {
+                REENTRY.set(Boolean.FALSE);
+            }
+            counter = 0; // Reset counter
+        }
+        
+        REVERSE_DAMAGE_COUNTER.put(player, counter);
+    }
+    
+    /** Check if incoming damage should be blocked by reverse damage system */
+    public static boolean shouldBlockDamageForReverse(PlayerEntity player, DamageSource source) {
+        if (!ChaosMod.config.reverseDamageEnabled) return false;
+        if (REENTRY.get()) return false; // Don't block our own reverse damage
+        
+        // Record the damage and block the original damage
+        recordPlayerDamage(player);
+        return true; // Block the original damage
+    }
+    
+    // === Sunburn System Methods ===
+    
+    /** Tick sunburn system for a player */
+    public static void tickSunburn(PlayerEntity player) {
+        if (!ChaosMod.config.sunburnEnabled) return;
+        if (player.isCreative() || player.isSpectator()) return;
+        if (player.getWorld().isClient()) return;
+        
+        // Check if it's clear weather and daytime
+        if (!player.getWorld().isRaining() && !player.getWorld().isThundering()) {
+            long timeOfDay = player.getWorld().getTimeOfDay() % 24000;
+            boolean isDaytime = timeOfDay >= 0 && timeOfDay < 12000;
+            
+            if (isDaytime) {
+                // Check if player has direct sunlight (no block above)
+                BlockPos playerPos = player.getBlockPos();
+                
+                // Check from player head position all the way up to sky for any blocking blocks
+                boolean hasBlockAbove = false;
+                for (int y = playerPos.getY() + 2; y <= player.getWorld().getHeight(); y++) {
+                    BlockPos checkPos = new BlockPos(playerPos.getX(), y, playerPos.getZ());
+                    if (!player.getWorld().isAir(checkPos)) {
+                        hasBlockAbove = true;
+                        break;
+                    }
+                }
+                
+                if (!hasBlockAbove) {
+                    // Check for helmet protection
+                    ItemStack helmet = player.getInventory().getArmorStack(3); // Helmet slot
+                    boolean hasHelmetProtection = false;
+                    
+                    if (!helmet.isEmpty()) {
+                        // Only damage helmet every SUNBURN_COOLDOWN_TICKS to prevent instant destruction
+                        long currentTime = player.getWorld().getTime();
+                        Long lastDamageTime = LAST_SUNBURN_DAMAGE_TIME.get(player);
+                        
+                        if (lastDamageTime == null || currentTime - lastDamageTime >= SUNBURN_COOLDOWN_TICKS) {
+                            LAST_SUNBURN_DAMAGE_TIME.put(player, currentTime);
+                            
+                            // Leather helmet still burns but damages helmet
+                            if (helmet.getItem() == Items.LEATHER_HELMET) {
+                                helmet.damage(1, player, net.minecraft.entity.EquipmentSlot.HEAD);
+                            } else {
+                                // Other helmets protect but consume durability
+                                helmet.damage(1, player, net.minecraft.entity.EquipmentSlot.HEAD);
+                                hasHelmetProtection = true;
+                            }
+                        } else if (helmet.getItem() != Items.LEATHER_HELMET) {
+                            // Non-leather helmets still provide protection even when not damaging
+                            hasHelmetProtection = true;
+                        }
+                    }
+                    
+                    // If no helmet protection, set player on fire
+                    if (!hasHelmetProtection) {
+                        player.setOnFireFor(3); // 3 seconds of fire
+                    }
+                }
+            }
+        }
+    }
+    
+    // === Fall Trap System Methods (Legacy) ===
+    // Note: Fall trap system now uses precise mixin injection methods
+    // All new effects (bed explosion, block revenge, container curse, etc.) 
+    // are implemented using targeted mixin approaches for better accuracy
 }
