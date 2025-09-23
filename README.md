@@ -142,9 +142,9 @@ Press 'P' Key   # Open bilingual config GUI (Admin only)
 
 ## 💡 Evil Inspiration Sources
 
-This mod's evil creativity comes from two **shocking** experimental videos:
+This mod's creativity comes from two **shocking** gaming videos:
 
-### 🎬 **Original Sinful Experiments**
+### 🎬 **Original Creative Videos**
 
 1. **【When you get hurt, you get electrocuted in real life! But damage randomly transfers to another person!】** 🎲⚡
    - Link: https://www.bilibili.com/video/BV1LypizBEpq/
@@ -156,9 +156,9 @@ This mod's evil creativity comes from two **shocking** experimental videos:
    - **Evil Highlight**: Virtual damage directly converts to **real pain**!
    - **Inspired Effects**: **Ultimate goal** of all 25 torture effects
 
-> 💡 **Creative Tribute**: Thanks to the original video creators for their innovative experiments! These interesting ideas inspired us to develop this mod, combining virtual games with real-world interaction to bring players a completely new gaming experience! 🎮
+> 💡 **Creative Tribute**: Thanks to the original video creators for their innovative ideas! These interesting concepts inspired us to develop this mod, combining virtual games with real-world interaction to bring players a completely new gaming experience! 🎮
 
-### 🎯 **From Experiment to Reality**
+### 🎯 **From Concept to Reality**
 
 After watching these two videos, we were deeply shocked:
 - **Why only one damage method?** → We created **25 types**!
@@ -361,7 +361,7 @@ When multiple people play together with shock devices:
 - ⛰️ **Ultimate Acrophobia**: Higher means more pain, maximum 2♥ every 2 seconds!
 - 📚 **Evil README**: Describe every pain with the most vicious language!
 - ⚡ **Perfect Shock Device Integration**: Every damage type carefully calibrated!
-- 😈 **Prepare for true hell experience, victims!**
+- 😈 **Prepare for true hell experience, players!**
 
 ---
 
@@ -447,7 +447,7 @@ When multiple people play together with shock devices:
 #### v0.1.5-proof-of-concept - "Psychological Warfare Concept Validation" 🧠⚔️
 - 🎭 First testing of "act innocent" strategy
 - 😇 Let testers pretend they don't know effects exist
-- 📊 Result: Victims completely unable to detect deception
+- 📊 Result: Players completely unable to detect deception
 - 💡 Established core concept of "secret torture"
 
 #### v0.1.0-proof-of-concept - "Evil Concept Validation" 😈
