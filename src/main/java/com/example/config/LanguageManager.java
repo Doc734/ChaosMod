@@ -118,6 +118,9 @@ public class LanguageManager {
         CHINESE_UI.put("gui.language", "🌐 Language");
         CHINESE_UI.put("permission.denied", "🚫 权限不足！只有管理员才能修改 ChaosMod 配置！");
         CHINESE_UI.put("config.updated", "[配置已更新] %s -> %s");
+        CHINESE_UI.put("ai.random.button", "[AI] 随机效果(为你量身定做)");
+        CHINESE_UI.put("ai.permission.denied", "[错误] 权限不足，只有管理员才能使用AI随机效果");
+        CHINESE_UI.put("ai.effects.enabled", "[ChaosMod AI] 已启用效果：");
     }
     
     private static final Map<String, String> ENGLISH_UI = new HashMap<>();
@@ -137,6 +140,9 @@ public class LanguageManager {
         ENGLISH_UI.put("gui.language", "🌐 语言");
         ENGLISH_UI.put("permission.denied", "🚫 Permission denied! Only admins can modify ChaosMod config!");
         ENGLISH_UI.put("config.updated", "[Config Updated] %s -> %s");
+        ENGLISH_UI.put("ai.random.button", "[AI] Random Effects (Tailored for You)");
+        ENGLISH_UI.put("ai.permission.denied", "[Error] Permission denied, only admins can use AI random effects");
+        ENGLISH_UI.put("ai.effects.enabled", "[ChaosMod AI] Enabled Effects:");
     }
     
     public static Language getCurrentLanguage() {

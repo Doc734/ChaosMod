@@ -1,4 +1,4 @@
-# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.4.1-Release
+# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.4.1-hotfix
 
 **Language**: [🇺🇸 English](README.md) | [🇨🇳 中文](README_CN.md)
 
@@ -374,6 +374,13 @@ When multiple people play together with shock devices:
 ---
 
 ## 📝 Update Log
+
+### v1.4.1-hotfix - "Emergency Fix: AI Function English Localization!" 🚨🌐⚡
+- 🚨 **EMERGENCY FIX: AI Function English Localization Missing**! English users can now use AI recommendation features normally!
+- 🌐 **Complete Bilingual Support**: All 20 AI combinations now have complete English versions!
+- 🤖 **Multilingual AI Button**: Button text automatically switches based on current language!
+- 💬 **Multilingual Chat Feedback**: AI recommendation messages now support Chinese/English switching!
+- 🔧 **Localization Complete**: Ensures all AI functions work properly in any language!
 
 ### v1.4.1-Release - "AI Smart Recommendations: Emoji Fix!" 🤖🔧⚡
 - 🤖 **NEW: AI Random Effect Selector**! 20 carefully designed evil combinations, tailored for you!

@@ -5,6 +5,7 @@ import com.example.config.LanguageManager;
 import com.example.network.ConfigToggleC2SPacket;
 import com.example.screen.ChaosModScreenHandler;
 import com.example.util.AIEffectCombinations;
+import com.example.util.AIEffectCombinationsEN;
 // import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking; // Simplified
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
@@ -163,7 +164,7 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
         // AI随机效果按钮
         bottomY += 30;
         this.addDrawableChild(ButtonWidget.builder(
-            Text.literal("[AI] 随机效果(为你量身定做)"),
+            Text.literal(LanguageManager.getUI("ai.random.button")),
             btn -> selectRandomAIEffects()
         ).dimensions(centerX - 100, bottomY, 200, 20).build());
     }
@@ -366,7 +367,7 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
         if (!hasPermission) {
             if (this.client != null && this.client.player != null) {
                 this.client.player.sendMessage(
-                    Text.literal("[错误] 权限不足，只有管理员才能使用AI随机效果")
+                    Text.literal(LanguageManager.getUI("ai.permission.denied"))
                         .formatted(Formatting.RED, Formatting.BOLD),
                     false
                 );
@@ -374,14 +375,19 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
             return;
         }
         
+        // 根据当前语言选择对应的组合列表
+        List<AIEffectCombinations.EffectCombination> combinations = 
+            LanguageManager.getCurrentLanguage() == LanguageManager.Language.ENGLISH ? 
+                AIEffectCombinationsEN.ALL_COMBINATIONS_EN : AIEffectCombinations.ALL_COMBINATIONS;
+        
         // 如果所有组合都用过了，重置池子
-        if (usedCombinations.size() >= AIEffectCombinations.ALL_COMBINATIONS.size()) {
+        if (usedCombinations.size() >= combinations.size()) {
             usedCombinations.clear();
         }
         
         // 找到还没用过的组合
         List<Integer> availableIndexes = new ArrayList<>();
-        for (int i = 0; i < AIEffectCombinations.ALL_COMBINATIONS.size(); i++) {
+        for (int i = 0; i < combinations.size(); i++) {
             if (!usedCombinations.contains(i)) {
                 availableIndexes.add(i);
             }
@@ -390,7 +396,7 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
         if (availableIndexes.isEmpty()) {
             // 理论上不应该发生，但保险起见
             usedCombinations.clear();
-            for (int i = 0; i < AIEffectCombinations.ALL_COMBINATIONS.size(); i++) {
+            for (int i = 0; i < combinations.size(); i++) {
                 availableIndexes.add(i);
             }
         }
@@ -399,7 +405,7 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
         int randomIndex = availableIndexes.get(ThreadLocalRandom.current().nextInt(availableIndexes.size()));
         usedCombinations.add(randomIndex);
         
-        AIEffectCombinations.EffectCombination selectedCombo = AIEffectCombinations.ALL_COMBINATIONS.get(randomIndex);
+        AIEffectCombinations.EffectCombination selectedCombo = combinations.get(randomIndex);
         
         // 先关闭所有效果
         Map<String, String> currentLabels = getCurrentLabels();
@@ -421,7 +427,7 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
             );
             
             // 显示启用的效果列表
-            StringBuilder effectList = new StringBuilder("[ChaosMod AI] 已启用效果：");
+            StringBuilder effectList = new StringBuilder(LanguageManager.getUI("ai.effects.enabled"));
             for (int i = 0; i < selectedCombo.effects.length; i++) {
                 String effectKey = selectedCombo.effects[i];
                 String effectName = getCurrentLabels().get(effectKey);

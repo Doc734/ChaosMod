@@ -1,0 +1,185 @@
+package com.example.util;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * AI Random Effect Combinations - English Version
+ */
+public class AIEffectCombinationsEN {
+    
+    // 20 AI Preset Combinations - English Version
+    public static final List<AIEffectCombinations.EffectCombination> ALL_COMBINATIONS_EN = new ArrayList<>();
+    
+    static {
+        // User specified 4 combinations
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Fire Slow] Slow BBQ Package",
+            "Burn you slowly, can't escape!",
+            new String[]{"mobIgniteEnabled", "mobSlownessEnabled", "enderDragonBucketEnabled", "shieldNerfEnabled"},
+            "AI Recommends: Slow BBQ Package - Experience slow-cooked despair!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Life Share] Life and Death Together",
+            "Team binding, one dies all die!",
+            new String[]{"sharedHealthEnabled", "mobIgniteEnabled", "shieldNerfEnabled", "mobSlownessEnabled"},
+            "AI Recommends: Life and Death Together - Enjoy team extinction with friends!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Environment Killer] Environment Killer Mode",
+            "Environment is your enemy!",
+            new String[]{"waterToLavaEnabled", "randomDamageEnabled", "shieldNerfEnabled"},
+            "AI Recommends: Environment Killer Mode - Even water betrays you!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Teleport Trap] Teleport Trap Master",
+            "Get hurt and teleport to death traps!",
+            new String[]{"positionSwapEnabled", "waterDamageEnabled", "randomDamageEnabled", "shieldNerfEnabled"},
+            "AI Recommends: Teleport Trap Master - Every teleport is a gamble!"
+        ));
+        
+        // Additional 16 combinations
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Beginner] Beginner Entry Package",
+            "Gentle evil entry experience",
+            new String[]{"foodPoisonEnabled", "shieldNerfEnabled", "lowHealthNoHealEnabled"},
+            "AI Recommends: Beginner Entry Package - Gently start your pain journey!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Acrophobia] Acrophobia Expert",
+            "Higher means more despair!",
+            new String[]{"acrophobiaEnabled", "reverseDamageEnabled", "fallTrapEnabled", "shieldNerfEnabled"},
+            "AI Recommends: Acrophobia Expert - Make the sky your nightmare!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Sunlight] Sunlight Death God",
+            "Outdoor daylight means death!",
+            new String[]{"sunburnEnabled", "mobIgniteEnabled", "healReverseEnabled", "reverseDamageEnabled"},
+            "AI Recommends: Sunlight Death God - Make every sunny day doomsday!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Operation Fear] Operation Phobia",
+            "Basic operations become traps!",
+            new String[]{"inventoryCurseEnabled", "craftingTrapEnabled", "containerCurseEnabled", "blockRevengeEnabled"},
+            "AI Recommends: Operation Phobia - Make every action fearful!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Healing Betrayal] Healing Betrayer",
+            "Healing becomes blood loss despair!",
+            new String[]{"healReverseEnabled", "lowHealthNoHealEnabled", "reverseDamageEnabled", "mobThornsEnabled"},
+            "AI Recommends: Healing Betrayer - Even healing is a trap!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Ender Dragon] Ender Dragon Revenge",
+            "The price of killing the dragon!",
+            new String[]{"enderDragonKillEnabled", "enderDragonBucketEnabled", "endKeepOverrideEnabled", "sharedHealthEnabled"},
+            "AI Recommends: Ender Dragon Revenge - Victory means death!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[All Hostile] All Hostile Mode",
+            "The world is your enemy!",
+            new String[]{"allHostileEnabled", "mobThornsEnabled", "mobBlindnessEnabled", "shieldNerfEnabled"},
+            "AI Recommends: All Hostile Mode - The entire world wants to kill you!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[PVP Encourage] PVP Encouragement Package",
+            "Encourage players to attack each other!",
+            new String[]{"playerHealOnAttackEnabled", "randomDamageEnabled", "mobThornsEnabled", "reverseDamageEnabled"},
+            "AI Recommends: PVP Encouragement Package - Friends are meant to be attacked!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Random Fate] Complete Random Fate",
+            "Everything depends on luck!",
+            new String[]{"randomDamageAmountEnabled", "randomDamageEnabled", "fallTrapEnabled", "foodPoisonEnabled"},
+            "AI Recommends: Complete Random Fate - Life depends entirely on luck!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Water Kill] Water System Kill",
+            "Water becomes the most dangerous thing!",
+            new String[]{"waterDamageEnabled", "waterToLavaEnabled", "positionSwapEnabled", "healReverseEnabled"},
+            "AI Recommends: Water System Kill - Never dare touch water again!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Crafting Terror] Crafting Terror",
+            "Crafting becomes life-and-death game!",
+            new String[]{"craftingBombEnabled", "craftingTrapEnabled", "inventoryCurseEnabled", "containerCurseEnabled"},
+            "AI Recommends: Crafting Terror - Every craft is a bomb defusal game!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Teleport Chaos] Teleport Chaos",
+            "Position never safe!",
+            new String[]{"positionSwapEnabled", "acrophobiaEnabled", "waterDamageEnabled", "sunburnEnabled"},
+            "AI Recommends: Teleport Chaos - Every teleport might be a death trap!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Survival Despair] Survival Despair",
+            "Basic survival needs are traps!",
+            new String[]{"foodPoisonEnabled", "healReverseEnabled", "lowHealthNoHealEnabled", "inventoryCurseEnabled"},
+            "AI Recommends: Survival Despair - Even staying alive is a luxury!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Team Betrayal] Team Betrayal",
+            "Friends are potential enemies!",
+            new String[]{"playerDamageShareEnabled", "sharedDamageSplitEnabled", "playerHealOnAttackEnabled", "randomDamageEnabled"},
+            "AI Recommends: Team Betrayal - Friends are more dangerous than enemies!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Ultimate Chaos] Ultimate Chaos",
+            "Collection of all pain types!",
+            new String[]{"randomDamageAmountEnabled", "allHostileEnabled", "sharedHealthEnabled", "acrophobiaEnabled", "craftingBombEnabled"},
+            "AI Recommends: Ultimate Chaos - True hell difficulty challenge!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Explosion Expert] Explosion Expert",
+            "Explosions everywhere!",
+            new String[]{"craftingBombEnabled", "mobThornsEnabled", "blockRevengeEnabled", "enderDragonKillEnabled"},
+            "AI Recommends: Explosion Expert - Fill the world with explosions!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Dark Terror] Dark Terror",
+            "Invisible fear!",
+            new String[]{"mobBlindnessEnabled", "allHostileEnabled", "reverseDamageEnabled", "randomDamageAmountEnabled"},
+            "AI Recommends: Dark Terror - Feel true fear in darkness!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Chaos Carnival] Chaos Carnival",
+            "Crazy effect combinations!",
+            new String[]{"foodPoisonEnabled", "waterToLavaEnabled", "fallTrapEnabled", "inventoryCurseEnabled", "containerCurseEnabled"},
+            "AI Recommends: Chaos Carnival - Crazy pain feast!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Shock Optimized] Shock Optimized Version",
+            "Optimized for shock devices!",
+            new String[]{"acrophobiaEnabled", "reverseDamageEnabled", "healReverseEnabled", "randomDamageAmountEnabled", "sunburnEnabled"},
+            "AI Recommends: Shock Optimized Version - Continuous stable shock experience!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Luck Test] Luck Test",
+            "Pure luck-based game!",
+            new String[]{"randomDamageAmountEnabled", "fallTrapEnabled", "foodPoisonEnabled", "craftingTrapEnabled", "blockRevengeEnabled"},
+            "AI Recommends: Luck Test - See how good your luck is!"
+        ));
+    }
+}
