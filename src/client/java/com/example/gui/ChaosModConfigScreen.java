@@ -4,6 +4,7 @@ import com.example.ChaosMod;
 import com.example.config.LanguageManager;
 import com.example.network.ConfigToggleC2SPacket;
 import com.example.screen.ChaosModScreenHandler;
+import com.example.util.AIEffectCombinations;
 // import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking; // Simplified
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
     private static final int BUTTON_WIDTH = 200;
@@ -27,6 +29,9 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
     private int currentPage = 0;
     private final int itemsPerPage = 10; // 每页显示的按钮数（减少一些避免重叠）
     private int totalPages;
+    
+    // AI随机效果组合管理
+    private static final List<Integer> usedCombinations = new ArrayList<>();
     
     public ChaosModConfigScreen(ChaosModScreenHandler handler, PlayerInventory inventory, Text title) {
         super(handler, inventory, Text.empty()); // 传入空标题
@@ -154,6 +159,13 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
             Text.literal(LanguageManager.getUI("gui.close")),
             btn -> this.close()
         ).dimensions(centerX + 70, bottomY, 80, 20).build());
+        
+        // AI随机效果按钮
+        bottomY += 30;
+        this.addDrawableChild(ButtonWidget.builder(
+            Text.literal("[AI] 随机效果(为你量身定做)"),
+            btn -> selectRandomAIEffects()
+        ).dimensions(centerX - 100, bottomY, 200, 20).build());
     }
     
     private Map<String, String> getCurrentLabels() {
@@ -344,5 +356,91 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
     @Override
     public boolean shouldPause() {
         return false;
+    }
+    
+    /**
+     * AI随机效果选择 - 不重复选择机制
+     */
+    private void selectRandomAIEffects() {
+        // 检查权限
+        if (!hasPermission) {
+            if (this.client != null && this.client.player != null) {
+                this.client.player.sendMessage(
+                    Text.literal("[错误] 权限不足，只有管理员才能使用AI随机效果")
+                        .formatted(Formatting.RED, Formatting.BOLD),
+                    false
+                );
+            }
+            return;
+        }
+        
+        // 如果所有组合都用过了，重置池子
+        if (usedCombinations.size() >= AIEffectCombinations.ALL_COMBINATIONS.size()) {
+            usedCombinations.clear();
+        }
+        
+        // 找到还没用过的组合
+        List<Integer> availableIndexes = new ArrayList<>();
+        for (int i = 0; i < AIEffectCombinations.ALL_COMBINATIONS.size(); i++) {
+            if (!usedCombinations.contains(i)) {
+                availableIndexes.add(i);
+            }
+        }
+        
+        if (availableIndexes.isEmpty()) {
+            // 理论上不应该发生，但保险起见
+            usedCombinations.clear();
+            for (int i = 0; i < AIEffectCombinations.ALL_COMBINATIONS.size(); i++) {
+                availableIndexes.add(i);
+            }
+        }
+        
+        // 随机选择一个组合
+        int randomIndex = availableIndexes.get(ThreadLocalRandom.current().nextInt(availableIndexes.size()));
+        usedCombinations.add(randomIndex);
+        
+        AIEffectCombinations.EffectCombination selectedCombo = AIEffectCombinations.ALL_COMBINATIONS.get(randomIndex);
+        
+        // 先关闭所有效果
+        Map<String, String> currentLabels = getCurrentLabels();
+        for (String key : currentLabels.keySet()) {
+            ChaosMod.config.set(key, false);
+        }
+        
+        // 开启选中组合的效果
+        for (String effectKey : selectedCombo.effects) {
+            ChaosMod.config.set(effectKey, true);
+        }
+        
+        // 发送聊天消息
+        if (this.client != null && this.client.player != null) {
+            this.client.player.sendMessage(
+                Text.literal("[ChaosMod AI] " + selectedCombo.chatMessage)
+                    .formatted(Formatting.YELLOW, Formatting.BOLD),
+                false
+            );
+            
+            // 显示启用的效果列表
+            StringBuilder effectList = new StringBuilder("[ChaosMod AI] 已启用效果：");
+            for (int i = 0; i < selectedCombo.effects.length; i++) {
+                String effectKey = selectedCombo.effects[i];
+                String effectName = getCurrentLabels().get(effectKey);
+                if (effectName != null) {
+                    effectList.append(effectName);
+                    if (i < selectedCombo.effects.length - 1) {
+                        effectList.append(" + ");
+                    }
+                }
+            }
+            
+            this.client.player.sendMessage(
+                Text.literal(effectList.toString())
+                    .formatted(Formatting.GREEN),
+                false
+            );
+        }
+        
+        // 更新按钮显示
+        updateButtonTexts();
     }
 }

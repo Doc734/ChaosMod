@@ -1,4 +1,4 @@
-# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.4.0-Release
+# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.4.1-Release
 
 **Language**: [🇺🇸 English](README.md) | [🇨🇳 中文](README_CN.md)
 
@@ -83,6 +83,20 @@ Press 'P' Key   # Open bilingual config GUI (Admin only)
 /chaos toggle <effect_name>  # Enable specific hell mode
 ```
 
+### 🤖 **AI Smart Recommendations (v1.4.1 New Feature)**
+- **[AI] Random Effects (Tailored for You)** - One-click intelligent effect selection!
+- **20 Professional Combinations**: From beginner entry to ultimate chaos, satisfying different pain needs
+- **Non-Repeat Mechanism**: Intelligently ensures all 20 combinations are experienced before repeating
+- **Chat Feedback**: Detailed display of recommended combinations and enabled effects
+- **Professional Balance**: Each combination carefully designed, evil but not excessive
+
+**Classic Combinations Include**:
+- `[Fire Slow] Slow BBQ Package` - Slow-cooked despair experience
+- `[Random Fate] Complete Random Fate` - Life depends entirely on luck
+- `[Crafting Terror] Crafting Terror` - Bomb defusal game mode
+- `[Shock Optimized] Shock Optimized Version` - Optimized for shock devices
+- Plus 16 other evil combinations waiting for you to discover!
+
 ### 🌐 **Language Support (v1.3.0)**
 - **🇺🇸 English**: Full English interface and effect descriptions
 - **🇨🇳 中文**: Complete Chinese localization for all features
@@ -134,6 +148,25 @@ Press 'P' Key   # Open bilingual config GUI (Admin only)
 | `craftingBombEnabled` | 💣 Crafting Bomb | 🌟🌟🌟🌟🌟 |
 | `waterDamageEnabled` | 🌊 Water Drowning | ⭐⭐⭐⭐⭐ |
 | `randomDamageAmountEnabled` | 🎰 **Random Damage Values** | 🌟🌟🌟🌟🌟 |
+
+---
+
+## 🚀 Quick Start Guide
+
+### 📋 **Method 1: Manual Effect Selection**
+1. Press `P` key to open config GUI
+2. Browse through 30 evil effects list
+3. Click the effect switches you want
+4. Enjoy the pain experience!
+
+### 🤖 **Method 2: AI Smart Recommendations** (Recommended for Beginners)
+1. Press `P` key to open config GUI
+2. Click `[AI] Random Effects (Tailored for You)` button
+3. AI will automatically select the best evil combination for you
+4. Check chat for recommendation reasoning
+5. Start professional-grade hell experience immediately!
+
+> 💡 **Tip**: Don't know which effects to choose? Let AI help you! Each recommendation is unique until all 20 combinations are experienced!
 
 ---
 
@@ -222,6 +255,10 @@ Focus on: `acrophobiaEnabled` + `reverseDamageEnabled` + `healReverseEnabled` + 
 ### 🎰 **v1.4.0 New Effects Experience Package** (Extreme Challenge)
 Focus on: `randomDamageAmountEnabled` + `craftingBombEnabled` + `waterDamageEnabled` + `positionSwapEnabled`
 > Experience the latest ultimate evil effects, including psychological terror and betrayal mechanics!
+
+### 🤖 **AI Smart Recommendation Mode** (For the Lazy)
+Click: `[AI] Random Effects (Tailored for You)` button
+> Don't want to think? Let AI choose the best evil combination for you! 20 professional setups, never repeating!
 
 ---
 
@@ -337,6 +374,14 @@ When multiple people play together with shock devices:
 ---
 
 ## 📝 Update Log
+
+### v1.4.1-Release - "AI Smart Recommendations: Emoji Fix!" 🤖🔧⚡
+- 🤖 **NEW: AI Random Effect Selector**! 20 carefully designed evil combinations, tailored for you!
+- 🎯 **Smart Non-Repeat Mechanism**: Ensures all 20 combinations are experienced before repeating, always fresh!
+- 💬 **Chat Feedback System**: Detailed display of AI recommended combinations and enabled effects!
+- 🔧 **FIX: Emoji Display Issues**! All interface text now displays correctly!
+- 🎮 **User Friendly**: Don't know which effects to enable? Let AI choose for you!
+- 😈 **Professional Combinations**: From beginner entry to ultimate chaos, satisfying different pain needs!
 
 ### v1.4.0-Release - "Ultimate Evil Expansion: 30-Effect Hell!" 💀🔥⚡
 - 🆕 **NEW: 5 Ultimate Evil Effects**! Expanded from 25 to 30 complete hellish experiences!
