@@ -58,6 +58,11 @@ public class LanguageManager {
         CHINESE_LABELS.put("containerCurseEnabled", "开箱子/熔炉25%概率扣1♥");
         CHINESE_LABELS.put("inventoryCurseEnabled", "切换物品槽12%概率扣0.5♥");
         CHINESE_LABELS.put("craftingTrapEnabled", "合成物品10%概率扣1♥");
+        CHINESE_LABELS.put("playerHealOnAttackEnabled", "攻击玩家回血");
+        CHINESE_LABELS.put("positionSwapEnabled", "位置互换");
+        CHINESE_LABELS.put("craftingBombEnabled", "合成炸弹");
+        CHINESE_LABELS.put("waterDamageEnabled", "水中溺死");
+        CHINESE_LABELS.put("randomDamageAmountEnabled", "随机伤害值");
     }
     
     // 英文标签
@@ -88,6 +93,11 @@ public class LanguageManager {
         ENGLISH_LABELS.put("containerCurseEnabled", "Container Open 25% → 1♥");
         ENGLISH_LABELS.put("inventoryCurseEnabled", "Item Switch 12% → 0.5♥");
         ENGLISH_LABELS.put("craftingTrapEnabled", "Crafting 10% → 1♥");
+        ENGLISH_LABELS.put("playerHealOnAttackEnabled", "Attack Player Heal");
+        ENGLISH_LABELS.put("positionSwapEnabled", "Position Swap");
+        ENGLISH_LABELS.put("craftingBombEnabled", "Crafting Bomb");
+        ENGLISH_LABELS.put("waterDamageEnabled", "Water Drowning");
+        ENGLISH_LABELS.put("randomDamageAmountEnabled", "Random Damage Value");
     }
     
     // UI 文本

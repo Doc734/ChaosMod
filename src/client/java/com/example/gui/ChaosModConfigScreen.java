@@ -169,7 +169,8 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
             "endKeepOverrideEnabled", "reverseDamageEnabled", "sunburnEnabled",
             "healReverseEnabled", "fallTrapEnabled", "acrophobiaEnabled",
             "blockRevengeEnabled", "containerCurseEnabled", "inventoryCurseEnabled",
-            "craftingTrapEnabled"
+            "craftingTrapEnabled", "playerHealOnAttackEnabled", "positionSwapEnabled",
+            "craftingBombEnabled", "waterDamageEnabled", "randomDamageAmountEnabled"
         };
         
         for (String key : keys) {
@@ -216,6 +217,11 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
         boolean current = ChaosMod.config.get(key);
         boolean newValue = !current;
         
+        // 检查互斥逻辑
+        if (newValue && !checkMutualExclusion(key)) {
+            return; // 如果互斥检查失败，不允许开启
+        }
+        
         // 立即更新本地配置以提供即时反馈
         ChaosMod.config.set(key, newValue);
         
@@ -227,9 +233,65 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
         updateButtonTexts();
     }
     
+    
+    /**
+     * 检查互斥逻辑：贴身平摊、共享生命、全服平摊、随机转移不能同时开启
+     */
+    private boolean checkMutualExclusion(String key) {
+        // 定义互斥的效果组
+        String[] mutexGroup = {
+            "playerDamageShareEnabled",  // 贴身平摊伤害
+            "sharedHealthEnabled",       // 共享生命(镜像)
+            "sharedDamageSplitEnabled",  // 全服平摊伤害
+            "randomDamageEnabled"        // 随机转移伤害
+        };
+        
+        // 如果当前要开启的key不在互斥组中，允许开启
+        boolean isInMutexGroup = false;
+        for (String mutexKey : mutexGroup) {
+            if (mutexKey.equals(key)) {
+                isInMutexGroup = true;
+                break;
+            }
+        }
+        
+        if (!isInMutexGroup) {
+            return true; // 不在互斥组中，允许开启
+        }
+        
+        // 检查是否有其他互斥效果已经开启
+        for (String mutexKey : mutexGroup) {
+            if (!mutexKey.equals(key) && ChaosMod.config.get(mutexKey)) {
+                // 找到已开启的效果，显示提示信息
+                String currentEffectName = getCurrentLabels().get(mutexKey);
+                String targetEffectName = getCurrentLabels().get(key);
+                
+                if (this.client != null && this.client.player != null) {
+                    this.client.player.sendMessage(
+                        Text.literal("[警告] 当前你开启了「" + currentEffectName + "」无法开启「" + targetEffectName + "」")
+                            .formatted(Formatting.RED, Formatting.BOLD),
+                        false
+                    );
+                }
+                
+                return false; // 不允许开启
+            }
+        }
+        
+        return true; // 允许开启
+    }
+    
     private void toggleAllConfigs(boolean enable) {
         Map<String, String> currentLabels = getCurrentLabels();
         for (String key : currentLabels.keySet()) {
+            // 如果是启用操作，检查互斥逻辑
+            if (enable) {
+                // 检查互斥逻辑
+                if (!checkMutualExclusion(key)) {
+                    continue; // 跳过这个效果
+                }
+            }
+            
             // 立即更新本地配置
             ChaosMod.config.set(key, enable);
             

@@ -1,8 +1,18 @@
 package com.example.mixin;
 
 import com.example.ChaosMod;
+import net.minecraft.fluid.FluidState;
+import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.tag.FluidTags;
+import net.minecraft.screen.CraftingScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -10,13 +20,30 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(ServerPlayerEntity.class)
 public class ServerPlayerEntityTickMixin {
     
+    @Unique
+    private int chaos$craftingTimer = 0;
+    
     @Inject(method = "tick", at = @At("TAIL"))
-    private void chaos$acrophobiaTick(CallbackInfo ci) {
+    private void chaos$serverPlayerTick(CallbackInfo ci) {
         ServerPlayerEntity player = (ServerPlayerEntity)(Object)this;
         
-        // 检查恐高症配置
-        if (!ChaosMod.config.acrophobiaEnabled) return;
+        // === 恐高症效果 ===
+        if (ChaosMod.config.acrophobiaEnabled) {
+            chaos$tickAcrophobia(player);
+        }
         
+        // === 水中溺死效果 ===
+        if (ChaosMod.config.waterDamageEnabled) {
+            chaos$tickWaterDamage(player);
+        }
+        
+        // === 合成炸弹效果 ===
+        if (ChaosMod.config.craftingBombEnabled) {
+            chaos$tickCraftingBomb(player);
+        }
+    }
+    
+    private void chaos$tickAcrophobia(ServerPlayerEntity player) {
         // 检查玩家模式
         if (player.isCreative() || player.isSpectator()) return;
         
@@ -50,6 +77,66 @@ public class ServerPlayerEntityTickMixin {
         } else {
             // 极度恐高：超过120层固定最大伤害2♥
             return 4.0F; // 4.0F = 2♥
+        }
+    }
+    
+    /**
+     * 水中溺死效果：触碰水时按原版攻击间隔造成0.5♥伤害
+     */
+    private void chaos$tickWaterDamage(ServerPlayerEntity player) {
+        // 检查玩家模式
+        if (player.isCreative() || player.isSpectator()) return;
+        
+        // 检查玩家是否在水中
+        boolean inWater = player.isSubmergedIn(FluidTags.WATER) || player.isTouchingWater();
+        if (!inWater) return;
+        
+        // 检查无敌帧（hurtTime==0表示可以受伤）
+        if (player.hurtTime != 0) return;
+        
+        // 造成0.5♥伤害（1.0F = 0.5♥）
+        player.damage(player.getServerWorld().getDamageSources().drown(), 1.0F);
+    }
+    
+    /**
+     * 合成炸弹效果：打开工作台超过5秒爆炸
+     */
+    private void chaos$tickCraftingBomb(ServerPlayerEntity player) {
+        // 检查玩家模式
+        if (player.isCreative() || player.isSpectator()) {
+            chaos$craftingTimer = 0;
+            return;
+        }
+        
+        // 检查当前屏幕是否是工作台
+        if (player.currentScreenHandler instanceof CraftingScreenHandler) {
+            chaos$craftingTimer++;
+            
+            // 100 ticks = 5秒
+            if (chaos$craftingTimer >= 100) {
+                // 在玩家位置创建真实爆炸（按Yarn 1.21正确API）
+                player.getServerWorld().createExplosion(
+                    null, // Entity 爆炸源
+                    null, // DamageSource 
+                    null, // ExplosionBehavior
+                    player.getX(), player.getY(), player.getZ(), // 爆炸位置
+                    3.0F, // 爆炸强度
+                    true, // createFire
+                    World.ExplosionSourceType.BLOCK, // ExplosionSourceType
+                    ParticleTypes.EXPLOSION, // ParticleEffect
+                    ParticleTypes.EXPLOSION_EMITTER, // ParticleEffect  
+                    SoundEvents.ENTITY_GENERIC_EXPLODE // RegistryEntry<SoundEvent>
+                );
+                
+                // 强制关闭界面
+                player.closeHandledScreen();
+                
+                // 重置计时器
+                chaos$craftingTimer = 0;
+            }
+        } else {
+            // 界面变化或关闭时重置计时器
+            chaos$craftingTimer = 0;
         }
     }
 }

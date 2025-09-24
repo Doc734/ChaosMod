@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "chaosmod",
-  "version": "1.3.0-Release",
+  "version": "1.4.0-Release",
   "name": "Chaos Mod 1.21",
-  "description": "All mobs aggressive + on-hit debuffs + reflects + damage routing + dragon tweaks + shield nerf + food poison + heal lock + admin permission system.",
+  "description": "30 evil effects including random damage values, crafting bombs, water drowning + all mobs aggressive + PVP healing + position swap + admin permission system.",
   "environment": "*",
   "entrypoints": {
     "main": [

@@ -40,5 +40,10 @@
   "chaosmod.config.blockRevengeEnabled": "破坏方块10%概率被反伤",
   "chaosmod.config.containerCurseEnabled": "开箱子/熔炉25%概率扣1♥",
   "chaosmod.config.inventoryCurseEnabled": "切换物品槽12%概率扣0.5♥",
-  "chaosmod.config.craftingTrapEnabled": "合成物品10%概率扣1♥"
+  "chaosmod.config.craftingTrapEnabled": "合成物品10%概率扣1♥",
+  "chaosmod.config.playerHealOnAttackEnabled": "攻击玩家回血",
+  "chaosmod.config.positionSwapEnabled": "位置互换",
+  "chaosmod.config.craftingBombEnabled": "合成炸弹", 
+  "chaosmod.config.waterDamageEnabled": "水中溺死",
+  "chaosmod.config.randomDamageAmountEnabled": "随机伤害值"
 }

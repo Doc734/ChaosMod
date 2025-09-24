@@ -17,13 +17,17 @@ public class UpdateSelectedSlotMixin {
     
     @Inject(method = "onUpdateSelectedSlot", at = @At("TAIL"))
     private void chaos$inventoryCurse(UpdateSelectedSlotC2SPacket packet, CallbackInfo ci) {
-        if (!ChaosMod.config.inventoryCurseEnabled) return;
-        if (player.isCreative() || player.isSpectator()) return;
-        
-        // 12% chance for inventory curse
-        if (player.getRandom().nextFloat() < 0.12f) {
-            // Deal 0.5 heart damage
-            player.damage(player.getDamageSources().generic(), 1.0f);
+        // 物品栏诅咒效果
+        if (ChaosMod.config.inventoryCurseEnabled) {
+            if (!player.isCreative() && !player.isSpectator()) {
+                // 12% chance for inventory curse
+                if (player.getRandom().nextFloat() < 0.12f) {
+                    // Deal 0.5 heart damage
+                    player.damage(player.getDamageSources().generic(), 1.0f);
+                }
+            }
         }
+        
+        // 旧效果已移除
     }
 }

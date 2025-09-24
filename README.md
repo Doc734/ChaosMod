@@ -1,4 +1,4 @@
-# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.3.0-Release
+# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.4.0-Release
 
 **Language**: [🇺🇸 English](README.md) | [🇨🇳 中文](README_CN.md)
 
@@ -10,7 +10,7 @@ This is a **ultimate torture mod specifically designed to work with DG_LAB X Min
 
 ---
 
-## 💀 25 Evil Effects - Your Nightmare Checklist
+## 💀 30 Evil Effects - Your Nightmare Checklist
 
 ### 🎯 Basic Torture Kit
 1. **🔴 All Mobs Hostile** - Even chickens want to kill you! No safe zones!
@@ -46,6 +46,13 @@ This is a **ultimate torture mod specifically designed to work with DG_LAB X Min
 23. **🔄 Shared Health (Mirror)** - One person hurt, **everyone suffers**!
 24. **🌍 Server-wide Damage Sharing** - The entire server is your **enemy**!
 25. **🎲 Random Damage Transfer** - Damage **randomly transfers**, no one escapes!
+
+### 🆕 v1.4.0 Ultimate Evil Expansion Pack
+26. **⚔️ Attack Player Heal** - Attack friends to heal yourself! Encourages **PVP betrayal**!
+27. **🌀 Position Swap** - Instantly **swap positions** with random teammates when hurt! Might teleport into lava!
+28. **💣 Crafting Bomb** - Workbench becomes a **bomb defusal game**! Over 5 seconds = **real explosion**!
+29. **🌊 Water Drowning** - Water becomes **chronic poison**! Touch = continuous damage!
+30. **🎰 Random Damage Values** - **Ultimate psychological terror**! Every damage 0.5♥-10♥ completely random! **Life depends on luck**!
 
 ---
 
@@ -122,6 +129,11 @@ Press 'P' Key   # Open bilingual config GUI (Admin only)
 | `sharedHealthEnabled` | 🔄 Shared Health | ⭐⭐⭐⭐⭐ |
 | `sharedDamageSplitEnabled` | 🌍 Server-wide Damage Sharing | ⭐⭐⭐⭐⭐ |
 | `randomDamageEnabled` | 🎲 Random Damage Transfer | ⭐⭐⭐⭐ |
+| `playerHealOnAttackEnabled` | ⚔️ Attack Player Heal | ⭐⭐⭐⭐ |
+| `positionSwapEnabled` | 🌀 Position Swap | ⭐⭐⭐⭐⭐ |
+| `craftingBombEnabled` | 💣 Crafting Bomb | 🌟🌟🌟🌟🌟 |
+| `waterDamageEnabled` | 🌊 Water Drowning | ⭐⭐⭐⭐⭐ |
+| `randomDamageAmountEnabled` | 🎰 **Random Damage Values** | 🌟🌟🌟🌟🌟 |
 
 ---
 
@@ -154,7 +166,7 @@ This mod's creativity comes from two **shocking** gaming videos:
 2. **【When you take damage, you get electrocuted in real life!】** ⚡💀
    - Link: https://www.bilibili.com/video/BV1bweuzkEaU/
    - **Evil Highlight**: Virtual damage directly converts to **real pain**!
-   - **Inspired Effects**: **Ultimate goal** of all 25 torture effects
+   - **Inspired Effects**: **Ultimate goal** of all 30 torture effects
 
 > 💡 **Creative Tribute**: Thanks to the original video creators for their innovative ideas! These interesting concepts inspired us to develop this mod, combining virtual games with real-world interaction to bring players a completely new gaming experience! 🎮
 
@@ -184,7 +196,8 @@ Every effect in this mod is carefully calibrated to perfectly integrate with sho
 - 🥈 **Intermediate Challenger**: Enable 15 effects and play for 30 minutes  
 - 🥇 **Advanced Challenger**: Enable 25 effects and play for 10 minutes
 - 👑 **Master Builder**: Enable acrophobia and build at Y=200
-- 💀 **Ultimate Challenger**: Enable all 25 effects simultaneously and survive
+- 💀 **Ultimate Challenger**: Enable all 30 effects simultaneously and survive
+- 🎰 **Random Master**: Enable random damage values and survive for 1 hour
 
 ---
 
@@ -199,12 +212,16 @@ Enable: Basic effects + `acrophobiaEnabled` + `reverseDamageEnabled` + `healReve
 > Classic challenge experience, suitable for experienced players
 
 ### 👹 **Ultimate Challenge Package** (Difficulty: Hard)
-Enable: **All 25 effects**
+Enable: **All 30 effects**
 > Only true warriors dare to try! Prepare for the ultimate challenge!
 
 ### 🔥 **Electric Shock Special Package** (Recommended)
-Focus on: `acrophobiaEnabled` + `reverseDamageEnabled` + `healReverseEnabled` + `inventoryCurseEnabled`
-> Optimized for shock devices, guarantees continuous stable damage output
+Focus on: `acrophobiaEnabled` + `reverseDamageEnabled` + `healReverseEnabled` + `randomDamageAmountEnabled`
+> Optimized for shock devices, guarantees continuous stable damage output with random surprises!
+
+### 🎰 **v1.4.0 New Effects Experience Package** (Extreme Challenge)
+Focus on: `randomDamageAmountEnabled` + `craftingBombEnabled` + `waterDamageEnabled` + `positionSwapEnabled`
+> Experience the latest ultimate evil effects, including psychological terror and betrayal mechanics!
 
 ---
 
@@ -243,7 +260,7 @@ Enable: `reverseDamageEnabled` + `healReverseEnabled` + `fallTrapEnabled`
 
 - 🥉 **Teamwork**: Play with friends with 5 effects enabled for 1 hour
 - 🥈 **Challengers**: Enable 15 effects in multiplayer environment
-- 🥇 **Brave Team**: All members enable 25 effects and persist in gaming
+- 🥇 **Brave Team**: All members enable 30 effects and persist in gaming
 - 👑 **Server Legend**: Become the most daring challenger on the server
 
 #### 💬 **Common Multiplayer Situations**
@@ -321,10 +338,21 @@ When multiple people play together with shock devices:
 
 ## 📝 Update Log
 
+### v1.4.0-Release - "Ultimate Evil Expansion: 30-Effect Hell!" 💀🔥⚡
+- 🆕 **NEW: 5 Ultimate Evil Effects**! Expanded from 25 to 30 complete hellish experiences!
+- ⚔️ **Attack Player Heal**: Encourages PVP betrayal, attack friends for healing!
+- 🌀 **Position Swap**: Instant random teleport swap when hurt, might teleport to death traps!
+- 💣 **Crafting Bomb**: Workbench becomes bomb defusal game! Over 5 seconds = real explosion!
+- 🌊 **Water Drowning**: Water becomes chronic poison! Touch = continuous damage!
+- 🎰 **Random Damage Values**: Ultimate psychological terror! Every damage 0.5♥-10♥ completely random!
+- 🧠 **Smart Random Pool**: No-repeat draw mechanism, ensures all 20 damage values are used before repeating!
+- 🎮 **Perfect Balance**: Evil but not excessive, psychological terror without rage-quit!
+- 😈 **Friendship Termination Simulator**: Specifically designed to destroy player relationships!
+
 ### v1.3.0-Release - "Bilingual Revolution: Global Language Support!" 🌐🔥⚡
 - 🌍 **NEW: Dual Language Support**! Full English and Chinese interface translations
 - 🎛️ **NEW: In-Game Language Switch**! Toggle between languages with GUI button
-- 🔤 **NEW: Complete Localization**! All 25 effects and UI elements translated
+- 🔤 **NEW: Complete Localization**! All effects and UI elements translated
 - 💾 **NEW: Language Persistence**! Settings automatically saved and restored
 - 🎨 **IMPROVED: Clean Transparent UI**! No more text overlap or grey backgrounds
 - 🎮 **ENHANCED: Professional Interface**! Minecraft-style pagination with language toggle

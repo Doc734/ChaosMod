@@ -40,5 +40,10 @@
   "chaosmod.config.blockRevengeEnabled": "Block Break 10% Revenge",
   "chaosmod.config.containerCurseEnabled": "Container Open 25% → 1♥",
   "chaosmod.config.inventoryCurseEnabled": "Item Switch 12% → 0.5♥",
-  "chaosmod.config.craftingTrapEnabled": "Crafting 10% → 1♥"
+  "chaosmod.config.craftingTrapEnabled": "Crafting 10% → 1♥",
+  "chaosmod.config.playerHealOnAttackEnabled": "Attack Player Heal",
+  "chaosmod.config.positionSwapEnabled": "Position Swap",
+  "chaosmod.config.craftingBombEnabled": "Crafting Bomb",
+  "chaosmod.config.waterDamageEnabled": "Water Drowning", 
+  "chaosmod.config.randomDamageAmountEnabled": "Random Damage Value"
 }

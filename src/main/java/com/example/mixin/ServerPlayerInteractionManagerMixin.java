@@ -18,16 +18,20 @@ public class ServerPlayerInteractionManagerMixin {
     
     @Inject(method = "tryBreakBlock", at = @At("TAIL"))
     private void chaos$blockRevenge(BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
-        if (!ChaosMod.config.blockRevengeEnabled) return;
-        if (player.isCreative() || player.isSpectator()) return;
-        
-        // Only trigger if block was successfully broken
-        if (cir.getReturnValue()) {
-            // 10% chance for block revenge
-            if (player.getRandom().nextFloat() < 0.1f) {
-                // Deal 1 heart damage
-                player.damage(player.getDamageSources().generic(), 2.0f);
+        // 方块反噬效果
+        if (ChaosMod.config.blockRevengeEnabled) {
+            if (!player.isCreative() && !player.isSpectator()) {
+                // Only trigger if block was successfully broken
+                if (cir.getReturnValue()) {
+                    // 10% chance for block revenge
+                    if (player.getRandom().nextFloat() < 0.1f) {
+                        // Deal 1 heart damage
+                        player.damage(player.getDamageSources().generic(), 2.0f);
+                    }
+                }
             }
         }
+        
+        // 旧效果已移除
     }
 }

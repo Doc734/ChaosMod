@@ -28,6 +28,13 @@ public class ChaosModConfig {
     public boolean containerCurseEnabled = false;      // 容器诅咒：开箱子/熔炉25%概率扣1♥
     public boolean inventoryCurseEnabled = false;      // 物品栏诅咒：切换物品槽12%概率扣0.5♥
     public boolean craftingTrapEnabled = false;        // 合成陷阱：合成物品10%概率扣1♥
+    
+    // === 新增的5个邪恶效果 ===
+    public boolean playerHealOnAttackEnabled = false;   // 攻击玩家回血：攻击其他玩家时自己回复1♥血
+    public boolean positionSwapEnabled = false;         // 位置互换：受伤时与随机队友交换位置  
+    public boolean craftingBombEnabled = false;         // 合成炸弹：打开工作台超过5秒直接爆炸
+    public boolean waterDamageEnabled = false;          // 水中溺死：触碰水时持续造成0.5♥伤害
+    public boolean randomDamageAmountEnabled = false;   // 随机伤害值：任何伤害都变成0.5♥-10♥随机值
 
     // v1.3.0: Language setting
     public String language = "zh_cn";                  // 默认中文，可选: "en_us", "zh_cn"
@@ -65,6 +72,11 @@ public class ChaosModConfig {
             case "containerCurseEnabled": return containerCurseEnabled;
             case "inventoryCurseEnabled": return inventoryCurseEnabled;
             case "craftingTrapEnabled": return craftingTrapEnabled;
+            case "playerHealOnAttackEnabled": return playerHealOnAttackEnabled;
+            case "positionSwapEnabled": return positionSwapEnabled;
+            case "craftingBombEnabled": return craftingBombEnabled;
+            case "waterDamageEnabled": return waterDamageEnabled;
+            case "randomDamageAmountEnabled": return randomDamageAmountEnabled;
             default: return false;
         }
     }
@@ -95,6 +107,11 @@ public class ChaosModConfig {
             case "containerCurseEnabled": containerCurseEnabled = value; break;
             case "inventoryCurseEnabled": inventoryCurseEnabled = value; break;
             case "craftingTrapEnabled": craftingTrapEnabled = value; break;
+            case "playerHealOnAttackEnabled": playerHealOnAttackEnabled = value; break;
+            case "positionSwapEnabled": positionSwapEnabled = value; break;
+            case "craftingBombEnabled": craftingBombEnabled = value; break;
+            case "waterDamageEnabled": waterDamageEnabled = value; break;
+            case "randomDamageAmountEnabled": randomDamageAmountEnabled = value; break;
             default: break;
         }
         markDirty();

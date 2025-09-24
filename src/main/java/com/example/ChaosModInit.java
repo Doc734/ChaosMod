@@ -62,6 +62,11 @@ public class ChaosModInit implements ModInitializer {
         LABELS.put("containerCurseEnabled", "开箱子/熔炉25%概率扣1♥");
         LABELS.put("inventoryCurseEnabled", "切换物品槽12%概率扣0.5♥");
         LABELS.put("craftingTrapEnabled", "合成物品10%概率扣1♥");
+        LABELS.put("playerHealOnAttackEnabled", "攻击玩家回血");
+        LABELS.put("positionSwapEnabled", "位置互换");
+        LABELS.put("craftingBombEnabled", "合成炸弹");
+        LABELS.put("waterDamageEnabled", "水中溺死");
+        LABELS.put("randomDamageAmountEnabled", "随机伤害值");
     }
 
     @Override
