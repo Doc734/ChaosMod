@@ -206,7 +206,7 @@ This mod's creativity comes from two **shocking** gaming videos:
 ### 🎯 **From Concept to Reality**
 
 After watching these two videos, we were deeply shocked:
-- **Why only one damage method?** → We created **25 types**!
+- **Why only one damage method?** → We created **30 types**!
 - **Why only single-player suffering?** → We added **multiplayer betrayal**!
 - **Why such simple damage?** → We designed **psychological warfare**!
 
@@ -544,7 +544,7 @@ When multiple people play together with shock devices:
 ChaosMod
 ├── 🎯 DamageRouting.java     # Damage routing system
 ├── 🎭 ThreatProfiles.java    # Threat parameter configuration
-├── ⚙️ ChaosModConfig.java    # 25 evil switches
+├── ⚙️ ChaosModConfig.java    # 30 evil switches
 └── 😈 ServerPlayerEntityTickMixin.java  # Acrophobia core
 ```
 

@@ -206,7 +206,7 @@
 ### 🎯 **从创意到现实**
 
 看完这两个视频后，我们深受震撼：
-- **为什么只有一种伤害方式？** → 我们创造了**25种**！
+- **为什么只有一种伤害方式？** → 我们创造了**30种**！
 - **为什么只能单人受苦？** → 我们加入了**多人背叛**！
 - **为什么伤害这么简单？** → 我们设计了**心理战术**！
 
@@ -544,7 +544,7 @@
 ChaosMod
 ├── 🎯 DamageRouting.java     # 伤害路由系统
 ├── 🎭 ThreatProfiles.java    # 威胁参数配置
-├── ⚙️ ChaosModConfig.java    # 25个邪恶开关
+├── ⚙️ ChaosModConfig.java    # 30个邪恶开关
 └── 😈 ServerPlayerEntityTickMixin.java  # 恐高症核心
 ```
 
