@@ -434,11 +434,11 @@ public class ScapegoatSystem {
                 }
             }
             
-            // 只保留核心伤害转移提示
+            // 只保留核心伤害转移提示（背锅人只在承受伤害时才知道）
             currentScapegoat.sendMessage(Text.literal("[ChaosMod] 💥 你替别人承受了伤害！")
                 .formatted(Formatting.GOLD), true);
             
-            // 广播模糊警告
+            // 只给其他人（非背锅人）发送模糊警告
             broadcastScapegoatWarning(victim.getServer());
             
             return true; // 取消原始伤害，按你的要求返回true
@@ -459,11 +459,13 @@ public class ScapegoatSystem {
             .formatted(Formatting.DARK_GRAY);
         
         for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
-            try {
-                // 给所有人（包括背锅人）发送模糊的ActionBar警告
-                player.networkHandler.sendPacket(new net.minecraft.network.packet.s2c.play.OverlayMessageS2CPacket(actionBarWarning));
-            } catch (Exception e) {
-                // 静默处理错误
+            // 只给非背锅人发送模糊警告，背锅人不需要知道
+            if (player != currentScapegoat) {
+                try {
+                    player.networkHandler.sendPacket(new net.minecraft.network.packet.s2c.play.OverlayMessageS2CPacket(actionBarWarning));
+                } catch (Exception e) {
+                    // 静默处理错误
+                }
             }
         }
     }
