@@ -455,17 +455,28 @@ public class ScapegoatSystem {
      * 广播模糊警告（Title/ActionBar）
      */
     private static void broadcastScapegoatWarning(MinecraftServer server) {
+        Text titleWarning = Text.literal("⚡").formatted(Formatting.RED, Formatting.BOLD);
         Text actionBarWarning = Text.literal("[ChaosMod] 有人的伤害被转移了...")
             .formatted(Formatting.DARK_GRAY);
         
+        // 给背锅人的特殊模糊警告（不让他知道是自己）
+        Text scapegoatTitleWarning = Text.literal("!").formatted(Formatting.YELLOW, Formatting.BOLD);
+        Text scapegoatActionBarWarning = Text.literal("[ChaosMod] 系统发生了变化...")
+            .formatted(Formatting.GRAY);
+        
         for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
-            // 只给非背锅人发送模糊警告，背锅人不需要知道
-            if (player != currentScapegoat) {
-                try {
+            try {
+                if (player == currentScapegoat) {
+                    // 给背锅人发送不同的模糊警告
+                    player.networkHandler.sendPacket(new net.minecraft.network.packet.s2c.play.TitleS2CPacket(scapegoatTitleWarning));
+                    player.networkHandler.sendPacket(new net.minecraft.network.packet.s2c.play.OverlayMessageS2CPacket(scapegoatActionBarWarning));
+                } else {
+                    // 给其他人发送闪电Title和伤害转移警告
+                    player.networkHandler.sendPacket(new net.minecraft.network.packet.s2c.play.TitleS2CPacket(titleWarning));
                     player.networkHandler.sendPacket(new net.minecraft.network.packet.s2c.play.OverlayMessageS2CPacket(actionBarWarning));
-                } catch (Exception e) {
-                    // 静默处理错误
                 }
+            } catch (Exception e) {
+                // 静默处理错误
             }
         }
     }
