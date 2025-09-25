@@ -1,4 +1,4 @@
-# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.4.1-hotfix
+# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.5.0-Release
 
 **Language**: [🇺🇸 English](README.md) | [🇨🇳 中文](README_CN.md)
 
@@ -10,7 +10,7 @@ This is a **ultimate torture mod specifically designed to work with DG_LAB X Min
 
 ---
 
-## 💀 30 Evil Effects - Your Nightmare Checklist
+## 💀 35 Evil Effects - Your Nightmare Checklist
 
 ### 🎯 Basic Torture Kit
 1. **🔴 All Mobs Hostile** - Even chickens want to kill you! No safe zones!
@@ -53,6 +53,13 @@ This is a **ultimate torture mod specifically designed to work with DG_LAB X Min
 28. **💣 Crafting Bomb** - Workbench becomes a **bomb defusal game**! Over 5 seconds = **real explosion**!
 29. **🌊 Water Drowning** - Water becomes **chronic poison**! Touch = continuous damage!
 30. **🎰 Random Damage Values** - **Ultimate psychological terror**! Every damage 0.5♥-10♥ completely random! **Life depends on luck**!
+
+### 🔥 v1.5.0 Ultimate Chaos Expansion Pack
+31. **⏱️ Delayed Damage** - Get hit but **don't lose health immediately**! System randomly delays 0-5 seconds before settling, keeping you **on edge**!
+32. **⌨️ Key Malfunction** - Every 10 damage accumulated **randomly disables** a common key (movement, sprint, attack, etc.), only **death restores** it!
+33. **🎲 Random Status Effects** - Every hit **randomly toggles** a status effect (speed, poison, wither, luck, etc.), **good or bad** depends on luck!
+34. **🎯 Damage Scapegoat** - Every 5 minutes **secretly selects** a scapegoat, all damage **redirects to them**! Others only see vague warnings, **never knowing who**!
+35. **⚡ Pain Spreading** - Get hit and become **"electrified"** for 5 seconds! Anyone who gets close gets **struck by lightning**, forcing everyone to **keep distance**!
 
 ---
 
@@ -148,6 +155,11 @@ Press 'P' Key   # Open bilingual config GUI (Admin only)
 | `craftingBombEnabled` | 💣 Crafting Bomb | 🌟🌟🌟🌟🌟 |
 | `waterDamageEnabled` | 🌊 Water Drowning | ⭐⭐⭐⭐⭐ |
 | `randomDamageAmountEnabled` | 🎰 **Random Damage Values** | 🌟🌟🌟🌟🌟 |
+| `delayedDamageEnabled` | ⏱️ **Delayed Damage** | 🌟🌟🌟🌟🌟 |
+| `keyDisableEnabled` | ⌨️ **Key Malfunction** | 🌟🌟🌟🌟🌟 |
+| `randomEffectsEnabled` | 🎲 **Random Status Effects** | 🌟🌟🌟🌟🌟 |
+| `damageScapegoatEnabled` | 🎯 **Damage Scapegoat** | 🌟🌟🌟🌟🌟 |
+| `painSpreadEnabled` | ⚡ **Pain Spreading** | 🌟🌟🌟🌟🌟 |
 
 ---
 
@@ -155,7 +167,7 @@ Press 'P' Key   # Open bilingual config GUI (Admin only)
 
 ### 📋 **Method 1: Manual Effect Selection**
 1. Press `P` key to open config GUI
-2. Browse through 30 evil effects list
+2. Browse through 35 evil effects list
 3. Click the effect switches you want
 4. Enjoy the pain experience!
 
@@ -199,14 +211,14 @@ This mod's creativity comes from two **shocking** gaming videos:
 2. **【When you take damage, you get electrocuted in real life!】** ⚡💀
    - Link: https://www.bilibili.com/video/BV1bweuzkEaU/
    - **Evil Highlight**: Virtual damage directly converts to **real pain**!
-   - **Inspired Effects**: **Ultimate goal** of all 30 torture effects
+   - **Inspired Effects**: **Ultimate goal** of all 35 torture effects
 
 > 💡 **Creative Tribute**: Thanks to the original video creators for their innovative ideas! These interesting concepts inspired us to develop this mod, combining virtual games with real-world interaction to bring players a completely new gaming experience! 🎮
 
 ### 🎯 **From Concept to Reality**
 
 After watching these two videos, we were deeply shocked:
-- **Why only one damage method?** → We created **30 types**!
+- **Why only one damage method?** → We created **35 types**!
 - **Why only single-player suffering?** → We added **multiplayer betrayal**!
 - **Why such simple damage?** → We designed **psychological warfare**!
 
@@ -229,7 +241,7 @@ Every effect in this mod is carefully calibrated to perfectly integrate with sho
 - 🥈 **Intermediate Challenger**: Enable 15 effects and play for 30 minutes  
 - 🥇 **Advanced Challenger**: Enable 25 effects and play for 10 minutes
 - 👑 **Master Builder**: Enable acrophobia and build at Y=200
-- 💀 **Ultimate Challenger**: Enable all 30 effects simultaneously and survive
+- 💀 **Ultimate Challenger**: Enable all 35 effects simultaneously and survive
 - 🎰 **Random Master**: Enable random damage values and survive for 1 hour
 
 ---
@@ -245,7 +257,7 @@ Enable: Basic effects + `acrophobiaEnabled` + `reverseDamageEnabled` + `healReve
 > Classic challenge experience, suitable for experienced players
 
 ### 👹 **Ultimate Challenge Package** (Difficulty: Hard)
-Enable: **All 30 effects**
+Enable: **All 35 effects**
 > Only true warriors dare to try! Prepare for the ultimate challenge!
 
 ### 🔥 **Electric Shock Special Package** (Recommended)
@@ -297,7 +309,7 @@ Enable: `reverseDamageEnabled` + `healReverseEnabled` + `fallTrapEnabled`
 
 - 🥉 **Teamwork**: Play with friends with 5 effects enabled for 1 hour
 - 🥈 **Challengers**: Enable 15 effects in multiplayer environment
-- 🥇 **Brave Team**: All members enable 30 effects and persist in gaming
+- 🥇 **Brave Team**: All members enable 35 effects and persist in gaming
 - 👑 **Server Legend**: Become the most daring challenger on the server
 
 #### 💬 **Common Multiplayer Situations**
@@ -374,6 +386,18 @@ When multiple people play together with shock devices:
 ---
 
 ## 📝 Update Log
+
+### v1.5.0-Release - "Ultimate Chaos Expansion: 5 Mind-Breaking Effects!" 🧠💥⚡
+- 🆕 **NEW: 5 Ultimate Chaos Effects**! Expanded from 30 to 35 complete psychological warfare!
+- ⏱️ **Delayed Damage**: Hit but no immediate health loss! Random 0-5 second delays keep you **constantly anxious**!
+- ⌨️ **Key Malfunction**: Every 10 damage accumulates to **randomly disable** keys (W/A/S/D/Mouse/etc), only death restores!
+- 🎲 **Random Status Effects**: Every hit randomly **toggles status effects** (good/bad depends on luck), complete chaos!
+- 🎯 **Damage Scapegoat**: Every 5 minutes **secretly selects** someone to bear all damage! **Total betrayal system**!
+- ⚡ **Pain Spreading**: Get hit = become "electrified" for 5 seconds! Close contact = **lightning strike**!
+- 🧠 **Psychological Warfare**: These effects focus on **mental torture** rather than direct damage!
+- 👻 **Invisible Terror**: Scapegoats **don't know their identity**, creating maximum paranoia!
+- 🔥 **Perfect Fire Transfer**: Scapegoat system now transfers **both damage AND fire effects**!
+- 💀 **Death ≠ Offline**: Improved death detection prevents scapegoat replacement during death animation!
 
 ### v1.4.1-hotfix - "Emergency Fix: AI Function English Localization!" 🚨🌐⚡
 - 🚨 **EMERGENCY FIX: AI Function English Localization Missing**! English users can now use AI recommendation features normally!
@@ -544,7 +568,7 @@ When multiple people play together with shock devices:
 ChaosMod
 ├── 🎯 DamageRouting.java     # Damage routing system
 ├── 🎭 ThreatProfiles.java    # Threat parameter configuration
-├── ⚙️ ChaosModConfig.java    # 30 evil switches
+├── ⚙️ ChaosModConfig.java    # 35 evil switches
 └── 😈 ServerPlayerEntityTickMixin.java  # Acrophobia core
 ```
 

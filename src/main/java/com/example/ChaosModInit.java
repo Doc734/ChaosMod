@@ -67,6 +67,11 @@ public class ChaosModInit implements ModInitializer {
         LABELS.put("craftingBombEnabled", "合成炸弹");
         LABELS.put("waterDamageEnabled", "水中溺死");
         LABELS.put("randomDamageAmountEnabled", "随机伤害值");
+        LABELS.put("delayedDamageEnabled", "延迟受伤");
+        LABELS.put("keyDisableEnabled", "按键失灵");
+        LABELS.put("randomEffectsEnabled", "受伤随机增益");
+        LABELS.put("damageScapegoatEnabled", "伤害背锅人");
+        LABELS.put("painSpreadEnabled", "痛觉扩散");
     }
 
     @Override
@@ -77,6 +82,36 @@ public class ChaosModInit implements ModInitializer {
         
         // Register network packet receiver with proper permission checks
         ConfigToggleC2SPacket.registerServerReceiver();
+        
+        // Register S2C key disable packet payload type
+        net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.playS2C().register(
+            com.example.network.KeyDisableS2CPacket.ID, 
+            com.example.network.KeyDisableS2CPacket.CODEC
+        );
+        
+        // Register key disable event handlers using Fabric events
+        com.example.util.KeyDisableEventHandler.registerEvents();
+        
+        // Initialize scapegoat system on server start
+        net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents.SERVER_STARTED.register(server -> {
+            com.example.util.ScapegoatSystem.loadScapegoatFromPersistentState(server);
+        });
+        
+        // 注册背锅人选择定时器 - 使用ServerTickEvents.START_SERVER_TICK
+        net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents.START_SERVER_TICK.register(server -> {
+            com.example.util.ScapegoatSystem.tickScapegoat(server);
+        });
+        
+        // 注册玩家JOIN/DISCONNECT事件监听器
+        net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
+            // JOIN即时重算
+            com.example.util.ScapegoatSystem.onPlayerJoin(handler.getPlayer(), server);
+        });
+        
+        net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
+            // DISCONNECT即时重算
+            com.example.util.ScapegoatSystem.onPlayerDisconnect(handler.getPlayer(), server);
+        });
         
         // Commands with Admin Permission Check (keeping only toggle command)
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {

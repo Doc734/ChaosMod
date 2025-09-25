@@ -45,5 +45,10 @@
   "chaosmod.config.positionSwapEnabled": "Position Swap",
   "chaosmod.config.craftingBombEnabled": "Crafting Bomb",
   "chaosmod.config.waterDamageEnabled": "Water Drowning", 
-  "chaosmod.config.randomDamageAmountEnabled": "Random Damage Value"
+  "chaosmod.config.randomDamageAmountEnabled": "Random Damage Value",
+  "chaosmod.config.delayedDamageEnabled": "Delayed Damage",
+  "chaosmod.config.keyDisableEnabled": "Key Malfunction",
+  "chaosmod.config.randomEffectsEnabled": "Random Status Effects",
+  "chaosmod.config.damageScapegoatEnabled": "Damage Scapegoat",
+  "chaosmod.config.painSpreadEnabled": "Pain Spreading"
 }

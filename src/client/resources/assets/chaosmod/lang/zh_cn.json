@@ -45,5 +45,10 @@
   "chaosmod.config.positionSwapEnabled": "位置互换",
   "chaosmod.config.craftingBombEnabled": "合成炸弹", 
   "chaosmod.config.waterDamageEnabled": "水中溺死",
-  "chaosmod.config.randomDamageAmountEnabled": "随机伤害值"
+  "chaosmod.config.randomDamageAmountEnabled": "随机伤害值",
+  "chaosmod.config.delayedDamageEnabled": "延迟受伤",
+  "chaosmod.config.keyDisableEnabled": "按键失灵",
+  "chaosmod.config.randomEffectsEnabled": "受伤随机增益",
+  "chaosmod.config.damageScapegoatEnabled": "伤害背锅人",
+  "chaosmod.config.painSpreadEnabled": "痛觉扩散"
 }

@@ -35,6 +35,13 @@ public class ChaosModConfig {
     public boolean craftingBombEnabled = false;         // 合成炸弹：打开工作台超过5秒直接爆炸
     public boolean waterDamageEnabled = false;          // 水中溺死：触碰水时持续造成0.5♥伤害
     public boolean randomDamageAmountEnabled = false;   // 随机伤害值：任何伤害都变成0.5♥-10♥随机值
+    
+    // === v1.5.0 新增的混沌效果 ===
+    public boolean delayedDamageEnabled = false;        // 延迟受伤：被打中不会马上掉血，系统随机拖延0-5秒
+    public boolean keyDisableEnabled = false;           // 按键失灵：受伤累积10次随机禁用一个常用键，死亡恢复
+    public boolean randomEffectsEnabled = false;        // 受伤随机增益：每次挨打随机关上或开一个状态效果
+    public boolean damageScapegoatEnabled = false;      // 伤害背锅人：每隔5分钟选出背锅侠承受所有伤害
+    public boolean painSpreadEnabled = false;           // 痛觉扩散：被打后5秒内"带电"，靠近会被雷劈
 
     // v1.3.0: Language setting
     public String language = "zh_cn";                  // 默认中文，可选: "en_us", "zh_cn"
@@ -77,6 +84,11 @@ public class ChaosModConfig {
             case "craftingBombEnabled": return craftingBombEnabled;
             case "waterDamageEnabled": return waterDamageEnabled;
             case "randomDamageAmountEnabled": return randomDamageAmountEnabled;
+            case "delayedDamageEnabled": return delayedDamageEnabled;
+            case "keyDisableEnabled": return keyDisableEnabled;
+            case "randomEffectsEnabled": return randomEffectsEnabled;
+            case "damageScapegoatEnabled": return damageScapegoatEnabled;
+            case "painSpreadEnabled": return painSpreadEnabled;
             default: return false;
         }
     }
@@ -112,6 +124,11 @@ public class ChaosModConfig {
             case "craftingBombEnabled": craftingBombEnabled = value; break;
             case "waterDamageEnabled": waterDamageEnabled = value; break;
             case "randomDamageAmountEnabled": randomDamageAmountEnabled = value; break;
+            case "delayedDamageEnabled": delayedDamageEnabled = value; break;
+            case "keyDisableEnabled": keyDisableEnabled = value; break;
+            case "randomEffectsEnabled": randomEffectsEnabled = value; break;
+            case "damageScapegoatEnabled": damageScapegoatEnabled = value; break;
+            case "painSpreadEnabled": painSpreadEnabled = value; break;
             default: break;
         }
         markDirty();

@@ -63,6 +63,11 @@ public class LanguageManager {
         CHINESE_LABELS.put("craftingBombEnabled", "合成炸弹");
         CHINESE_LABELS.put("waterDamageEnabled", "水中溺死");
         CHINESE_LABELS.put("randomDamageAmountEnabled", "随机伤害值");
+        CHINESE_LABELS.put("delayedDamageEnabled", "延迟受伤");
+        CHINESE_LABELS.put("keyDisableEnabled", "按键失灵");
+        CHINESE_LABELS.put("randomEffectsEnabled", "受伤随机增益");
+        CHINESE_LABELS.put("damageScapegoatEnabled", "伤害背锅人");
+        CHINESE_LABELS.put("painSpreadEnabled", "痛觉扩散");
     }
     
     // 英文标签
@@ -98,6 +103,11 @@ public class LanguageManager {
         ENGLISH_LABELS.put("craftingBombEnabled", "Crafting Bomb");
         ENGLISH_LABELS.put("waterDamageEnabled", "Water Drowning");
         ENGLISH_LABELS.put("randomDamageAmountEnabled", "Random Damage Value");
+        ENGLISH_LABELS.put("delayedDamageEnabled", "Delayed Damage");
+        ENGLISH_LABELS.put("keyDisableEnabled", "Key Malfunction");
+        ENGLISH_LABELS.put("randomEffectsEnabled", "Random Status Effects");
+        ENGLISH_LABELS.put("damageScapegoatEnabled", "Damage Scapegoat");
+        ENGLISH_LABELS.put("painSpreadEnabled", "Pain Spreading");
     }
     
     // UI 文本

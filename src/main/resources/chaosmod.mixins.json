@@ -21,7 +21,9 @@
     "ServerPlayerInteractionManagerMixin",
     "ServerPlayerScreenHandlerMixin",
     "UpdateSelectedSlotMixin",
-    "CraftingResultSlotMixin"
+    "CraftingResultSlotMixin",
+    "ServerPlayerEntityJoinMixin",
+    "PlayerManagerRespawnMixin"
   ],
   "client": []
 }
