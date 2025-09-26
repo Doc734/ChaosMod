@@ -50,5 +50,9 @@
   "chaosmod.config.keyDisableEnabled": "Key Malfunction",
   "chaosmod.config.randomEffectsEnabled": "Random Status Effects",
   "chaosmod.config.damageScapegoatEnabled": "Damage Scapegoat",
-  "chaosmod.config.painSpreadEnabled": "Pain Spreading"
+  "chaosmod.config.painSpreadEnabled": "Pain Spreading",
+  
+  "chaosmod.config.panicMagnetEnabled": "Panic Magnet",
+  "chaosmod.config.pickupDrainEnabled": "Pickup Drain",
+  "chaosmod.config.vertigoScapegoatEnabled": "Vertigo Scapegoat"
 }

@@ -117,6 +117,20 @@ public final class ChaosEffects {
     private static final double SPREAD_RADIUS = 3.5; // 扩散半径
     private static final int LIGHTNING_COOLDOWN = 20; // 1秒防重复
 
+    // === 惊惧磁铁系统 ===
+    private static final Map<PlayerEntity, Long> PANIC_MAGNETIZED_PLAYERS = new WeakHashMap<>();
+    private static final Map<PlayerEntity, Long> PANIC_MAGNET_IMMUNITY = new WeakHashMap<>(); // 磁化免疫
+    private static final int PANIC_MAGNET_DURATION = 200; // 10秒 = 200 ticks
+    private static final int PANIC_IMMUNITY_DURATION = 200; // 免疫持续时间，与磁化时长一致
+    private static final double PANIC_MAGNET_RADIUS = 30.0; // 30格范围
+    private static final ThreadLocal<Boolean> PANIC_MAGNET_REENTRY = ThreadLocal.withInitial(() -> false); // 递归抑制
+
+    // === 眩晕背锅侠系统 ===
+    private static ServerPlayerEntity vertigoScapegoat = null;
+    private static long nextVertigoRollTick = 0;
+    private static final Set<ServerPlayerEntity> visitedScapegoats = new HashSet<>();
+    private static final long VERTIGO_SCAPEGOAT_INTERVAL = 6000; // 5分钟 = 6000 ticks
+
     /**
      * 延迟受伤：拦截LivingEntity#damage并将伤害入队
      */
@@ -527,6 +541,278 @@ public final class ChaosEffects {
     public static boolean isKeyDisabled(PlayerEntity player, String key) {
         Set<String> disabled = DISABLED_KEYS.get(player);
         return disabled != null && disabled.contains(key);
+    }
+
+    // ==================== 新增的三个混沌效果 ====================
+
+    /**
+     * 惊惧磁铁：标记受伤玩家进入磁化状态
+     * 仅当玩家无免疫且伤害源非PANIC_PULL时才生效
+     */
+    public static void markPanicMagnetized(LivingEntity entity, DamageSource source) {
+        if (!ChaosMod.config.panicMagnetEnabled) return;
+        if (entity.getWorld().isClient()) return;
+        if (!(entity instanceof ServerPlayerEntity player)) return;
+        if (PANIC_MAGNET_REENTRY.get()) return; // 递归抑制
+
+        // 检查是否有磁化免疫
+        long currentTime = entity.getWorld().getTime();
+        Long immunityUntil = PANIC_MAGNET_IMMUNITY.get(player);
+        if (immunityUntil != null && currentTime < immunityUntil) {
+            return; // 有免疫，不进入磁化状态
+        }
+
+        // 检查伤害源是否为PANIC_PULL（通过检查攻击者是否为磁化状态的玩家）
+        if (source.getAttacker() instanceof ServerPlayerEntity attacker) {
+            Long attackerMagnetized = PANIC_MAGNETIZED_PLAYERS.get(attacker);
+            if (attackerMagnetized != null && currentTime < attackerMagnetized) {
+                // 这是由磁化玩家造成的PANIC_PULL伤害，不触发新的磁化
+                return;
+            }
+        }
+
+        PANIC_MAGNETIZED_PLAYERS.put(player, currentTime + PANIC_MAGNET_DURATION);
+        
+        player.sendMessage(Text.literal("⚡ 你被磁化了！10秒内会不断拉拽队友到身边！")
+            .formatted(Formatting.RED, Formatting.BOLD), true);
+    }
+
+    /**
+     * 惊惧磁铁：tick处理磁化玩家
+     */
+    public static void tickPanicMagnet(ServerPlayerEntity player) {
+        if (!ChaosMod.config.panicMagnetEnabled) return;
+        if (player.getWorld().isClient()) return;
+
+        Long magnetizedUntil = PANIC_MAGNETIZED_PLAYERS.get(player);
+        if (magnetizedUntil == null) return;
+
+        long currentTime = player.getWorld().getTime();
+        
+        // 检查是否已经过期
+        if (currentTime >= magnetizedUntil) {
+            PANIC_MAGNETIZED_PLAYERS.remove(player);
+            player.sendMessage(Text.literal("✅ 磁化状态已结束")
+                .formatted(Formatting.GREEN), true);
+            return;
+        }
+
+        // 清理过期的免疫状态
+        cleanupExpiredImmunity(currentTime);
+
+        // 每2秒触发一次 (40 ticks)
+        if (player.age % 40 != 0) return;
+
+        ServerWorld world = player.getServerWorld();
+
+        // 寻找最近的有效队友并拉拽
+        List<ServerPlayerEntity> validTargets = world.getServer().getPlayerManager().getPlayerList().stream()
+            .filter(p -> p != player && p.getWorld() == player.getWorld())
+            .filter(p -> p.distanceTo(player) <= PANIC_MAGNET_RADIUS)
+            .filter(p -> isValidPanicTarget(p, currentTime)) // 过滤未免疫且未磁化的目标
+            .sorted((p1, p2) -> Float.compare(p1.distanceTo(player), p2.distanceTo(player)))
+            .toList();
+
+        if (!validTargets.isEmpty()) {
+            ServerPlayerEntity target = validTargets.get(0);
+            
+            // 传送到磁化玩家身边
+            target.teleport(player.getX(), player.getY(), player.getZ(), true);
+            
+            // 施加磁化免疫（防止连锁反应）
+            PANIC_MAGNET_IMMUNITY.put(target, currentTime + PANIC_IMMUNITY_DURATION);
+            
+            // 定向单播Title消息（与拉取伤害同tick发送）
+            // 给磁化者发送"别靠近我！"
+            Text magnetTitle = Text.literal("别靠近我！").formatted(Formatting.RED, Formatting.BOLD);
+            player.sendMessage(magnetTitle, true); // 发送到ActionBar
+            
+            // 给被拉者发送"玩家名：别靠近我！"
+            Text targetTitle = Text.literal(player.getName().getString() + "：别靠近我！")
+                .formatted(Formatting.RED, Formatting.BOLD);
+            target.sendMessage(targetTitle, true); // 发送到ActionBar
+            
+            // 对被拉拽的玩家造成0.5♥PANIC_PULL伤害（递归抑制）
+            try {
+                PANIC_MAGNET_REENTRY.set(true);
+                // 使用玩家作为伤害源，在markPanicMagnetized中通过攻击者识别为PANIC_PULL
+                target.damage(world.getDamageSources().playerAttack(player), 1.0F);
+            } finally {
+                PANIC_MAGNET_REENTRY.set(false);
+            }
+            
+            target.sendMessage(Text.literal("💀 你被磁化的队友拉了过去！获得短暂磁化免疫。")
+                .formatted(Formatting.YELLOW), false); // 改为聊天消息，避免与Title重叠
+        } else {
+            // 如果没有有效目标，只给磁化者发送Title
+            Text magnetTitle = Text.literal("别靠近我！").formatted(Formatting.RED, Formatting.BOLD);
+            player.sendMessage(magnetTitle, true); // 发送到ActionBar
+        }
+    }
+
+    /**
+     * 检查玩家是否为有效的惊惧磁铁目标
+     */
+    private static boolean isValidPanicTarget(ServerPlayerEntity player, long currentTime) {
+        // 检查是否有磁化免疫
+        Long immunityUntil = PANIC_MAGNET_IMMUNITY.get(player);
+        if (immunityUntil != null && currentTime < immunityUntil) {
+            return false; // 有免疫，不是有效目标
+        }
+
+        // 检查是否已经磁化
+        Long magnetizedUntil = PANIC_MAGNETIZED_PLAYERS.get(player);
+        if (magnetizedUntil != null && currentTime < magnetizedUntil) {
+            return false; // 已磁化，不是有效目标
+        }
+
+        return true; // 有效目标
+    }
+
+    /**
+     * 清理过期的磁化免疫状态
+     */
+    private static void cleanupExpiredImmunity(long currentTime) {
+        PANIC_MAGNET_IMMUNITY.entrySet().removeIf(entry -> currentTime >= entry.getValue());
+    }
+
+    /**
+     * 贪婪吸血：物品拾取后扣血
+     */
+    public static void handlePickupDrain(ServerPlayerEntity player) {
+        if (!ChaosMod.config.pickupDrainEnabled) return;
+        if (player.getWorld().isClient()) return;
+        if (player.isCreative() || player.isSpectator()) return;
+
+        // 对拾取物品的玩家造成0.5♥伤害
+        player.damage(player.getServerWorld().getDamageSources().magic(), 1.0F);
+        
+        player.sendMessage(Text.literal("⚡ 贪心的代价！拾取物品让你失去了生命！")
+            .formatted(Formatting.RED), true);
+    }
+
+    /**
+     * 眩晕背锅侠：服务器tick时管理背锅侠系统
+     */
+    public static void tickVertigoScapegoat(MinecraftServer server) {
+        if (!ChaosMod.config.vertigoScapegoatEnabled) return;
+
+        long currentTick = server.getOverworld().getTime();
+        
+        // 检查是否需要选择新的背锅侠
+        if (currentTick >= nextVertigoRollTick) {
+            selectNewVertigoScapegoat(server);
+            nextVertigoRollTick = currentTick + VERTIGO_SCAPEGOAT_INTERVAL;
+        }
+
+        // 检查当前背锅侠是否仍然在线
+        if (vertigoScapegoat != null && (vertigoScapegoat.isDisconnected() || vertigoScapegoat.isRemoved())) {
+            vertigoScapegoat = null;
+        }
+    }
+
+    /**
+     * 选择新的眩晕背锅侠
+     */
+    private static void selectNewVertigoScapegoat(MinecraftServer server) {
+        List<ServerPlayerEntity> allPlayers = server.getPlayerManager().getPlayerList();
+        if (allPlayers.isEmpty()) return;
+
+        // 过滤候选者：不包括上次的背锅侠且未被选过
+        List<ServerPlayerEntity> candidates = allPlayers.stream()
+            .filter(p -> !visitedScapegoats.contains(p) && p != vertigoScapegoat)
+            .filter(p -> !p.isDisconnected())
+            .toList();
+
+        // 如果所有人都被选过，重置访问集合
+        if (candidates.isEmpty()) {
+            visitedScapegoats.clear();
+            candidates = allPlayers.stream()
+                .filter(p -> p != vertigoScapegoat && !p.isDisconnected())
+                .toList();
+        }
+
+        if (!candidates.isEmpty()) {
+            vertigoScapegoat = candidates.get(ThreadLocalRandom.current().nextInt(candidates.size()));
+            visitedScapegoats.add(vertigoScapegoat);
+            
+            // 发送模糊警告
+            Text generalWarning = Text.literal("⚠️ 黑暗中有人成为了...某种存在的目标...").formatted(Formatting.DARK_PURPLE);
+            Text scapegoatWarning = Text.literal("⚠️ 你感到一种不祥的预感...仿佛承担了某种...责任...").formatted(Formatting.DARK_RED);
+            
+            for (ServerPlayerEntity player : allPlayers) {
+                if (player == vertigoScapegoat) {
+                    player.sendMessage(scapegoatWarning, true);
+                } else {
+                    player.sendMessage(generalWarning, true);
+                }
+            }
+        }
+    }
+
+    /**
+     * 眩晕背锅侠：处理伤害重定向
+     */
+    public static boolean handleVertigoScapegoatDamage(LivingEntity victim, DamageSource source, float amount) {
+        if (!ChaosMod.config.vertigoScapegoatEnabled) return false;
+        if (victim.getWorld().isClient()) return false;
+        if (vertigoScapegoat == null) return false;
+        if (!(victim instanceof ServerPlayerEntity victimPlayer)) return false;
+
+        MinecraftServer server = victimPlayer.getServer();
+        if (server == null) return false;
+
+        if (victimPlayer == vertigoScapegoat) {
+            // 背锅侠自己受伤，给予10秒debuff并重新选择
+            vertigoScapegoat.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 200, 0)); // 10秒失明
+            vertigoScapegoat.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 200, 0)); // 10秒反胃
+            
+            // 发送不同的消息
+            Text scapegoatMsg = Text.literal("💀 作为背锅侠的痛苦...命运将转向他人...").formatted(Formatting.DARK_RED);
+            Text othersMsg = Text.literal("⚠️ 黑暗中的目标发生了改变...").formatted(Formatting.DARK_PURPLE);
+            
+            vertigoScapegoat.sendMessage(scapegoatMsg, true);
+            
+            for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
+                if (player != vertigoScapegoat) {
+                    player.sendMessage(othersMsg, true);
+                }
+            }
+            
+            // 立即重新选择背锅侠
+            selectNewVertigoScapegoat(server);
+            nextVertigoRollTick = server.getOverworld().getTime() + VERTIGO_SCAPEGOAT_INTERVAL;
+            
+            return false; // 不阻止原伤害
+            
+        } else {
+            // 其他玩家受伤，背锅侠承受后果
+            vertigoScapegoat.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 200, 0)); // 10秒失明
+            vertigoScapegoat.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 200, 0)); // 10秒反胃
+            
+            // 发送模糊提示
+            Text victimMsg = Text.literal("💫 有人替你承受了痛苦...").formatted(Formatting.YELLOW);
+            Text scapegoatMsg = Text.literal("💀 你感受到了不属于自己的痛苦...").formatted(Formatting.RED);
+            Text othersMsg = Text.literal("⚠️ 痛苦在黑暗中流转...").formatted(Formatting.GRAY);
+            
+            victimPlayer.sendMessage(victimMsg, true);
+            vertigoScapegoat.sendMessage(scapegoatMsg, true);
+            
+            for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {
+                if (player != victimPlayer && player != vertigoScapegoat) {
+                    player.sendMessage(othersMsg, true);
+                }
+            }
+            
+            return false; // 不阻止原伤害
+        }
+    }
+
+    /**
+     * 获取当前眩晕背锅侠（用于调试）
+     */
+    public static ServerPlayerEntity getCurrentVertigoScapegoat() {
+        return vertigoScapegoat;
     }
 
 }

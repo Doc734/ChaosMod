@@ -41,6 +41,13 @@ public class ServerPlayerEntityTickMixin {
         if (ChaosMod.config.craftingBombEnabled) {
             chaos$tickCraftingBomb(player);
         }
+        
+        // === 新增的混沌效果 ===
+        // 惊惧磁铁：处理磁化状态的tick逻辑
+        com.example.util.ChaosEffects.tickPanicMagnet(player);
+        
+        // 痛觉扩散：处理带电状态的tick逻辑（原有）
+        com.example.util.ChaosEffects.tickElectrified(player);
     }
     
     private void chaos$tickAcrophobia(ServerPlayerEntity player) {

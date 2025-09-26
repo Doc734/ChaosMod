@@ -185,7 +185,9 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
             "craftingTrapEnabled", "playerHealOnAttackEnabled", "positionSwapEnabled",
             "craftingBombEnabled", "waterDamageEnabled", "randomDamageAmountEnabled",
             "delayedDamageEnabled", "keyDisableEnabled", "randomEffectsEnabled",
-            "damageScapegoatEnabled", "painSpreadEnabled"
+            "damageScapegoatEnabled", "painSpreadEnabled",
+            // v1.6.0 新增效果
+            "panicMagnetEnabled", "pickupDrainEnabled", "vertigoScapegoatEnabled"
         };
         
         for (String key : keys) {

@@ -68,6 +68,11 @@ public class LanguageManager {
         CHINESE_LABELS.put("randomEffectsEnabled", "受伤随机增益");
         CHINESE_LABELS.put("damageScapegoatEnabled", "伤害背锅人");
         CHINESE_LABELS.put("painSpreadEnabled", "痛觉扩散");
+        
+        // v1.6.0 新增效果
+        CHINESE_LABELS.put("panicMagnetEnabled", "惊惧磁铁");
+        CHINESE_LABELS.put("pickupDrainEnabled", "贪婪吸血");
+        CHINESE_LABELS.put("vertigoScapegoatEnabled", "眩晕背锅侠");
     }
     
     // 英文标签
@@ -108,6 +113,11 @@ public class LanguageManager {
         ENGLISH_LABELS.put("randomEffectsEnabled", "Random Status Effects");
         ENGLISH_LABELS.put("damageScapegoatEnabled", "Damage Scapegoat");
         ENGLISH_LABELS.put("painSpreadEnabled", "Pain Spreading");
+        
+        // v1.6.0 New Effects
+        ENGLISH_LABELS.put("panicMagnetEnabled", "Panic Magnet");
+        ENGLISH_LABELS.put("pickupDrainEnabled", "Pickup Drain");
+        ENGLISH_LABELS.put("vertigoScapegoatEnabled", "Vertigo Scapegoat");
     }
     
     // UI 文本

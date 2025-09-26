@@ -108,10 +108,10 @@ public class AIEffectCombinations {
         ));
         
         ALL_COMBINATIONS.add(new EffectCombination(
-            "[PVP鼓励] PVP鼓励套餐",
-            "鼓励玩家互相攻击！",
-            new String[]{"playerHealOnAttackEnabled", "randomDamageEnabled", "mobThornsEnabled", "reverseDamageEnabled"},
-            "AI为你推荐：PVP鼓励套餐 - 朋友就是用来攻击的！"
+            "[磁力惊惧] 磁力惊惧套餐", 
+            "受伤后成为队友噩梦！",
+            new String[]{"panicMagnetEnabled", "painSpreadEnabled", "mobIgniteEnabled", "shieldNerfEnabled"},
+            "AI为你推荐：磁力惊惧套餐 - 受伤后变成队友的死亡磁铁！"
         ));
         
         ALL_COMBINATIONS.add(new EffectCombination(
@@ -150,10 +150,10 @@ public class AIEffectCombinations {
         ));
         
         ALL_COMBINATIONS.add(new EffectCombination(
-            "[PVP鼓励] PVP鼓励套餐",
-            "鼓励玩家互相攻击！",
-            new String[]{"playerHealOnAttackEnabled", "randomDamageEnabled", "mobThornsEnabled", "reverseDamageEnabled"},
-            "AI为你推荐：PVP鼓励套餐 - 朋友就是用来攻击的！"
+            "[磁力惊惧] 磁力惊惧套餐", 
+            "受伤后成为队友噩梦！",
+            new String[]{"panicMagnetEnabled", "painSpreadEnabled", "mobIgniteEnabled", "shieldNerfEnabled"},
+            "AI为你推荐：磁力惊惧套餐 - 受伤后变成队友的死亡磁铁！"
         ));
         
         ALL_COMBINATIONS.add(new EffectCombination(
@@ -185,10 +185,10 @@ public class AIEffectCombinations {
         ));
         
         ALL_COMBINATIONS.add(new EffectCombination(
-            "[生存绝望] 生存绝望",
-            "基本生存需求都是陷阱！",
-            new String[]{"foodPoisonEnabled", "healReverseEnabled", "lowHealthNoHealEnabled", "inventoryCurseEnabled"},
-            "AI为你推荐：生存绝望 - 连活着都是奢望！"
+            "[贪婪诅咒] 贪婪诅咒",
+            "拾取物品都要付出血的代价！",
+            new String[]{"pickupDrainEnabled", "inventoryCurseEnabled", "containerCurseEnabled", "craftingTrapEnabled"},
+            "AI为你推荐：贪婪诅咒 - 每次贪心都会失血！"
         ));
         
         ALL_COMBINATIONS.add(new EffectCombination(
@@ -213,10 +213,10 @@ public class AIEffectCombinations {
         ));
         
         ALL_COMBINATIONS.add(new EffectCombination(
-            "[黑暗恐怖] 黑暗恐怖",
-            "看不见的恐惧！",
-            new String[]{"mobBlindnessEnabled", "allHostileEnabled", "reverseDamageEnabled", "randomDamageAmountEnabled"},
-            "AI为你推荐：黑暗恐怖 - 在黑暗中感受真正的恐惧！"
+            "[眩晕背锅] 眩晕背锅侠",
+            "神秘的背锅者承受他人痛苦！",
+            new String[]{"vertigoScapegoatEnabled", "mobBlindnessEnabled", "painSpreadEnabled", "randomDamageEnabled"},
+            "AI为你推荐：眩晕背锅侠 - 让无辜的人承受你的痛苦！"
         ));
         
         ALL_COMBINATIONS.add(new EffectCombination(
@@ -234,10 +234,10 @@ public class AIEffectCombinations {
         ));
         
         ALL_COMBINATIONS.add(new EffectCombination(
-            "[运气测试] 运气测试",
-            "全凭运气的游戏！",
-            new String[]{"randomDamageAmountEnabled", "fallTrapEnabled", "foodPoisonEnabled", "craftingTrapEnabled", "blockRevengeEnabled"},
-            "AI为你推荐：运气测试 - 看看你的人品如何！"
+            "[新时代混沌] 新时代混沌",
+            "最新的痛苦科技！",
+            new String[]{"panicMagnetEnabled", "pickupDrainEnabled", "vertigoScapegoatEnabled", "delayedDamageEnabled", "keyDisableEnabled"},
+            "AI为你推荐：新时代混沌 - 体验最新的痛苦科技！"
         ));
     }
 }

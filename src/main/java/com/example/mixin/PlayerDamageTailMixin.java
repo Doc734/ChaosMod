@@ -24,8 +24,15 @@ public abstract class PlayerDamageTailMixin {
             // 受伤随机增益：随机添加或移除状态效果
             ChaosEffects.handleRandomEffects(p);
             
-            // 痛觉扩散：标记为带电状态（使用新的严格实现）
-            com.example.util.PainSpreadSystem.markElectrified(p);
+            // 痛觉扩散：标记为带电状态
+            ChaosEffects.markElectrified(p);
+            
+            // === 新增的混沌效果 ===
+            // 惊惧磁铁：标记受伤玩家进入磁化状态
+            ChaosEffects.markPanicMagnetized(p, source);
+            
+            // 眩晕背锅侠：处理伤害后果
+            ChaosEffects.handleVertigoScapegoatDamage(p, source, amount);
         }
         
         // 盾牌削弱（原有功能）

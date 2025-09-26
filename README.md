@@ -1,108 +1,113 @@
-# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB HELL TORMENT EDITION ⚡ v1.5.1-Release
+# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.5.5-Release
 
 **Language**: [🇺🇸 English](README.md) | [🇨🇳 中文](README_CN.md)
 
-## 💀 ENTER THE VIRTUAL ABYSS OF ETERNAL SUFFERING! THIS IS YOUR NIGHTMARE MANIFEST!
+## 😈 Welcome to Hell! This is NOT an ordinary mod!
 
-This is the **ULTIMATE GAMING TORMENT ENGINE**, forged in the darkest depths of code to work with **DG_LAB X Minecraft Mod**! Every pixel of damage in this cursed realm will send **AGONIZING ELECTRIC SHOCKS** coursing through your mortal flesh! Are you ready to willingly submit to **THE MOST SADISTIC REALITY-CONNECTING TORTURE EVER CONCEIVED**? 👹💀
+This is a **ultimate torture mod specifically designed to work with DG_LAB X Minecraft Mod**! Every time you take damage in the game, you'll experience **real electric shocks** in reality! Are you ready to endure the pain? 👹
 
-> ⚠️ **BLOOD WARNING**: This cursed creation is designed to **SHATTER YOUR SANITY** and **BREAK YOUR SPIRIT**! Every effect has been lovingly crafted by dark forces to deliver **SOUL-CRUSHING DESPAIR** when you least expect it!
-
----
-
-## 💀 35 INSTRUMENTS OF VIRTUAL DAMNATION - YOUR DESCENT INTO MADNESS
-
-### 🎯 BLOOD-SOAKED STARTER PACK OF AGONY  
-1. **🔴 ALL CREATURES THIRST FOR YOUR BLOOD** - Even the most innocent chickens become **RABID HARBINGERS OF YOUR DOOM**! There is NO ESCAPE, NO SANCTUARY, ONLY DEATH!
-2. **🔥 EVERY STRIKE IGNITES YOUR SCREAMING FLESH** - Feel your avatar's skin **MELT AND BUBBLE** as flames consume your virtual soul! **BURN, MORTAL, BURN!**
-3. **🐌 CRIPPLING SLOWNESS PARALYSIS** - Your limbs betray you as **SUPERNATURAL WEAKNESS** courses through your veins! Watch helplessly as death approaches!
-4. **👁️ VISION STOLEN BY SHADOW PHANTOMS** - Stumble blindly through **ABSOLUTE DARKNESS** while unseen horrors close in for the kill!
-5. **⚔️ YOUR OWN BLADE THIRSTS FOR YOUR BLOOD** - Every swing against enemies **CARVES CHUNKS FROM YOUR OWN FLESH**! Feel the betrayal of your own weapons!
-
-### 🍖 STARVATION AND SURVIVAL TORMENT
-6. **☠️ EVERY BITE MAY BE YOUR LAST** - Even your final meal becomes a **ROULETTE WITH DEATH**! Choke on poisoned sustenance!
-7. **🥛 THE DRAGON'S MOCKERY** - When your parched throat screams for water, the beast **TRANSFORMS YOUR SALVATION INTO MOCKERY**! Drink milk while you die!
-8. **💀 VICTORY IS YOUR GRAVE** - Slay the dragon and **IMMEDIATELY PLUNGE A BLADE INTO YOUR OWN HEART**! Triumph tastes like **BITTER BLOOD AND ASHES**!
-9. **🛡️ YOUR SHIELD CRUMBLES LIKE YOUR HOPE** - Watch 20% of every blow **SLICE THROUGH YOUR DEFENSES** like paper!
-10. **❤️‍🩹 NO MERCY FOR THE DYING** - When death's cold fingers grasp your throat, **EVEN THE GODS ABANDON YOU** to 10 seconds of pure agony!
-
-### 😱 PSYCHOLOGICAL WARFARE AND REALITY DISTORTION
-11. **🌊 YOUR WATER TURNS TO MOLTEN HELLFIRE** - Watch in **SCREAMING HORROR** as your innocent construction materials become **RIVERS OF LIQUID AGONY**!
-12. **💎 DEATH'S CRUEL LOTTERY** - The End dimension **STRIPS YOUR CORPSE BARE** while other realms mock you by letting you keep your precious trinkets!
-13. **🩸 SAFETY IS YOUR EXECUTIONER** - Standing still becomes **SLOW SUICIDE** as unseen horrors **FEAST ON YOUR FLESH** when you dare to rest!
-14. **☀️ THE SUN BECOMES YOUR CREMATORIUM** - God's own light **INCINERATES YOUR MORTAL FLESH** under clear skies! **THE HEAVENS WANT YOU DEAD!**
-15. **💚 HEALING POTIONS ARE LIQUID DEATH** - Your medicine becomes **CONCENTRATED POISON** as hope itself **STABS YOU IN THE BACK**!
-
-### 🏗️ ARCHITECT'S NIGHTMARE CHAMBER
-16. **🕳️ THE GROUND ITSELF BETRAYS YOUR FEET** - Even a simple jump becomes **BONE-SHATTERING AGONY** as the earth **RETALIATES**!
-17. **⛰️ VERTIGO HELL: THE HIGHER YOU CLIMB, THE MORE YOU BLEED** - Every block upward brings you closer to **PSYCHOLOGICAL BREAKDOWN**! Feel your **SANITY CRUMBLE** at Y>80! 💀
-18. **💎 EVERY STONE SCREAMS FOR VENGEANCE** - The very rocks you mine **LACERATE YOUR FLESH IN RETRIBUTION**! Feel their ancient rage!
-19. **📦 TREASURE CHESTS ARE CURSED DEATH TRAPS** - Every container you dare open may **EXPLODE WITH SPECTRAL DAGGERS** piercing your heart!
-
-### 🎭 ADVANCED TORMENT AMPLIFICATION
-20. **🎒 YOUR INVENTORY HUNGERS FOR BLOOD** - Every item switch may **SLICE THROUGH YOUR FINGERS** like razors! **FEEL THE BETRAYAL OF YOUR OWN POSSESSIONS!**
-21. **⚒️ CREATION IS AGONY INCARNATE** - Every craft you attempt may **EXPLODE IN YOUR FACE** like a furnace of pure suffering! 
-22. **👥 BROTHERHOOD OF MUTUAL DESTRUCTION** - Stand close to allies and **SHARE EACH OTHER'S AGONY** in beautiful symphonic screaming!
-23. **🔄 LINKED SOULS IN TORMENT** - Your health becomes **MYSTICALLY CHAINED** to others! When one bleeds, **ALL BLEED TOGETHER!**
-24. **🌍 SERVER-WIDE BLOOD PACT** - Every player becomes **YOUR EXECUTIONER** as all damage spreads like a **PLAGUE OF SUFFERING!**
-25. **🎲 CHAOS ROULETTE OF PAIN** - Watch in **HELPLESS TERROR** as your wounds randomly **TRANSFER TO INNOCENT VICTIMS!** Who will scream next?
-
-### 🆕 BETRAYAL & PSYCHOLOGICAL WARFARE ARSENAL  
-26. **⚔️ VAMPIRIC FRIENDSHIP DESTRUCTION** - **STAB YOUR FRIENDS IN THE BACK** to steal their life force! Watch trust **CRUMBLE INTO BLOODY DUST**!
-27. **🌀 TELEPORTATION ROULETTE OF DOOM** - Get hurt and **INSTANTLY SWAP INTO DEATH TRAPS**! One moment you're safe, the next you're **PLUMMETING INTO LAVA**!
-28. **💣 THE CRAFTING TABLE OF EXPLOSIVE DEATH** - Linger too long at your workbench and **DETONATE INTO SCREAMING CHUNKS OF FLESH**! Tick... tick... **BOOM!**
-29. **🌊 WATER IS NOW LIQUID SUFFOCATION** - Every drop becomes **CONCENTRATED DROWNING ESSENCE**! Feel your lungs **FILL WITH LIQUID AGONY**!
-30. **🎰 THE DICE OF RANDOM ANNIHILATION** - Every hit could be a gentle tap or **CATASTROPHIC OBLITERATION**! **FATE LAUGHS AT YOUR SUFFERING**!
-
-### 🔥 MIND-SHATTERING PSYCHOLOGICAL TORMENT COLLECTION
-31. **⏱️ THE ANTICIPATION OF DOOM** - Feel the hit but watch helplessly as **YOUR HEALTH BAR MOCKS YOU**! Count the seconds until **DELAYED AGONY EXPLODES** through your body!
-32. **⌨️ YOUR FINGERS BETRAY YOU** - Accumulate damage and watch in **PARALYZED HORROR** as your controls **DIE ONE BY ONE**! Trapped in your own body until **DEATH SETS YOU FREE**!
-33. **🎲 RUSSIAN ROULETTE OF EFFECTS** - Every blow spins the **WHEEL OF FORTUNE AND MISFORTUNE**! Will you be blessed or **CURSED INTO OBLIVION**?
-34. **🎯 THE SECRET SCAPEGOAT OF SUFFERING** - Someone among you **SILENTLY BEARS ALL PAIN** while others remain blissfully ignorant! **WHO IS THE CHOSEN VICTIM**?
-35. **⚡ CONTAGIOUS ELECTROCUTION PLAGUE** - Become a **WALKING LIGHTNING ROD OF DEATH**! Spread your **ELECTRIC TORMENT** to anyone who dares come near!
+> ⚠️ **Warning**: The sole purpose of this mod is to make you **suffer immensely**! All effects are carefully designed to deliver fatal blows when you least expect them!
 
 ---
 
-## ⚡ FEATURED NIGHTMARE: THE ACROPHOBIC HELL EXPERIENCE
+## 💀 38 Evil Effects - Your Nightmare Checklist
 
-### 🏔️ THE TOWER OF INFINITE SCREAMING
-| Height | LEVEL OF MENTAL COLLAPSE | FLESH RENT PER 2s | YOUR DYING WORDS |
+### 🎯 Basic Torture Kit
+1. **🔴 All Mobs Hostile** - Even chickens want to kill you! No safe zones!
+2. **🔥 Mob Hits Ignite** - Every hit sets you on fire, enjoy the continuous BBQ!
+3. **🐌 Mob Hits Slowness II** - Can't run away? Wait for death slowly!
+4. **👁️ Mob Hits Blindness** - The fear of the unseen is the worst!
+5. **⚔️ Reflection Damage = 50%** - Attacking mobs hurts yourself too, despair!
+
+### 🍖 Survival Despair Series
+6. **☠️ Food Poisoning Chance** - Even eating is **gambling with your life**!
+7. **🥛 Dragon Hit → Water Bucket to Milk** - When you need water most, it betrays you!
+8. **💀 Ender Dragon Killer Suicide** - Victory? Non-existent! **Mutual destruction** is the only ending!
+9. **🛡️ Shield Only Absorbs 80%** - Defense? That's a weakling's fantasy!
+10. **❤️‍🩹 ≤1♥ No Healing (10s)** - Watch your life drain away in despair when near death!
+
+### 😱 Psychological Torture Zone
+11. **🌊 Water Placement 50% Becomes Lava (Player Only)** - Even basic construction requires **gambling with your life**!
+12. **💎 End Death Drops/Other Dimensions Keep Items** - Rules? I make them!
+13. **🩸 Reverse Damage: Take Damage When Safe** - Safety? That's the **greatest danger**!
+14. **☀️ Sunny Daylight Spontaneous Combustion** - Sunlight is no longer warm, but **death rays**!
+15. **💚 Healing 50% Chance Becomes Damage** - Healing potions? **Poison** is more accurate!
+
+### 🏗️ Builder's Nightmare
+16. **🕳️ Flat Ground Jump Landing 20% Chance 0.5♥ Damage** - Even walking requires **constant vigilance**!
+17. **⛰️ Acrophobia: Y>80 Higher = More Damage (Max 2♥)** - Want to build tall? Prepare for **bloodshed**! 💀
+18. **💎 Block Breaking 10% Chance Reflection Damage** - Mining also requires **paying the blood price**!
+19. **📦 Opening Containers 25% Chance 1♥ Damage** - Even opening chests is a **life-or-death choice**!
+
+### 🎭 Ultimate Despair Package
+20. **🎒 Item Slot Switching 12% Chance 0.5♥ Damage** - Changing weapons requires **gambling with your life**!
+21. **⚒️ Crafting Items 10% Chance 1♥ Damage** - Making tools? **Shed some blood** first!
+22. **👥 Close Range Damage Sharing** - Share **pain together** with friends!
+23. **🔄 Shared Health (Mirror)** - One person hurt, **everyone suffers**!
+24. **🌍 Server-wide Damage Sharing** - The entire server is your **enemy**!
+25. **🎲 Random Damage Transfer** - Damage **randomly transfers**, no one escapes!
+
+### 🆕 v1.4.0 Ultimate Evil Expansion Pack
+26. **⚔️ Attack Player Heal** - Attack friends to heal yourself! Encourages **PVP betrayal**!
+27. **🌀 Position Swap** - Instantly **swap positions** with random teammates when hurt! Might teleport into lava!
+28. **💣 Crafting Bomb** - Workbench becomes a **bomb defusal game**! Over 5 seconds = **real explosion**!
+29. **🌊 Water Drowning** - Water becomes **chronic poison**! Touch = continuous damage!
+30. **🎰 Random Damage Values** - **Ultimate psychological terror**! Every damage 0.5♥-10♥ completely random! **Life depends on luck**!
+
+### 🔥 v1.5.0 Ultimate Chaos Expansion Pack
+31. **⏱️ Delayed Damage** - Get hit but **don't lose health immediately**! System randomly delays 0-5 seconds before settling, keeping you **on edge**!
+32. **⌨️ Key Malfunction** - Every 10 damage accumulated **randomly disables** a common key (movement, sprint, attack, etc.), only **death restores** it!
+33. **🎲 Random Status Effects** - Every hit **randomly toggles** a status effect (speed, poison, wither, luck, etc.), **good or bad** depends on luck!
+34. **🎯 Damage Scapegoat** - Every 5 minutes **secretly selects** a scapegoat, all damage **redirects to them**! Others only see vague warnings, **never knowing who**!
+35. **⚡ Pain Spreading** - Get hit and become **"electrified"** for 5 seconds! Anyone who gets close gets **struck by lightning**, forcing everyone to **keep distance**!
+
+### 🌀 v1.5.5 Ultimate Evil Additions
+36. **🧲 Panic Magnet** - Enter **10-second magnetization** after injury! Every 2 seconds, **teleport the nearest teammate within 30 blocks** through walls, dealing 0.5♥ damage and granting **magnetization immunity**! Magnetized player sees "Don't come near me!", pulled player sees "PlayerName: Don't come near me!" **Precise fear transmission**!
+37. **🩸 Pickup Drain** - **Picking up any item instantly costs 0.5♥**! Let greedy teammates **suffer electric torture** while collecting items! Every act of greed requires **paying the blood price**!
+38. **😵 Vertigo Scapegoat** - Server randomly selects a **scapegoat every 5 minutes** (rotating, no repeats)! When normal players get hurt, scapegoat instantly suffers **10-second blindness + nausea**; when scapegoat gets hurt, also **10 seconds debuff plus reselection**! System sends **mysterious vague warnings**, scapegoat and others receive **different hints**!
+
+---
+
+## ⚡ Featured: Ultimate Acrophobia
+
+### 🏔️ Height Damage Scale
+| Height | Pain Level | Damage per 2s | Survival Advice |
 |--------|------------|---------------|-----------------|
-| Y ≤ 80 | 😌 **DECEPTIVE CALM** | 0♥ | *"The silence... it's too quiet..."* |
-| Y = 90 | 😰 **FIRST TASTE OF DREAD** | 0.5♥ | *"Something's wrong... WHY ARE MY HANDS SHAKING?"* |
-| Y = 100 | 😨 **MOUNTING HYSTERIA** | 1♥ | *"CAN'T BREATHE... THE VOID CALLS TO ME..."* |
-| Y = 110 | 😱 **SANITY FRAGMENTS** | 1.5♥ | *"MY SOUL IS CRACKING! THE HEIGHT... IT HUNGERS!"* |
-| Y ≥ 120 | 💀 ****ABSOLUTE VERTIGO APOCALYPSE**** | **2♥** | ***"I AM FALLING THROUGH REALITY! THE ABYSS DEVOURS MY MIND!"*** |
+| Y ≤ 80 | 😌 Safe | 0♥ | Enjoy the last peace |
+| Y = 90 | 😰 Mild Fear | 0.5♥ | Start trembling |
+| Y = 100 | 😨 Obvious Fear | 1♥ | Heart racing? |
+| Y = 110 | 😱 Severe Fear | 1.5♥ | Legs going weak? |
+| Y ≥ 120 | 💀 **Extreme Acrophobia** | **2♥** | **Life worse than death!** |
 
-> 💡 **EVIL PROPHECY**: Dream of touching the sky? Prepare to become **SCREAMING CHUNKS OF FALLING MEAT**! Every 2-second pulse of **PRIMAL TERROR**, amplified by electric shocks, transforms you into a **GIBBERING ACROPHOBIC HUSK** begging for the sweet release of ground impact!
+> 💡 **Evil Tip**: Want to build a sky city? Prepare to become **aerial mincemeat**! Up to 2 hearts damage every 2 seconds, combined with shock devices for **true acrophobia experience**!
 
 ---
 
-## 🎮 AWAKENING THE DARK FORCES (IF YOUR SOUL IS READY)
+## 🎮 Usage (If You Dare)
 
-### 🔐 THE GATES OF HELL ARE LOCKED TO MORTALS
-> ⚠️ **ONLY THE VIRTUAL OVERLORDS MAY UNLEASH CHAOS**: All ChaosMod commands require **SUPREME ADMINISTRATOR PRIVILEGES (Permission Level 4)**!
-> Only those who possess the **KEYS TO THE TORTURE CHAMBER** (server operators and OP status) may **UNLEASH THIS NIGHTMARE** upon innocent souls!
+### 🔐 Permission Requirements
+> ⚠️ **ADMIN ONLY**: All ChaosMod commands require **Administrator privileges (Permission Level 4)**!
+> Only server operators and players with OP status can access these commands.
 
-### 👹 INCANTATIONS OF GAMING DAMNATION
+### 👹 Evil Commands
 ```
-Press 'P' Key   # OPEN THE CURSED BILINGUAL TORTURE MENU (Dark Lords only)
-/chaos toggle <effect_name>  # ACTIVATE SPECIFIC CHAMBERS OF HELL
+Press 'P' Key   # Open bilingual config GUI (Admin only)
+/chaos toggle <effect_name>  # Enable specific hell mode
 ```
 
-### 🤖 **THE ARTIFICIAL INTELLIGENCE OF SUFFERING (v1.4.1 DARK UPGRADE)**
-- **[AI] PERSONALLY CRAFTED TORMENT SELECTION** - One-click **INTELLIGENT SOUL DESTRUCTION**!
-- **20 MASTERPIECES OF AGONY**: From **GENTLE INTRODUCTION TO HELL** to **COMPLETE MENTAL ANNIHILATION**, satisfying every masochistic craving
-- **NON-REPEATING NIGHTMARE CYCLE**: The AI **REMEMBERS YOUR SCREAMS** and ensures all 20 torture combinations are experienced before cycling
-- **SADISTIC CHAT FEEDBACK**: Detailed display of your **PERSONALIZED SUFFERING MENU** and activated torment chambers
-- **PROFESSIONALLY BALANCED HELL**: Each combination is **LOVINGLY CRAFTED BY EVIL POWERS**, evil enough to break you but not so much that you escape
+### 🤖 **AI Smart Recommendations (v1.4.1 New Feature)**
+- **[AI] Random Effects (Tailored for You)** - One-click intelligent effect selection!
+- **20 Professional Combinations**: From beginner entry to ultimate chaos, satisfying different pain needs
+- **Non-Repeat Mechanism**: Intelligently ensures all 20 combinations are experienced before repeating
+- **Chat Feedback**: Detailed display of recommended combinations and enabled effects
+- **Professional Balance**: Each combination carefully designed, evil but not excessive
 
-**LEGENDARY TORTURE PORTFOLIOS INCLUDE**:
-- `[Fire Slow] THE SLOW ROAST OF ETERNAL DAMNATION` - **SLOW-COOKED DESPAIR** until you beg for death
-- `[Random Fate] COMPLETE SUBMISSION TO CHAOS` - Your life becomes a **COIN FLIP WITH DEATH**
-- `[Crafting Terror] EXPLOSIVE CREATION NIGHTMARE` - Turn every workbench into a **BOMB DEFUSAL HORROR GAME**
-- `[Shock Optimized] ELECTRIC CHAIR SPECIAL EDITION` - **PERFECTLY CALIBRATED FOR MAXIMUM SHOCK SUFFERING**
-- Plus **16 OTHER MASTERWORKS OF MISERY** waiting to **SHATTER YOUR SANITY**!
+**Classic Combinations Include**:
+- `[Fire Slow] Slow BBQ Package` - Slow-cooked despair experience
+- `[Random Fate] Complete Random Fate` - Life depends entirely on luck
+- `[Crafting Terror] Crafting Terror` - Bomb defusal game mode
+- `[Shock Optimized] Shock Optimized Version` - Optimized for shock devices
+- Plus 16 other evil combinations waiting for you to discover!
 
 ### 🌐 **Language Support (v1.3.0)**
 - **🇺🇸 English**: Full English interface and effect descriptions
@@ -116,10 +121,10 @@ Press 'P' Key   # OPEN THE CURSED BILINGUAL TORTURE MENU (Dark Lords only)
 - **Error Handling**: Non-admin players receive automatic permission denial
 - **Security**: Commands are completely hidden from unauthorized users
 
-### ⚙️ HELL CONFIGURATION MANIFEST
-- **DEFAULT STATE**: All effects are **MERCIFULLY DISABLED** (dark forces show temporary mercy)
-- **RECOMMENDED APOCALYPSE**: **ACTIVATE ALL 35 CHAMBERS OF TORMENT**, experience the **COMPLETE VIRTUAL INFERNO**!
-- **GRADUAL MODE**: Enable just a few, **SLOWLY ACCLIMATE YOUR FLESH** to exquisite agony
+### ⚙️ Configuration Guide
+- **Default State**: All effects are **disabled** (we're merciful)
+- **Recommended Setting**: **Enable all**, experience complete hell!
+- **Coward Mode**: Enable just a few, slowly adapt to pain
 
 ### 📋 Effect Toggle List
 
@@ -167,7 +172,7 @@ Press 'P' Key   # OPEN THE CURSED BILINGUAL TORTURE MENU (Dark Lords only)
 
 ### 📋 **Method 1: Manual Effect Selection**
 1. Press `P` key to open config GUI
-2. Browse through 35 evil effects list
+2. Browse through 38 evil effects list
 3. Click the effect switches you want
 4. Enjoy the pain experience!
 
@@ -206,24 +211,71 @@ This mod's creativity comes from two **shocking** gaming videos:
 1. **【When you get hurt, you get electrocuted in real life! But damage randomly transfers to another person!】** 🎲⚡
    - Link: https://www.bilibili.com/video/BV1LypizBEpq/
    - **Evil Highlight**: Random damage transfer + real shock **double betrayal**!
-   - **Inspired Effects**: `randomDamageEnabled` + `sharedDamageSplitEnabled`
+   - **Inspired Effects**: `randomDamageEnabled` + `endKeepOverrideEnabled` + `shieldNerfEnabled`
 
 2. **【When you take damage, you get electrocuted in real life!】** ⚡💀
    - Link: https://www.bilibili.com/video/BV1bweuzkEaU/
    - **Evil Highlight**: Virtual damage directly converts to **real pain**!
-   - **Inspired Effects**: `mobIgniteEnabled` + `mobSlownessEnabled` + `mobBlindnessEnabled`
+   - **Inspired Effects**: `mobIgniteEnabled` + `enderDragonBucketEnabled`
 
 > 💡 **Creative Tribute**: Thanks to the original video creators for their innovative ideas! These interesting concepts inspired us to develop this mod, combining virtual games with real-world interaction to bring players a completely new gaming experience! 🎮
 
-### 🎯 **From Concept to Reality**
+### 🎯 **From Concept to Reality - Our Insane Expansion**
 
-After watching these two videos, we were deeply shocked and immediately set out to create this **ULTIMATE PAIN AMPLIFIER**:
+After watching these two videos, we were inspired but found **they were too conservative**! We decided to explosively expand these **5 basic effects** into **38 ultimate tortures**:
 
-- **Why only one damage method?** → We meticulously crafted **35 TYPES OF BRUTAL TORMENT**! From simple ignition and self-immolation to complex psychological warfare, each one makes you **EXPERIENCE DESPAIR ON DIFFERENT LEVELS**! No longer monotonous electric shocks, but a **COMPREHENSIVE THREE-DIMENSIONAL SYMPHONY OF PAIN**!
+### 🔥 **From 5 Effects to 38 Effects - 760% Evil Growth!**
 
-- **Why only single-player suffering?** → We added **UNPRECEDENTED MULTIPLAYER BETRAYAL SYSTEMS**! Watch your most trusted friends **STAB YOU IN THE BACK FOR THEIR OWN HEALING**, experience **TEAM DAMAGE SHARING** that makes everyone **WAIL TOGETHER IN HELL**, plus the **MYSTERIOUS SCAPEGOAT MECHANISM** where some unlucky soul **SILENTLY BEARS EVERYONE'S PAIN**! Friendship? Here it only becomes **THE MOST BEAUTIFUL ART OF BETRAYAL**!
+#### 📹 **Original Video Effect Analysis**
+**First video had only 3 effects:**
+- 🎲 Random damage transfer (1 effect)
+- 🏺 End death drops (1 effect)  
+- 🛡️ Shield can't block damage (1 effect)
 
-- **Why such simple damage?** → We designed **DEEP PSYCHOLOGICAL TACTICS AND MENTAL TORTURE**! Not just physical damage, but **DELAYED DAMAGE TO KEEP YOU ON EDGE**, **KEY MALFUNCTION TO PARALYZE YOU IN DESPAIR**, **RANDOM EFFECTS TO LET FATE MOCK YOU**! This isn't a game, this is **TOTAL DEMOLITION OF YOUR PSYCHOLOGICAL DEFENSES**!
+**Second video had only 2 effects:**
+- 🔥 Monster hits ignite (1 effect)
+- 🥛 Ender dragon steals water buckets (1 effect)
+
+#### 🚀 **Our Insane Breakthrough**
+**We explosively expanded these 5 effects into 38! What does this mean?**
+
+🎲 **Damage System Expansion** (1→8)
+- Original: Only random damage transfer
+- **Our Breakthrough**: Random transfer + server-wide split + close sharing + mirror health + reverse damage + delayed damage + random damage values + dual scapegoats!
+
+🔥 **Monster Interaction Expansion** (2→7)  
+- Original: Only ignition and bucket stealing
+- **Our Breakthrough**: Ignite + steal buckets + slowness + blindness + reflection + all hostile + dragon killer suicide!
+
+🛡️ **Survival Mechanism Expansion** (1→12)
+- Original: Only shield weakening
+- **Our Breakthrough**: Shield weaken + no healing + heal reversal + food poison + key malfunction + acrophobia + sunlight burn + water drowning + block revenge + container curse + inventory curse + crafting traps!
+
+🆕 **Completely New Categories** (0→11)
+- Original: These concepts didn't exist at all
+- **Our Innovation**: Position swap + crafting bombs + panic magnet + pickup drain + vertigo scapegoat + pain spreading + random status effects + fall traps + attack healing + water to lava + AI smart recommendations!
+
+### 💀 **Qualitative Leap - From Simple to Complex**
+- **Original Videos**: 5 independent effects, fighting separately
+- **Our Breakthrough**: 38 effects **interact with each other**, forming a **complete torture ecosystem**!
+
+- **Original Videos**: Only basic damage
+- **Our Breakthrough**: **Physical + psychological dual devastation**, making pain penetrate the soul!
+
+- **Original Videos**: Simple instant reactions
+- **Our Breakthrough**: **Time delay + spatial fear + social betrayal** in three-dimensional strikes!
+
+- **Original Videos**: Fixed effect combinations
+- **Our Breakthrough**: **AI smart recommendations** with 20 professional combinations, each player gets customized hell!
+
+### 🎭 **Revolutionary Innovation Summary**
+From the original videos' **5 basic effects** to our **38 ultimate tortures**, this isn't just numerical growth, but **qualitative revolution**:
+- 🧠 **Psychological Tactics**: Make fear the greatest enemy
+- ⏰ **Time Torture**: Waiting is more painful than damage  
+- 🌍 **Environmental Hostility**: The entire world fights against you
+- 👥 **Social Betrayal**: Friends become the greatest threat source
+- 🎰 **Random Terror**: Never knowing what happens next
+- 🔗 **Effect Chaining**: 38 tortures form perfect loops of agony
 
 ---
 
@@ -238,96 +290,93 @@ Every effect in this mod is carefully calibrated to perfectly integrate with sho
 
 ---
 
-## 🏆 Achievement System (Badges of Beautiful Suffering)
+## 🏆 Achievement System (Challenge Medals)
 
-- 🥉 **Suffering Apprentice**: Enable 5 effects and **endure the pain** for 1 hour
-- 🥈 **Torment Enthusiast**: Enable 15 effects and **embrace agony** for 30 minutes  
-- 🥇 **Pain Connoisseur**: Enable 25 effects and **savor exquisite suffering** for 10 minutes
-- 👑 **Master of Vertigo**: Enable acrophobia and build at Y=200 - **blood at every height**
-- 💀 **Ultimate Masochist**: Enable all 35 effects simultaneously and **survive the beautiful hell**
-- 🎰 **Chaos Gambler**: Enable random damage values and **dance with cruel fate** for 1 hour
+- 🥉 **Beginner Challenger**: Enable 5 effects and play for 1 hour
+- 🥈 **Intermediate Challenger**: Enable 15 effects and play for 30 minutes  
+- 🥇 **Advanced Challenger**: Enable 25 effects and play for 10 minutes
+- 👑 **Master Builder**: Enable acrophobia and build at Y=200
+- 💀 **Ultimate Challenger**: Enable all 38 effects simultaneously and survive
+- 🎰 **Random Master**: Enable random damage values and survive for 1 hour
 
 ---
 
-## 🎯 Recommended Torture Modes
+## 🎯 Recommended Game Modes
 
-### 😇 **Beginner's First Taste** (Difficulty: Gentle Torment)
+### 😇 **Beginner Package** (Difficulty: Easy)
 Enable: `mobIgniteEnabled` + `foodPoisonEnabled` + `shieldNerfEnabled`
-> Perfect for **first-time pain tasters**, **gentle agony initiation**
+> Suitable for first-time players, gentle challenge difficulty
 
-### 😈 **Standard Hell Package** (Difficulty: Exquisite Torment)
+### 😈 **Standard Challenge Package** (Difficulty: Medium)
 Enable: Basic effects + `acrophobiaEnabled` + `reverseDamageEnabled` + `healReverseEnabled`
-> Classic suffering experience, suitable for **pain addicts**
+> Classic challenge experience, suitable for experienced players
 
-### 👹 **Ultimate Masochist Package** (Difficulty: Endless Abyss)
-Enable: **All 35 effects**
-> Only true **masochists** dare to try! Prepare for the **ultimate hell feast**!
+### 👹 **Ultimate Challenge Package** (Difficulty: Hard)
+Enable: **All 38 effects**
+> Only true warriors dare to try! Prepare for the ultimate challenge!
 
-### 🔥 **Electric Shock Special Package** (Pain Recommended)
+### 🔥 **Electric Shock Special Package** (Recommended)
 Focus on: `acrophobiaEnabled` + `reverseDamageEnabled` + `healReverseEnabled` + `randomDamageAmountEnabled`
-> Optimized for shock devices, guarantees continuous stable **pain output** with **cruel surprises**!
+> Optimized for shock devices, guarantees continuous stable damage output with random surprises!
 
-### 🎰 **v1.5.0 New Effects Experience Package** (Mind Destruction)
-Focus on: `delayedDamageEnabled` + `keyDisableEnabled` + `damageScapegoatEnabled` + `painSpreadEnabled`
-> Experience the latest **psychological warfare weapons**, including **mental torture and ultimate betrayal** mechanisms!
+### 🎰 **v1.4.0 New Effects Experience Package** (Extreme Challenge)
+Focus on: `randomDamageAmountEnabled` + `craftingBombEnabled` + `waterDamageEnabled` + `positionSwapEnabled`
+> Experience the latest ultimate evil effects, including psychological terror and betrayal mechanics!
 
-### 🤖 **AI Smart Recommendation Mode** (For the Adventurous)
+### 🤖 **AI Smart Recommendation Mode** (For the Lazy)
 Click: `[AI] Random Effects (Tailored for You)` button
-> Don't want to choose? Let AI **craft the perfect challenge combination** for you! 20 **professional setups**, never-repeating **exciting experiences**!
+> Don't want to think? Let AI choose the best evil combination for you! 20 professional setups, never repeating!
 
 ---
 
-## 👥 Multiplayer Gaming: Team Challenge Guide 💪😈
+## 👥 Multiplayer Gaming: Team Challenge Guide 💪😊
 
 ### 🎭 **Strongly Recommend Playing with Friends!**
 
-Multiplayer gaming transforms this mod into an **intense social experience**! Face **challenging trials together** as you navigate **unpredictable scenarios** and **shared consequences**!
+Multiplayer gaming makes this mod's effects even more interesting! Experience different gameplay fun through teamwork facing various challenges!
 
 #### 🔥 **Multiplayer Challenge Scenarios**
 
-##### 💀 **Collective Suffering Ritual**
+##### 💀 **Team Sharing Challenge**
 Enable: `sharedHealthEnabled` + `sharedDamageSplitEnabled` + `playerDamageShareEnabled`
 
-- **Nightmare 1**: When one soul bleeds, **all souls bleed together** - no escape from shared doom
-- **Nightmare 2**: Challenging the Ender Dragon becomes a **group execution ceremony** where everyone feels the **dragon's wrath**
-- **Nightmare 3**: Building at heights? Watch your friends **writhe in agony** from your **architectural ambitions**
+- **Scenario 1**: When players take damage, it's distributed among all online players
+- **Scenario 2**: When challenging the Ender Dragon, other players also feel the battle tension  
+- **Scenario 3**: When architects build at height, acrophobia effects add extra challenge
 
-> 💡 **Diabolical Tip**: Convince friends to enable effects **without telling them what they do** - enjoy their **beautiful confusion and horror**!
+> 💡 **Game Tip**: Recommend discussing effect settings with friends beforehand to ensure everyone can enjoy the game!
 
-##### 🎯 **Betrayal Laboratory Experiment**
+##### 🎯 **Strategic Challenge Mode**
 Enable: `randomDamageEnabled` + `mobThornsEnabled` + `acrophobiaEnabled`
 
-- **Experiment 1**: Ascend together to great heights, watch friends **collapse in vertigo terror**
-- **Experiment 2**: Let **random fate decide** who becomes the **sacrifice** - witness beautiful betrayal
-- **Experiment 3**: Mine together while reflection damage **randomly punishes the innocent**
+- **Challenge 1**: Explore high-altitude areas together, experience acrophobia effects
+- **Challenge 2**: Test the luck factor of random damage transfer
+- **Challenge 3**: Mining challenges with block reflection damage enabled
 
-##### 😱 **Psychological Warfare Protocol**
+##### 😱 **High Difficulty Challenge**
 Enable: `reverseDamageEnabled` + `healReverseEnabled` + `fallTrapEnabled`
 
-- **Protocol 1**: Experience **reverse damage madness** - safety becomes your **greatest enemy**
-- **Protocol 2**: Watch healing become **poison** - medical aid transforms into **exquisite betrayal**
-- **Protocol 3**: Every step becomes a **potential death trap** - paranoia is your **new religion**
+- **Challenge 1**: Test the uniqueness of reverse damage mechanics
+- **Challenge 2**: Experience the randomness of healing reversal effects  
+- **Challenge 3**: Movement challenges under fall trap effects
 
-#### 🏆 **Multiplayer Challenge Achievements**
+#### 🏆 **Multiplayer Achievements**
 
-- 🥉 **Team Initiator**: Experience **collaborative challenges** with 5 effects for 1 hour
-- 🥈 **Challenge Master**: Enable 15 effects and create **intense group experiences**
-- 🥇 **Elite Squad**: All members enable 35 effects and **face the ultimate test together**
-- 👑 **Server Legend**: Become the most **daring challenger** on the server
+- 🥉 **Teamwork**: Play with friends with 5 effects enabled for 1 hour
+- 🥈 **Challengers**: Enable 15 effects in multiplayer environment
+- 🥇 **Brave Team**: All members enable 38 effects and persist in gaming
+- 👑 **Server Legend**: Become the most daring challenger on the server
 
-#### 💬 **Epic Multiplayer Challenge Dialogues**
+#### 💬 **Common Multiplayer Situations**
 
-> **Player A**: "Why am I taking constant damage?!"
-> **Player B**: "That's the **reverse damage effect** - safety becomes dangerous!"
+> **Player A**: "Why am I constantly losing health?"
+> **Player B**: "Might be the reverse damage effect, let's check the config!"
 > 
-> **Player C**: "Let's build a tall tower together!"
-> **Player D**: "Careful with acrophobia effects at high altitude..."
+> **Player C**: "Let's build a tall building together!"
+> **Player D**: "Remember to watch out for acrophobia effects!"
 > 
-> **Player E**: "This healing potion had an unexpected effect..."
-> **Player F**: "That's the **healing reversal** - it's quite the **wild mechanic**!"
-> 
-> **Mystery Voice**: "💥 **[ChaosMod] You're suffering for someone else!**"
-> **Everyone Else**: "⚡ **Someone's damage is being transferred**... but who?"
+> **Player E**: "Why does healing sometimes cause damage?"
+> **Player F**: "That's the healing reversal effect, quite an interesting mechanism!"
 
 #### 🎪 **Recommended Multiplayer Configurations**
 
@@ -359,51 +408,58 @@ Suitable for experienced player groups
 - **🤝 Team Coordinator**: Ensure everyone can enjoy the game
 - **👹 Effect Expert**: Introduce various interesting effects to other players
 
-#### ⚡ **Electric Multiplayer Challenge Experience**
+#### ⚡ **Electric Multiplayer Experience**
 
-When multiple players use shock devices together:
+When multiple people play together with shock devices:
 
-- **Synchronized Challenges**: `sharedHealthEnabled` creates **simultaneous feedback experiences**! True team unity! ⚡⚡⚡
-- **Random Fate**: `randomDamageEnabled` creates **unpredictable experiences** - who will be the **next chosen challenger**? 🎲⚡
-- **Friendship Test**: Watch **true team spirit** as friends **face challenges together**! Bonds strengthen through **shared trials**! 💔⚡
-- **The Scapegoat's Secret**: Someone among you is **silently bearing extra challenges** - but they discover it only at **crucial moments**! 🎯💀
+- **Synchronized Pain**: `sharedHealthEnabled` makes everyone **get shocked simultaneously**! ⚡⚡⚡
+- **Random Scares**: `randomDamageEnabled` keeps you guessing **who gets shocked next**! 🎲⚡
+- **Friendship Test**: True friends will **suffer with you** when you get shocked! 💔⚡
 
-### 🎯 **Multiplayer Challenge Strategy**
+### 🎯 **Multiplayer Game Suggestions**
 
-1. **Invitation Phase**: Invite friends to experience this **unique gaming challenge**
-2. **Discussion Phase**: Explain effects and let everyone **choose their comfort level**
-3. **Gradual Phase**: Start with mild effects to **ease into the experience**
-4. **Escalation Phase**: Gradually increase **challenge intensity**
-5. **Experience Phase**: Share **memorable gaming moments** together
-6. **Mastery Phase**: Experiment with **different effect combinations**
+1. **Step 1**: Invite friends to experience this interesting mod together
+2. **Step 2**: Discuss which effects you want to enable together
+3. **Step 3**: Start trying simple effects
+4. **Step 4**: Gradually increase challenge difficulty
+5. **Step 5**: Share gaming experiences and fun moments
+6. **Step 6**: Explore different effect combinations
 
-> 💡 **Strategic Tip**: The best challenges are **consensual** - make sure everyone understands what they're signing up for!
+> 💡 **Game Tip**: When playing multiplayer, it's recommended to discuss effect settings together for a more interesting and fair gaming experience!
 
 ---
 
-## ⚠️ Virtual Challenge Safety Warning
+## ⚠️ Health Warning
 
-> **Important Safety Reminder**: If you plan to pair this with DG_LAB devices:
-> - Ensure device safety and **reasonable feedback intensity**
-> - Set shock intensity within **comfortable experience range**
-> - Keep stop buttons ready and **be prepared to use them**
+> **Serious Reminder**: If you're actually using DG_LAB devices, please:
+> - Ensure device safety
+> - Set reasonable shock intensity
+> - Prepare stop buttons
 > - Use under supervision
-> - **Stop immediately** if any discomfort occurs
-> 
-> **Enjoy the challenge while keeping safety first** ⚡💪
+> - Stop immediately if uncomfortable
 
 ---
 
 ## 📝 Update Log
 
+### v1.5.5-Release - "Ultimate Evil Trilogy: Complete 38 Effects Edition!" 🧲🩸😵
+- 🧲 **NEW: Panic Magnet** - 10-second magnetization after injury! Every 2 seconds teleport teammates within 30 blocks through walls, precise fear transmission system!
+- 🩸 **NEW: Pickup Drain** - Picking up any item instantly costs 0.5♥! Make greed pay the blood price!
+- 😵 **NEW: Vertigo Scapegoat** - Brand new scapegoat system! Random rotation selection, 10-second enhanced debuffs, mysterious vague warnings!
+- 🛡️ **FIXED: Panic Magnet Infinite Loop** - Magnetization immunity system prevents chain attraction, recursive protection completely avoids loops!
+- 📢 **OPTIMIZED: Precise Message System** - Targeted unicast Titles, magnetized sees "Don't come near me!", pulled sees "PlayerName: Don't come near me!"
+- 🎯 **BALANCED: Vertigo Scapegoat Enhanced** - Scapegoat suffering others' damage consequences duration increased from 2 seconds to 10 seconds!
+- 🎮 **INTERFACE: Complete GUI Support** - Three new effects perfectly integrated into config interface, AI recommendation system includes new combinations!
+- 🌐 **MULTILINGUAL: Full Coverage** - Chinese/English language files, LanguageManager comprehensive support!
+
 ### v1.5.1-Release - "Stealth Perfection: Invisible Terror System!" 👻❗⚡
-- 🔧 **FIXED: Scapegoat Message System**! Scapegoats no longer see redundant warnings, only damage notifications!
-- ❗ **NEW: Warning Symbol System**! Scapegoats see **yellow "!"** while others see **red "⚡"**, perfect psychological differentiation!
-- 👻 **ENHANCED: Invisible Terror**! Scapegoats feel **mysterious unease** without knowing they're chosen until damage hits!
-- 🎭 **PERFECT: Differentiated Experience**! Each player sees different warnings, maximizing paranoia and confusion!
-- 🔥 **OPTIMIZED: Network Packet Registration**! Fixed payload type registration order to prevent connection errors!
-- 💀 **ULTIMATE: Death ≠ Offline Logic**! Scapegoats retain identity even when dead, only lose it on true disconnect!
-- ⚡ **POLISHED: Fire Damage Transfer**! Both damage and burning effects now transfer perfectly to scapegoats!
+- 🔧 FIXED: Scapegoat Message System! Scapegoats no longer see redundant warnings, only damage notifications!
+- ❗ NEW: Warning Symbol System! Scapegoats see yellow "!" while others see red "⚡", perfect psychological differentiation!
+- 👻 ENHANCED: Invisible Terror! Scapegoats feel mysterious unease without knowing they're chosen until damage hits!
+- 🎭 PERFECT: Differentiated Experience! Each player sees different warnings, maximizing paranoia and confusion!
+- 🔥 OPTIMIZED: Network Packet Registration! Fixed payload type registration order to prevent connection errors!
+- 💀 ULTIMATE: Death ≠ Offline Logic! Scapegoats retain identity even when dead, only lose it on true disconnect!
+- ⚡ POLISHED: Fire Damage Transfer! Both damage and burning effects now transfer perfectly to scapegoats!
 
 ### v1.5.0-Release - "Ultimate Chaos Expansion: 5 Mind-Breaking Effects!" 🧠💥⚡
 - 🆕 **NEW: 5 Ultimate Chaos Effects**! Expanded from 30 to 35 complete psychological warfare!
@@ -579,29 +635,27 @@ When multiple players use shock devices together:
 
 ---
 
-## 🛠️ Dark Technical Secrets (For Digital Demons)
+## 🛠️ Technical Details (For Developers)
 
-### 🔧 Architecture of Suffering
+### 🔧 Core Architecture
 ```
-ChaosMod - The Digital Hell Engine
-├── 🎯 DamageRouting.java     # Pain distribution nexus
-├── 🎭 ThreatProfiles.java    # Terror calibration matrix
-├── ⚙️ ChaosModConfig.java    # 35 gates to damnation
-├── 😈 ScapegoatSystem.java   # The invisible betrayal core
-└── 💀 ServerPlayerEntityTickMixin.java  # Acrophobia nightmare engine
+ChaosMod
+├── 🎯 DamageRouting.java     # Damage routing system
+├── 🎭 ThreatProfiles.java    # Threat parameter configuration
+├── ⚙️ ChaosModConfig.java    # 38 evil switches
+└── 😈 ServerPlayerEntityTickMixin.java  # Acrophobia core
 ```
 
-### 💀 The Mathematics of Fear (Acrophobia Algorithm)
+### 💀 Acrophobia Algorithm
 ```java
-// Formula for calculating the descent into madness
+// Progressive fear formula
 if (height <= 80) {
-    damage = 0.0F;  // False safety - the calm before the storm
+    damage = 0.0F;  // Safe zone
 } else if (height <= 120) {
-    damage = (height - 80) * 0.1F;  // Each meter higher = deeper into hell
+    damage = (height - 80) * 0.1F;  // +0.05♥ per level
 } else {
-    damage = 4.0F;  // Maximum terror: 2♥ of pure vertigo agony
+    damage = 4.0F;  // Extreme acrophobia: 2♥
 }
-// Every 2 seconds, this whispers: "Fall... fall... fall..."
 ```
 
 ---
@@ -610,15 +664,15 @@ if (height <= 80) {
 
 This project uses MIT License.
 
-**In other words**: You can freely share this **exquisite suffering** and let more people experience **virtual hell**! 😈
+**In other words**: You can freely share this pain and let more people experience hell! 😈
 
 ---
 
 ## 🎯 Final Words
 
-Still hesitating? **Give up resistance**! Download this mod and step into your **virtual hell eternity**!
+Still hesitating? **Be brave**! Download this mod and start your **journey to hell**!
 
-Remember: **Pain crushes your will, electric shocks tear your soul! Find your true destiny in despair!** ⚡💀
+Remember: **Pain makes you grow, shocks keep you awake!** ⚡💀
 
 ### 🌟 Special Thanks
 
@@ -629,10 +683,10 @@ Remember: **Pain crushes your will, electric shocks tear your soul! Find your tr
 
 ---
 
-*"In this world, there are only two types of players: those who haven't downloaded this mod - the **ignorant and fearless**, and those already **writhing in bloody fragments and desperate wails** in our carefully crafted virtual hell. Are you ready to **fall into eternal abyss**?"* 👹💀
+*"In this world, there are only two types of players: those who haven't downloaded this mod yet, and those already struggling in hell. Which one do you choose to be?"* 👹
 
-### 🎊 Download Now, Embrace Your Cursed Destiny!
+### 🎊 Download Now, Start Your Journey of Pain!
 
-**[⚡ Click to Download and Enter Hell ⚡](https://github.com/Doc734/ChaosMod/releases/latest)**
+**[⚡ Click to Download Latest Version ⚡](https://github.com/Doc734/ChaosMod/releases/latest)**
 
-> Downloading means you have **sold your soul to dark forces**! May you find your **desperate refuge in endless torment**! Your **screams will be our most beautiful music**! 🎮💀
+> Downloading means you're ready to experience brand new gaming challenges! Have fun gaming! 🎮

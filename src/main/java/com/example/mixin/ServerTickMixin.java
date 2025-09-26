@@ -11,7 +11,12 @@ public class ServerTickMixin {
     
     @Inject(method = "tick", at = @At("TAIL"))
     private void chaos$serverTick(CallbackInfo ci) {
-        // 新的效果将在其他mixin中实现
-        // 这里保留为空，以防将来需要服务器级别的tick处理
+        MinecraftServer server = (MinecraftServer)(Object)this;
+        
+        // 背锅人系统（原有）
+        com.example.util.ChaosEffects.tickScapegoat(server);
+        
+        // 眩晕背锅侠系统（新增）
+        com.example.util.ChaosEffects.tickVertigoScapegoat(server);
     }
 }

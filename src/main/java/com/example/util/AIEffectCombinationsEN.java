@@ -35,10 +35,10 @@ public class AIEffectCombinationsEN {
         ));
         
         ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
-            "[Teleport Trap] Teleport Trap Master",
-            "Get hurt and teleport to death traps!",
-            new String[]{"positionSwapEnabled", "waterDamageEnabled", "randomDamageEnabled", "shieldNerfEnabled"},
-            "AI Recommends: Teleport Trap Master - Every teleport is a gamble!"
+            "[Panic Magnet] Panic Magnet Terror",
+            "Get hurt and become a teammate nightmare!",
+            new String[]{"panicMagnetEnabled", "painSpreadEnabled", "mobIgniteEnabled", "shieldNerfEnabled"},
+            "AI Recommends: Panic Magnet Terror - Turn into a death magnet for teammates!"
         ));
         
         // Additional 16 combinations
@@ -127,10 +127,10 @@ public class AIEffectCombinationsEN {
         ));
         
         ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
-            "[Survival Despair] Survival Despair",
-            "Basic survival needs are traps!",
-            new String[]{"foodPoisonEnabled", "healReverseEnabled", "lowHealthNoHealEnabled", "inventoryCurseEnabled"},
-            "AI Recommends: Survival Despair - Even staying alive is a luxury!"
+            "[Greed Curse] Greed Curse",
+            "Pick up items at the cost of blood!",
+            new String[]{"pickupDrainEnabled", "inventoryCurseEnabled", "containerCurseEnabled", "craftingTrapEnabled"},
+            "AI Recommends: Greed Curse - Every act of greed costs blood!"
         ));
         
         ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
@@ -155,10 +155,10 @@ public class AIEffectCombinationsEN {
         ));
         
         ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
-            "[Dark Terror] Dark Terror",
-            "Invisible fear!",
-            new String[]{"mobBlindnessEnabled", "allHostileEnabled", "reverseDamageEnabled", "randomDamageAmountEnabled"},
-            "AI Recommends: Dark Terror - Feel true fear in darkness!"
+            "[Vertigo Scapegoat] Vertigo Scapegoat",
+            "Mysterious scapegoat bears others' pain!",
+            new String[]{"vertigoScapegoatEnabled", "mobBlindnessEnabled", "painSpreadEnabled", "randomDamageEnabled"},
+            "AI Recommends: Vertigo Scapegoat - Let innocent bear your pain!"
         ));
         
         ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
@@ -176,10 +176,10 @@ public class AIEffectCombinationsEN {
         ));
         
         ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
-            "[Luck Test] Luck Test",
-            "Pure luck-based game!",
-            new String[]{"randomDamageAmountEnabled", "fallTrapEnabled", "foodPoisonEnabled", "craftingTrapEnabled", "blockRevengeEnabled"},
-            "AI Recommends: Luck Test - See how good your luck is!"
+            "[New Age Chaos] New Age Chaos",
+            "Latest pain technology!",
+            new String[]{"panicMagnetEnabled", "pickupDrainEnabled", "vertigoScapegoatEnabled", "delayedDamageEnabled", "keyDisableEnabled"},
+            "AI Recommends: New Age Chaos - Experience latest pain technology!"
         ));
     }
 }

@@ -50,5 +50,9 @@
   "chaosmod.config.keyDisableEnabled": "按键失灵",
   "chaosmod.config.randomEffectsEnabled": "受伤随机增益",
   "chaosmod.config.damageScapegoatEnabled": "伤害背锅人",
-  "chaosmod.config.painSpreadEnabled": "痛觉扩散"
+  "chaosmod.config.painSpreadEnabled": "痛觉扩散",
+  
+  "chaosmod.config.panicMagnetEnabled": "惊惧磁铁",
+  "chaosmod.config.pickupDrainEnabled": "贪婪吸血",
+  "chaosmod.config.vertigoScapegoatEnabled": "眩晕背锅侠"
 }

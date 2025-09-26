@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "chaosmod",
-  "version": "1.5.1-Release",
+  "version": "1.5.5-Release",
   "name": "Chaos Mod 1.21",
-  "description": "35 evil effects including delayed damage, key malfunction, random status effects, damage scapegoat, pain spreading + all previous 30 effects + admin permission system.",
+  "description": "38 evil effects including panic magnet, pickup drain, vertigo scapegoat + all previous 35 effects + admin permission system.",
   "environment": "*",
   "entrypoints": {
     "main": [
