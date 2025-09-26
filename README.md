@@ -165,6 +165,9 @@ Press 'P' Key   # Open bilingual config GUI (Admin only)
 | `randomEffectsEnabled` | 🎲 **Random Status Effects** | 🌟🌟🌟🌟🌟 |
 | `damageScapegoatEnabled` | 🎯 **Damage Scapegoat** | 🌟🌟🌟🌟🌟 |
 | `painSpreadEnabled` | ⚡ **Pain Spreading** | 🌟🌟🌟🌟🌟 |
+| `panicMagnetEnabled` | 🧲 **Panic Magnet** | 🌟🌟🌟🌟🌟 |
+| `pickupDrainEnabled` | 🩸 **Pickup Drain** | 🌟🌟🌟🌟🌟 |
+| `vertigoScapegoatEnabled` | 😵 **Vertigo Scapegoat** | 🌟🌟🌟🌟🌟 |
 
 ---
 
