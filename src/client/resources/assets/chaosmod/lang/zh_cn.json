@@ -59,9 +59,13 @@
   "chaosmod.config.windowViolentShakeEnabled": "窗口暴力抖动",
   "chaosmod.config.desktopPrankInvasionEnabled": "桌面恶作剧入侵(会记录IP地址)",
   
-  "chaosmod.desktop.help_5hp": "😱 救命啊！血量不够了！游戏要杀死我！ 😱",
-  "chaosmod.desktop.help_3hp": "💀 啊啊啊！！！马上就要死掉了！游戏在折磨我！ 💀",
-  "chaosmod.desktop.death": "😈 游戏结束！你被ChaosMod彻底击败了！ 😈",
+  "chaosmod.desktop.help_5hp": "我好像出事了",
+  "chaosmod.desktop.help_3hp": "我要死了",
+  "chaosmod.desktop.death": "结束了",
+  
+  "chaosmod.chat.help_5hp": "📄 桌面上出现了什么东西...你应该去看看。",
+  "chaosmod.chat.help_3hp": "🚨 桌面上生成了文件。这很紧急。",
+  "chaosmod.chat.death": "📋 检查你的桌面。那里有重要的东西。",
   "chaosmod.desktop.current_health": "当前生命值",
   "chaosmod.desktop.generation_time": "生成时间",
   "chaosmod.desktop.signature": "--- ChaosMod 桌面入侵系统 ---",

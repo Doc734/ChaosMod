@@ -47,16 +47,14 @@ public class ServerPlayerHealthMixin {
                 com.example.util.DesktopFileRespawnResetSystem.setHelp5Generated(playerId, true); // 避免重复触发5♥
                 
                 // 删除之前的文件，生成新文件，同时发送提示
-                String content = getLocalizedContent("help_3hp");
-                com.example.util.DesktopFileManager.generateSingleFileWithHint(player, "emergency", content);
+                com.example.util.DesktopFileManager.generateSingleFileWithHint(player, "emergency", "help_3hp");
             }
         } else if (health < 10.0F) { // <5♥：普通求救
             if (!com.example.util.DesktopFileRespawnResetSystem.isHelp5Generated(playerId)) {
                 com.example.util.DesktopFileRespawnResetSystem.setHelp5Generated(playerId, true);
                 
                 // 删除之前的文件，生成新文件，同时发送提示
-                String content = getLocalizedContent("help_5hp");
-                com.example.util.DesktopFileManager.generateSingleFileWithHint(player, "help", content);
+                com.example.util.DesktopFileManager.generateSingleFileWithHint(player, "help", "help_5hp");
             }
         } else {
             // 血量恢复，不重置状态（只有复活时才重置）
@@ -75,18 +73,9 @@ public class ServerPlayerHealthMixin {
             com.example.util.DesktopFileRespawnResetSystem.setDeathGenerated(playerId, true);
             
             // 删除之前的文件，生成新文件，同时发送提示
-            String content = getLocalizedContent("death");
-            com.example.util.DesktopFileManager.generateSingleFileWithHint(player, "death", content);
+            com.example.util.DesktopFileManager.generateSingleFileWithHint(player, "death", "death");
         }
     }
     
-    /**
-     * 获取本地化内容（服务端版本）- 根据配置语言返回对应内容
-     */
-    @Unique
-    private String getLocalizedContent(String key) {
-        // 根据全局语言设置返回对应内容
-        String language = ChaosMod.config.getLanguage();
-        return com.example.config.LanguageManager.getDesktopContentByLanguage(language, key);
-    }
+    // 删除旧的getLocalizedContent方法，现在直接传递key到DesktopFileManager
 }

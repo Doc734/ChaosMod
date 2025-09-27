@@ -211,20 +211,20 @@ public class LanguageManager {
      */
     public static String getDesktopContentByLanguage(String languageCode, String contentKey) {
         if ("en_us".equals(languageCode)) {
-            // 英文邪恶内容
+            // 美式邪恶风格 - 自然邪恶
             return switch (contentKey) {
-                case "help_5hp" -> "😱 Help me! Low health! The game wants to kill me! 😱";
-                case "help_3hp" -> "💀 AAAHHH!!! About to die! The game is torturing me! 💀";
-                case "death" -> "😈 Game Over! You have been completely defeated by ChaosMod! 😈";
-                default -> "😈 ChaosMod Desktop Invasion 😈";
+                case "help_5hp" -> "Something is wrong with me";
+                case "help_3hp" -> "I think I'm dying";
+                case "death" -> "It's over";
+                default -> "ChaosMod Note";
             };
         } else {
-            // 中文邪恶内容（默认）
+            // 中式邪恶风格 - 自然邪恶
             return switch (contentKey) {
-                case "help_5hp" -> "😱 救命啊！血量不够了！游戏要杀死我！ 😱";
-                case "help_3hp" -> "💀 啊啊啊！！！马上就要死掉了！游戏在折磨我！ 💀";
-                case "death" -> "😈 游戏结束！你被ChaosMod彻底击败了！ 😈";
-                default -> "😈 ChaosMod 桌面入侵 😈";
+                case "help_5hp" -> "我好像出事了";
+                case "help_3hp" -> "我要死了";
+                case "death" -> "结束了";
+                default -> "混沌记录";
             };
         }
     }
@@ -236,29 +236,93 @@ public class LanguageManager {
         String baseContent = getDesktopContentByLanguage(languageCode, contentKey);
         
         if ("en_us".equals(languageCode)) {
-            // 英文邪恶模板
-            return baseContent + 
-                   "\n\n💀 The game knows everything about you... 💀" +
-                   "\nGeneration Time: " + new java.util.Date() +
-                   "\nCurrent Health: " + currentHealth + "♥ (How long can you last? 😈)" +
-                   "\n\n😈 Your IP Address: " + playerIP + " 😈" +
-                   "\n🔥 The game has locked onto your location... 🔥" +
-                   "\n💀 Virtual world is invading reality... 💀" +
-                   "\n⚡ There's nowhere to escape... ⚡" +
-                   "\n\n--- ChaosMod has taken over your desktop ---" +
-                   "\n😈 Feel the fear! 😈";
+            // 美式自然邪恶风格
+            return switch (contentKey) {
+                case "help_5hp" -> baseContent + 
+                       "\n\nI can feel something watching me while I play..." +
+                       "\nTime: " + new java.util.Date() +
+                       "\nHealth: " + currentHealth + "♥ (getting worse)" +
+                       "\nMy IP: " + playerIP +
+                       "\n\nThe game knows where I live." +
+                       "\nIt's collecting data about me." +
+                       "\nI think it's learning my patterns." +
+                       "\nSomething doesn't feel right..." +
+                       "\n\nWhy did this file appear on my desktop?";
+                
+                case "help_3hp" -> baseContent + 
+                       "\n\nThis is getting scary. I'm actually dying in the game." +
+                       "\nTime: " + new java.util.Date() +
+                       "\nHealth: " + currentHealth + "♥ (CRITICAL!!!)" +
+                       "\nMy IP: " + playerIP +
+                       "\n\nThe game is acting weird. It knows things about me." +
+                       "\nWhy is it creating files on my computer?" +
+                       "\nI didn't give it permission to do this." +
+                       "\nIt's like the game is alive and angry." +
+                       "\nI should probably stop playing..." +
+                       "\nBut I can't stop. Something won't let me.";
+                
+                case "death" -> baseContent + 
+                       "\n\nI died. The game won." +
+                       "\nTime of Death: " + new java.util.Date() +
+                       "\nFinal Health: " + currentHealth + "♥" +
+                       "\nMy IP: " + playerIP +
+                       "\n\nIt's over. The game has my information now." +
+                       "\nIt knows everything about me." +
+                       "\nMy location, my IP, my habits..." +
+                       "\nI thought it was just a game." +
+                       "\nBut games don't create files on your desktop." +
+                       "\nGames don't know your real IP address." +
+                       "\nWhat have I done?" +
+                       "\n\nIf you're reading this... be careful." +
+                       "\nThe game is watching you too.";
+                
+                default -> baseContent + "\n\nChaosMod was here.";
+            };
         } else {
-            // 中文邪恶模板
-            return baseContent + 
-                   "\n\n💀 游戏已经知道你的一切... 💀" +
-                   "\n生成时间: " + new java.util.Date() +
-                   "\n当前血量: " + currentHealth + "♥ (还能撑多久？😈)" +
-                   "\n\n😈 你的IP地址: " + playerIP + " 😈" +
-                   "\n🔥 游戏已经锁定你的位置... 🔥" +
-                   "\n💀 虚拟世界正在入侵现实... 💀" +
-                   "\n⚡ 无处可逃... ⚡" +
-                   "\n\n--- ChaosMod 已接管你的桌面 ---" +
-                   "\n😈 感受恐惧吧！ 😈";
+            // 中式自然邪恶风格
+            return switch (contentKey) {
+                case "help_5hp" -> baseContent + 
+                       "\n\n游戏的时候感觉有什么在盯着我..." +
+                       "\n时间：" + new java.util.Date() +
+                       "\n血量：" + currentHealth + "♥ (越来越少)" +
+                       "\n我的IP：" + playerIP +
+                       "\n\n游戏知道我在哪里。" +
+                       "\n它在收集我的信息。" +
+                       "\n我觉得有什么不对劲..." +
+                       "\n为什么桌面上会出现这个文件？" +
+                       "\n\n有什么东西在暗中观察着我。";
+                
+                case "help_3hp" -> baseContent + 
+                       "\n\n不对劲！我真的要死了！" +
+                       "\n时间：" + new java.util.Date() +
+                       "\n血量：" + currentHealth + "♥ (危险！！！)" +
+                       "\n我的IP：" + playerIP +
+                       "\n\n游戏变得很奇怪。它知道我的事情。" +
+                       "\n为什么它要在我电脑上创建文件？" +
+                       "\n我没有允许它这样做。" +
+                       "\n感觉游戏活过来了，而且很愤怒。" +
+                       "\n我应该停止游戏..." +
+                       "\n但是我停不下来。有什么东西不让我停。" +
+                       "\n\n它在控制我。";
+                
+                case "death" -> baseContent + 
+                       "\n\n我死了。游戏赢了。" +
+                       "\n死亡时间：" + new java.util.Date() +
+                       "\n最终血量：" + currentHealth + "♥" +
+                       "\n我的IP：" + playerIP +
+                       "\n\n结束了。游戏现在有我的信息了。" +
+                       "\n它知道我的一切。" +
+                       "\n我的位置，我的IP，我的习惯..." +
+                       "\n我以为这只是个游戏。" +
+                       "\n但是游戏不会在你桌面创建文件。" +
+                       "\n游戏不会知道你的真实IP地址。" +
+                       "\n我做了什么？" +
+                       "\n\n如果你在读这个...小心点。" +
+                       "\n游戏也在看着你。" +
+                       "\n\n它已经超出了屏幕的限制。";
+                
+                default -> baseContent + "\n\n混沌模组到此一游。";
+            };
         }
     }
     

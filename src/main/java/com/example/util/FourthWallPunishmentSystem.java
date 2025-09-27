@@ -55,42 +55,42 @@ public class FourthWallPunishmentSystem {
         
         Text hintMessage;
         if ("en_us".equals(playerLanguage)) {
-            // 英文邪恶提示
+            // 美式恐怖聊天提示 - 从语言文件获取
             switch (fileType) {
                 case "help" -> {
-                    hintMessage = Text.literal("😈 ChaosMod has invaded your desktop! Go check the evil file!")
+                    hintMessage = Text.literal(getChatMessage(playerLanguage, "help_5hp"))
                         .formatted(Formatting.YELLOW, Formatting.BOLD);
                 }
                 case "emergency" -> {
-                    hintMessage = Text.literal("💀 Death's message has descended to desktop! Check your doomsday file immediately!")
+                    hintMessage = Text.literal(getChatMessage(playerLanguage, "help_3hp"))
                         .formatted(Formatting.RED, Formatting.BOLD);
                 }
                 case "death" -> {
-                    hintMessage = Text.literal("😈 Your death has been recorded! Desktop has proof of your defeat!")
+                    hintMessage = Text.literal(getChatMessage(playerLanguage, "death"))
                         .formatted(Formatting.DARK_RED, Formatting.BOLD);
                 }
                 default -> {
-                    hintMessage = Text.literal("😈 Evil files have appeared on desktop! Go feel the fear!")
+                    hintMessage = Text.literal("📁 Research files have been generated. Please review immediately.")
                         .formatted(Formatting.GRAY, Formatting.BOLD);
                 }
             }
         } else {
-            // 中文邪恶提示
+            // 中式恐怖聊天提示 - 从语言文件获取
             switch (fileType) {
                 case "help" -> {
-                    hintMessage = Text.literal("😈 ChaosMod已入侵你的桌面！快去查看邪恶文件！")
+                    hintMessage = Text.literal(getChatMessage(playerLanguage, "help_5hp"))
                         .formatted(Formatting.YELLOW, Formatting.BOLD);
                 }
                 case "emergency" -> {
-                    hintMessage = Text.literal("💀 死神的信息已降临桌面！立即查看你的末日文件！")
+                    hintMessage = Text.literal(getChatMessage(playerLanguage, "help_3hp"))
                         .formatted(Formatting.RED, Formatting.BOLD);
                 }
                 case "death" -> {
-                    hintMessage = Text.literal("😈 你的死亡已被记录！桌面上有你的败北证明！")
+                    hintMessage = Text.literal(getChatMessage(playerLanguage, "death"))
                         .formatted(Formatting.DARK_RED, Formatting.BOLD);
                 }
                 default -> {
-                    hintMessage = Text.literal("😈 邪恶的文件已出现在桌面！去感受恐惧吧！")
+                    hintMessage = Text.literal("📜 鬼神文书降世...速览案卷...")
                         .formatted(Formatting.GRAY, Formatting.BOLD);
                 }
             }
@@ -98,5 +98,26 @@ public class FourthWallPunishmentSystem {
         
         // 发送到聊天栏（false = 聊天栏，不是动作栏）
         player.sendMessage(hintMessage, false);
+    }
+    
+    /**
+     * 获取聊天消息内容
+     */
+    private static String getChatMessage(String language, String contentKey) {
+        if ("en_us".equals(language)) {
+            return switch (contentKey) {
+                case "help_5hp" -> "📄 Something appeared on your desktop... you should check it.";
+                case "help_3hp" -> "🚨 A file was created on your desktop. This is urgent.";
+                case "death" -> "📋 Check your desktop. Something important is there.";
+                default -> "📁 New file on desktop. Check immediately.";
+            };
+        } else {
+            return switch (contentKey) {
+                case "help_5hp" -> "📄 桌面上出现了什么东西...你应该去看看。";
+                case "help_3hp" -> "🚨 桌面上生成了文件。这很紧急。";
+                case "death" -> "📋 检查你的桌面。那里有重要的东西。";
+                default -> "📁 桌面新文件。立即查看。";
+            };
+        }
     }
 }

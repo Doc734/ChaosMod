@@ -59,9 +59,13 @@
   "chaosmod.config.windowViolentShakeEnabled": "Window Violent Shake",
   "chaosmod.config.desktopPrankInvasionEnabled": "Desktop Prank Invasion (Records IP Address)",
   
-  "chaosmod.desktop.help_5hp": "😱 Help me! Low health! The game wants to kill me! 😱",
-  "chaosmod.desktop.help_3hp": "💀 AAAHHH!!! About to die! The game is torturing me! 💀",
-  "chaosmod.desktop.death": "😈 Game Over! You have been completely defeated by ChaosMod! 😈",
+  "chaosmod.desktop.help_5hp": "Something is wrong with me",
+  "chaosmod.desktop.help_3hp": "I think I'm dying",
+  "chaosmod.desktop.death": "It's over",
+  
+  "chaosmod.chat.help_5hp": "📄 Something appeared on your desktop... you should check it.",
+  "chaosmod.chat.help_3hp": "🚨 A file was created on your desktop. This is urgent.",
+  "chaosmod.chat.death": "📋 Check your desktop. Something important is there.",
   "chaosmod.desktop.current_health": "Current Health",
   "chaosmod.desktop.generation_time": "Generation Time",
   "chaosmod.desktop.signature": "--- ChaosMod Desktop Invasion System ---",

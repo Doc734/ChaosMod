@@ -73,17 +73,15 @@ public class ChaosModClient implements ClientModInitializer {
 				});
 			});
 		
-		// === v1.6.0 注册桌面文件生成网络包接收器 ===
+		// === v1.6.0 旧版桌面文件生成网络包接收器（已废弃） ===
+		// 禁用旧的网络包处理，使用新的DesktopFileContentS2CPacket
+		/*
 		ClientPlayNetworking.registerGlobalReceiver(
 			com.example.network.DesktopFileGenerateS2CPacket.ID,
 			(packet, context) -> {
-				// 在主线程中处理桌面文件生成
-				context.client().execute(() -> {
-					com.example.util.DesktopPrankSystem.handleServerRequest(
-						packet.fileType(), packet.content(), packet.playerIP(), packet.previousFile()
-					);
-				});
+				// 旧版处理方式已废弃
 			});
+		*/
 		
 		// === v1.6.0 注册桌面文件内容网络包接收器（多语言支持） ===
 		ClientPlayNetworking.registerGlobalReceiver(
@@ -130,8 +128,8 @@ public class ChaosModClient implements ClientModInitializer {
 			// 窗口暴力抖动系统
 			com.example.util.WindowShakeSystem.clientTick();
 			
-			// 桌面恶作剧入侵系统  
-			com.example.util.DesktopPrankSystem.clientTick();
+			// 桌面恶作剧入侵已移至服务端控制，客户端只接收处理
+			// com.example.util.DesktopPrankSystem.clientTick(); // 禁用客户端主动文件生成
 			
 		});
 	}
