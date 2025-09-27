@@ -181,6 +181,8 @@ Press 'P' Key   # Open bilingual config GUI (Admin only)
 | `panicMagnetEnabled` | 🧲 **Panic Magnet** | 🌟🌟🌟🌟🌟 |
 | `pickupDrainEnabled` | 🩸 **Pickup Drain** | 🌟🌟🌟🌟🌟 |
 | `vertigoScapegoatEnabled` | 😵 **Vertigo Scapegoat** | 🌟🌟🌟🌟🌟 |
+| `windowViolentShakeEnabled` | 🪟 **Window Violent Shake** | 💀💀💀💀💀 |
+| `desktopPrankInvasionEnabled` | 📁 **Desktop Prank Invasion** | 💀💀💀💀💀 |
 
 ---
 
