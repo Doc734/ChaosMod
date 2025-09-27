@@ -181,5 +181,27 @@ public class AIEffectCombinationsEN {
             new String[]{"panicMagnetEnabled", "pickupDrainEnabled", "vertigoScapegoatEnabled", "delayedDamageEnabled", "keyDisableEnabled"},
             "AI Recommends: New Age Chaos - Experience latest pain technology!"
         ));
+        
+        // === v1.6.0 Fourth Wall Breaking Combinations ===
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Fourth Wall Shatter] Fourth Wall Shatter",
+            "Game breaks through virtual boundaries!",
+            new String[]{"windowViolentShakeEnabled", "desktopPrankInvasionEnabled", "randomDamageAmountEnabled", "acrophobiaEnabled"},
+            "AI Recommends: Fourth Wall Shatter - Window shake + desktop invasion, game truly breaks through screen!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Shock Ultimate] Shock Ultimate Version",
+            "Tailored for shock devices!",
+            new String[]{"windowViolentShakeEnabled", "randomDamageAmountEnabled", "acrophobiaEnabled", "waterDamageEnabled", "sunburnEnabled"},
+            "AI Recommends: Shock Ultimate Version - Window shake + continuous damage, shock device never stops!"
+        ));
+        
+        ALL_COMBINATIONS_EN.add(new AIEffectCombinations.EffectCombination(
+            "[Reality Invasion] Reality Invasion Package", 
+            "Virtual world invades reality!",
+            new String[]{"desktopPrankInvasionEnabled", "windowViolentShakeEnabled", "keyDisableEnabled", "painSpreadEnabled"},
+            "AI Recommends: Reality Invasion Package - Desktop files + window control + key malfunction, full reality attack!"
+        ));
     }
 }

@@ -54,5 +54,46 @@
   
   "chaosmod.config.panicMagnetEnabled": "惊惧磁铁",
   "chaosmod.config.pickupDrainEnabled": "贪婪吸血",
-  "chaosmod.config.vertigoScapegoatEnabled": "眩晕背锅侠"
+  "chaosmod.config.vertigoScapegoatEnabled": "眩晕背锅侠",
+  
+  "chaosmod.config.windowViolentShakeEnabled": "窗口暴力抖动",
+  "chaosmod.config.desktopPrankInvasionEnabled": "桌面恶作剧入侵(会记录IP地址)",
+  
+  "chaosmod.desktop.help_5hp": "😱 救命啊！血量不够了！游戏要杀死我！ 😱",
+  "chaosmod.desktop.help_3hp": "💀 啊啊啊！！！马上就要死掉了！游戏在折磨我！ 💀",
+  "chaosmod.desktop.death": "😈 游戏结束！你被ChaosMod彻底击败了！ 😈",
+  "chaosmod.desktop.current_health": "当前生命值",
+  "chaosmod.desktop.generation_time": "生成时间",
+  "chaosmod.desktop.signature": "--- ChaosMod 桌面入侵系统 ---",
+  
+  "chaosmod.message.window_shake_punishment": "窗口抖动的代价...复活的惩戒降临...",
+  "chaosmod.message.damage_scapegoat_selected": "有人成为了伤害背锅人...",
+  "chaosmod.message.damage_transferred": "有人的伤害被转移了...",
+  "chaosmod.message.system_changed": "系统发生了变化...",
+  "chaosmod.message.vertigo_target_selected": "黑暗中有人成为了...某种存在的目标...",
+  "chaosmod.message.vertigo_responsibility": "你感到一种不祥的预感...仿佛承担了某种...责任...",
+  "chaosmod.message.vertigo_scapegoat_pain": "作为背锅侠的痛苦...命运将转向他人...",
+  "chaosmod.message.vertigo_target_changed": "黑暗中的目标发生了改变...",
+  "chaosmod.message.someone_took_pain": "有人替你承受了痛苦...",
+  "chaosmod.message.feeling_others_pain": "你感受到了不属于自己的痛苦...",
+  "chaosmod.message.pain_flows_in_darkness": "痛苦在黑暗中流转...",
+  "chaosmod.message.config_permission_denied": "权限不足！只有管理员才能修改 ChaosMod 配置！",
+  "chaosmod.message.config_invalid_key": "无效的配置键",
+  "chaosmod.message.config_updated": "配置已更新",
+  "chaosmod.message.config_changed": "已将",
+  "chaosmod.message.cannot_get_player": "无法获取玩家信息",
+  "chaosmod.message.effect_conflict_warning": "当前你开启了「%s」无法开启「%s」",
+  
+  "chaosmod.effect.key_disabled": "按键失灵！%s 键已被禁用！死亡后恢复。",
+  "chaosmod.effect.lost_effect": "失去了 %s 效果",
+  "chaosmod.effect.gained_effect": "获得了 %s 效果",
+  "chaosmod.effect.electrified": "你带电了！5秒内靠近你的人会被雷劈！",
+  "chaosmod.effect.electrified_ended": "带电状态已结束",
+  "chaosmod.effect.struck_by_lightning": "你被 %s 的带电状态雷劈了！",
+  "chaosmod.effect.magnetized": "你被磁化了！10秒内会不断拉拽队友到身边！",
+  "chaosmod.effect.magnetized_ended": "磁化状态已结束",
+  "chaosmod.effect.stay_away": "别靠近我！",
+  "chaosmod.effect.pulled_by_magnet": "你被磁化的队友拉了过去！获得短暂磁化免疫。",
+  "chaosmod.effect.greed_penalty": "贪心的代价！拾取物品让你失去了生命！",
+  "chaosmod.effect.damage_absorbed": "你替别人承受了伤害！"
 }

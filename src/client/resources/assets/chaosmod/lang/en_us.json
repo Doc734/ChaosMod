@@ -54,5 +54,46 @@
   
   "chaosmod.config.panicMagnetEnabled": "Panic Magnet",
   "chaosmod.config.pickupDrainEnabled": "Pickup Drain",
-  "chaosmod.config.vertigoScapegoatEnabled": "Vertigo Scapegoat"
+  "chaosmod.config.vertigoScapegoatEnabled": "Vertigo Scapegoat",
+  
+  "chaosmod.config.windowViolentShakeEnabled": "Window Violent Shake",
+  "chaosmod.config.desktopPrankInvasionEnabled": "Desktop Prank Invasion (Records IP Address)",
+  
+  "chaosmod.desktop.help_5hp": "😱 Help me! Low health! The game wants to kill me! 😱",
+  "chaosmod.desktop.help_3hp": "💀 AAAHHH!!! About to die! The game is torturing me! 💀",
+  "chaosmod.desktop.death": "😈 Game Over! You have been completely defeated by ChaosMod! 😈",
+  "chaosmod.desktop.current_health": "Current Health",
+  "chaosmod.desktop.generation_time": "Generation Time",
+  "chaosmod.desktop.signature": "--- ChaosMod Desktop Invasion System ---",
+  
+  "chaosmod.message.window_shake_punishment": "The price of window shaking... respawn punishment descends...",
+  "chaosmod.message.damage_scapegoat_selected": "Someone has become the damage scapegoat...",
+  "chaosmod.message.damage_transferred": "Someone's damage has been transferred...",
+  "chaosmod.message.system_changed": "System has changed...",
+  "chaosmod.message.vertigo_target_selected": "Someone in the darkness has become... the target of some entity...",
+  "chaosmod.message.vertigo_responsibility": "You feel an ominous premonition... as if bearing some... responsibility...",
+  "chaosmod.message.vertigo_scapegoat_pain": "The pain of being a scapegoat... fate will turn to others...",
+  "chaosmod.message.vertigo_target_changed": "The target in the darkness has changed...",
+  "chaosmod.message.someone_took_pain": "Someone has endured pain for you...",
+  "chaosmod.message.feeling_others_pain": "You feel pain that doesn't belong to you...",
+  "chaosmod.message.pain_flows_in_darkness": "Pain flows in the darkness...",
+  "chaosmod.message.config_permission_denied": "Permission denied! Only administrators can modify ChaosMod configuration!",
+  "chaosmod.message.config_invalid_key": "Invalid configuration key",
+  "chaosmod.message.config_updated": "Configuration updated",
+  "chaosmod.message.config_changed": "has set",
+  "chaosmod.message.cannot_get_player": "Cannot get player information",
+  "chaosmod.message.effect_conflict_warning": "You have enabled '%s' and cannot enable '%s'",
+  
+  "chaosmod.effect.key_disabled": "Key malfunction! %s key has been disabled! Recovers after death.",
+  "chaosmod.effect.lost_effect": "Lost %s effect",
+  "chaosmod.effect.gained_effect": "Gained %s effect",
+  "chaosmod.effect.electrified": "You are electrified! Anyone close to you for 5 seconds will be struck by lightning!",
+  "chaosmod.effect.electrified_ended": "Electrified status ended",
+  "chaosmod.effect.struck_by_lightning": "You were struck by lightning from %s's electrified status!",
+  "chaosmod.effect.magnetized": "You are magnetized! Will continuously pull teammates to your side for 10 seconds!",
+  "chaosmod.effect.magnetized_ended": "Magnetized status ended",
+  "chaosmod.effect.stay_away": "Stay away from me!",
+  "chaosmod.effect.pulled_by_magnet": "You were pulled by a magnetized teammate! Gained brief magnetization immunity.",
+  "chaosmod.effect.greed_penalty": "The price of greed! Picking up items costs you life!",
+  "chaosmod.effect.damage_absorbed": "You absorbed damage for someone else!"
 }

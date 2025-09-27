@@ -23,7 +23,7 @@ public class ConfigSyncPacket {
     public static void updateConfig(String key, boolean value, ServerPlayerEntity player) {
         // Check if player has permission (admin level 4)
         if (player != null && !player.hasPermissionLevel(4)) {
-            player.sendMessage(Text.literal("🚫 权限不足！只有管理员才能修改 ChaosMod 配置！")
+            player.sendMessage(Text.literal(com.example.config.LanguageManager.getMessage("config_permission_denied"))
                 .formatted(Formatting.RED, Formatting.BOLD));
             return;
         }
@@ -31,10 +31,19 @@ public class ConfigSyncPacket {
         // Update the configuration
         ChaosMod.config.set(key, value);
         
-        // Send feedback to player
+        // Send feedback to player (支持多语言)
         if (player != null) {
-            String state = value ? "✓ 启用" : "✗ 禁用";
-            player.sendMessage(Text.literal("[配置已更新] " + key + " -> " + state)
+            String language = ChaosMod.config.getLanguage();
+            String state, updateMsg;
+            if ("en_us".equals(language)) {
+                state = value ? "✓ Enabled" : "✗ Disabled";
+                updateMsg = com.example.config.LanguageManager.getMessage("config_updated");
+            } else {
+                state = value ? "✓ 启用" : "✗ 禁用";
+                updateMsg = com.example.config.LanguageManager.getMessage("config_updated");
+            }
+            
+            player.sendMessage(Text.literal("[" + updateMsg + "] " + key + " -> " + state)
                 .formatted(Formatting.YELLOW));
         }
     }

@@ -229,7 +229,8 @@ public final class ChaosEffects {
 
             // 通知玩家
             String keyName = getKeyDisplayName(keyToDisable);
-            serverPlayer.sendMessage(Text.literal("⚡ 按键失灵！" + keyName + " 键已被禁用！死亡后恢复。")
+            serverPlayer.sendMessage(Text.literal("⚡ " + 
+                String.format(com.example.config.LanguageManager.getMessage("key_disabled"), keyName))
                 .formatted(Formatting.RED, Formatting.BOLD), true);
         }
     }
@@ -344,7 +345,8 @@ public final class ChaosEffects {
             // 如果有，移除它
             player.removeStatusEffect(effect);
             if (player instanceof ServerPlayerEntity serverPlayer) {
-                serverPlayer.sendMessage(Text.literal("🔴 失去了 " + getEffectName(effect) + " 效果")
+                serverPlayer.sendMessage(Text.literal("🔴 " + 
+                    String.format(com.example.config.LanguageManager.getMessage("lost_effect"), getEffectName(effect)))
                     .formatted(Formatting.YELLOW), true);
             }
         } else {
@@ -360,7 +362,8 @@ public final class ChaosEffects {
             
             player.addStatusEffect(new StatusEffectInstance(effect, duration, amplifier));
             if (player instanceof ServerPlayerEntity serverPlayer) {
-                serverPlayer.sendMessage(Text.literal("🟢 获得了 " + getEffectName(effect) + " 效果")
+                serverPlayer.sendMessage(Text.literal("🟢 " + 
+                    String.format(com.example.config.LanguageManager.getMessage("gained_effect"), getEffectName(effect)))
                     .formatted(Formatting.GREEN), true);
             }
         }
@@ -369,9 +372,56 @@ public final class ChaosEffects {
     /**
      * 获取效果名称
      */
+    /**
+     * 获取状态效果的本地化名称
+     * 支持中英文效果名称显示
+     */
     private static String getEffectName(RegistryEntry<StatusEffect> effect) {
-        // 这里可以返回中文名称，简化版本直接返回英文
-        return effect.value().getName().getString();
+        String language = com.example.ChaosMod.config.getLanguage();
+        String effectKey = effect.getIdAsString();
+        
+        // 简化映射：主要状态效果的中英文名称
+        if ("zh_cn".equals(language)) {
+            return switch (effectKey) {
+                case "minecraft:speed" -> "速度";
+                case "minecraft:slowness" -> "缓慢";
+                case "minecraft:haste" -> "急迫";
+                case "minecraft:mining_fatigue" -> "挖掘疲劳";
+                case "minecraft:strength" -> "力量";
+                case "minecraft:instant_health" -> "瞬间治疗";
+                case "minecraft:instant_damage" -> "瞬间伤害";
+                case "minecraft:jump_boost" -> "跳跃提升";
+                case "minecraft:nausea" -> "反胃";
+                case "minecraft:regeneration" -> "生命恢复";
+                case "minecraft:resistance" -> "抗性提升";
+                case "minecraft:fire_resistance" -> "抗火";
+                case "minecraft:water_breathing" -> "水下呼吸";
+                case "minecraft:invisibility" -> "隐身";
+                case "minecraft:blindness" -> "失明";
+                case "minecraft:night_vision" -> "夜视";
+                case "minecraft:hunger" -> "饥饿";
+                case "minecraft:weakness" -> "虚弱";
+                case "minecraft:poison" -> "中毒";
+                case "minecraft:wither" -> "凋零";
+                case "minecraft:health_boost" -> "生命提升";
+                case "minecraft:absorption" -> "伤害吸收";
+                case "minecraft:saturation" -> "饱和";
+                case "minecraft:glowing" -> "发光";
+                case "minecraft:levitation" -> "飘浮";
+                case "minecraft:luck" -> "幸运";
+                case "minecraft:unluck" -> "霉运";
+                case "minecraft:slow_falling" -> "缓降";
+                case "minecraft:conduit_power" -> "潮涌能量";
+                case "minecraft:dolphins_grace" -> "海豚的恩惠";
+                case "minecraft:bad_omen" -> "不祥之兆";
+                case "minecraft:hero_of_the_village" -> "村庄英雄";
+                case "minecraft:darkness" -> "黑暗";
+                default -> effect.value().getName().getString(); // 未知效果返回原名
+            };
+        } else {
+            // 英文直接返回原名
+            return effect.value().getName().getString();
+        }
     }
 
     /**
@@ -416,8 +466,9 @@ public final class ChaosEffects {
         if (!candidates.isEmpty()) {
             currentScapegoat = candidates.get(ThreadLocalRandom.current().nextInt(candidates.size()));
             
-            // 广播模糊警告
-            Text warning = Text.literal("⚠️ 有人成为了伤害背锅人...").formatted(Formatting.DARK_RED, Formatting.BOLD);
+            // 广播模糊警告（支持多语言）
+            Text warning = Text.literal(com.example.config.LanguageManager.getMessage("damage_scapegoat_selected"))
+                .formatted(Formatting.DARK_RED, Formatting.BOLD);
             for (ServerPlayerEntity player : players) {
                 player.sendMessage(warning, true);
             }
@@ -437,8 +488,8 @@ public final class ChaosEffects {
             // 重定向伤害到背锅人
             currentScapegoat.damage(source, amount);
             
-            // 给背锅人发送提示
-            currentScapegoat.sendMessage(Text.literal("💥 你替别人承受了伤害！")
+            // 给背锅人发送提示（支持多语言）
+            currentScapegoat.sendMessage(Text.literal("💥 " + com.example.config.LanguageManager.getMessage("damage_absorbed"))
                 .formatted(Formatting.RED), true);
                 
             return true; // 取消原始伤害
@@ -459,7 +510,7 @@ public final class ChaosEffects {
         ELECTRIFIED_PLAYERS.put(player, currentTime + ELECTRIFIED_DURATION);
         
         if (player instanceof ServerPlayerEntity serverPlayer) {
-            serverPlayer.sendMessage(Text.literal("⚡ 你带电了！5秒内靠近你的人会被雷劈！")
+            serverPlayer.sendMessage(Text.literal("⚡ " + com.example.config.LanguageManager.getMessage("electrified"))
                 .formatted(Formatting.YELLOW, Formatting.BOLD), true);
         }
     }
@@ -481,7 +532,7 @@ public final class ChaosEffects {
         if (currentTime >= electrifiedUntil) {
             ELECTRIFIED_PLAYERS.remove(player);
             LIGHTNING_COOLDOWNS.remove(player);
-            serverPlayer.sendMessage(Text.literal("✅ 带电状态已结束")
+            serverPlayer.sendMessage(Text.literal("✅ " + com.example.config.LanguageManager.getMessage("electrified_ended"))
                 .formatted(Formatting.GREEN), true);
             return;
         }
@@ -517,7 +568,9 @@ public final class ChaosEffects {
             
             // 发送消息
             if (nearbyPlayer instanceof ServerPlayerEntity nearbyServerPlayer) {
-                nearbyServerPlayer.sendMessage(Text.literal("⚡ 你被带电的玩家雷劈了！")
+                nearbyServerPlayer.sendMessage(Text.literal("⚡ " + 
+                    String.format(com.example.config.LanguageManager.getMessage("struck_by_lightning"), 
+                    serverPlayer.getName().getString()))
                     .formatted(Formatting.RED), true);
             }
         }
@@ -573,7 +626,7 @@ public final class ChaosEffects {
 
         PANIC_MAGNETIZED_PLAYERS.put(player, currentTime + PANIC_MAGNET_DURATION);
         
-        player.sendMessage(Text.literal("⚡ 你被磁化了！10秒内会不断拉拽队友到身边！")
+        player.sendMessage(Text.literal("⚡ " + com.example.config.LanguageManager.getMessage("magnetized"))
             .formatted(Formatting.RED, Formatting.BOLD), true);
     }
 
@@ -592,7 +645,7 @@ public final class ChaosEffects {
         // 检查是否已经过期
         if (currentTime >= magnetizedUntil) {
             PANIC_MAGNETIZED_PLAYERS.remove(player);
-            player.sendMessage(Text.literal("✅ 磁化状态已结束")
+            player.sendMessage(Text.literal("✅ " + com.example.config.LanguageManager.getMessage("magnetized_ended"))
                 .formatted(Formatting.GREEN), true);
             return;
         }
@@ -623,12 +676,14 @@ public final class ChaosEffects {
             PANIC_MAGNET_IMMUNITY.put(target, currentTime + PANIC_IMMUNITY_DURATION);
             
             // 定向单播Title消息（与拉取伤害同tick发送）
-            // 给磁化者发送"别靠近我！"
-            Text magnetTitle = Text.literal("别靠近我！").formatted(Formatting.RED, Formatting.BOLD);
+            // 给磁化者发送"别靠近我！"（支持多语言）
+            Text magnetTitle = Text.literal(com.example.config.LanguageManager.getMessage("stay_away"))
+                .formatted(Formatting.RED, Formatting.BOLD);
             player.sendMessage(magnetTitle, true); // 发送到ActionBar
             
-            // 给被拉者发送"玩家名：别靠近我！"
-            Text targetTitle = Text.literal(player.getName().getString() + "：别靠近我！")
+            // 给被拉者发送"玩家名：别靠近我！"（支持多语言）
+            Text targetTitle = Text.literal(player.getName().getString() + "：" + 
+                com.example.config.LanguageManager.getMessage("stay_away"))
                 .formatted(Formatting.RED, Formatting.BOLD);
             target.sendMessage(targetTitle, true); // 发送到ActionBar
             
@@ -641,11 +696,12 @@ public final class ChaosEffects {
                 PANIC_MAGNET_REENTRY.set(false);
             }
             
-            target.sendMessage(Text.literal("💀 你被磁化的队友拉了过去！获得短暂磁化免疫。")
+            target.sendMessage(Text.literal("💀 " + com.example.config.LanguageManager.getMessage("pulled_by_magnet"))
                 .formatted(Formatting.YELLOW), false); // 改为聊天消息，避免与Title重叠
         } else {
-            // 如果没有有效目标，只给磁化者发送Title
-            Text magnetTitle = Text.literal("别靠近我！").formatted(Formatting.RED, Formatting.BOLD);
+            // 如果没有有效目标，只给磁化者发送Title（支持多语言）
+            Text magnetTitle = Text.literal(com.example.config.LanguageManager.getMessage("stay_away"))
+                .formatted(Formatting.RED, Formatting.BOLD);
             player.sendMessage(magnetTitle, true); // 发送到ActionBar
         }
     }
@@ -687,7 +743,7 @@ public final class ChaosEffects {
         // 对拾取物品的玩家造成0.5♥伤害
         player.damage(player.getServerWorld().getDamageSources().magic(), 1.0F);
         
-        player.sendMessage(Text.literal("⚡ 贪心的代价！拾取物品让你失去了生命！")
+        player.sendMessage(Text.literal("⚡ " + com.example.config.LanguageManager.getMessage("greed_penalty"))
             .formatted(Formatting.RED), true);
     }
 
@@ -736,9 +792,11 @@ public final class ChaosEffects {
             vertigoScapegoat = candidates.get(ThreadLocalRandom.current().nextInt(candidates.size()));
             visitedScapegoats.add(vertigoScapegoat);
             
-            // 发送模糊警告
-            Text generalWarning = Text.literal("⚠️ 黑暗中有人成为了...某种存在的目标...").formatted(Formatting.DARK_PURPLE);
-            Text scapegoatWarning = Text.literal("⚠️ 你感到一种不祥的预感...仿佛承担了某种...责任...").formatted(Formatting.DARK_RED);
+            // 发送模糊警告（支持多语言）
+            Text generalWarning = Text.literal(com.example.config.LanguageManager.getMessage("vertigo_target_selected"))
+                .formatted(Formatting.DARK_PURPLE);
+            Text scapegoatWarning = Text.literal(com.example.config.LanguageManager.getMessage("vertigo_responsibility"))
+                .formatted(Formatting.DARK_RED);
             
             for (ServerPlayerEntity player : allPlayers) {
                 if (player == vertigoScapegoat) {
@@ -767,9 +825,11 @@ public final class ChaosEffects {
             vertigoScapegoat.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 200, 0)); // 10秒失明
             vertigoScapegoat.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 200, 0)); // 10秒反胃
             
-            // 发送不同的消息
-            Text scapegoatMsg = Text.literal("💀 作为背锅侠的痛苦...命运将转向他人...").formatted(Formatting.DARK_RED);
-            Text othersMsg = Text.literal("⚠️ 黑暗中的目标发生了改变...").formatted(Formatting.DARK_PURPLE);
+            // 发送不同的消息（支持多语言）
+            Text scapegoatMsg = Text.literal(com.example.config.LanguageManager.getMessage("vertigo_scapegoat_pain"))
+                .formatted(Formatting.DARK_RED);
+            Text othersMsg = Text.literal(com.example.config.LanguageManager.getMessage("vertigo_target_changed"))
+                .formatted(Formatting.DARK_PURPLE);
             
             vertigoScapegoat.sendMessage(scapegoatMsg, true);
             
@@ -790,10 +850,13 @@ public final class ChaosEffects {
             vertigoScapegoat.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 200, 0)); // 10秒失明
             vertigoScapegoat.addStatusEffect(new StatusEffectInstance(StatusEffects.NAUSEA, 200, 0)); // 10秒反胃
             
-            // 发送模糊提示
-            Text victimMsg = Text.literal("💫 有人替你承受了痛苦...").formatted(Formatting.YELLOW);
-            Text scapegoatMsg = Text.literal("💀 你感受到了不属于自己的痛苦...").formatted(Formatting.RED);
-            Text othersMsg = Text.literal("⚠️ 痛苦在黑暗中流转...").formatted(Formatting.GRAY);
+            // 发送模糊提示（支持多语言）
+            Text victimMsg = Text.literal(com.example.config.LanguageManager.getMessage("someone_took_pain"))
+                .formatted(Formatting.YELLOW);
+            Text scapegoatMsg = Text.literal(com.example.config.LanguageManager.getMessage("feeling_others_pain"))
+                .formatted(Formatting.RED);
+            Text othersMsg = Text.literal(com.example.config.LanguageManager.getMessage("pain_flows_in_darkness"))
+                .formatted(Formatting.GRAY);
             
             victimPlayer.sendMessage(victimMsg, true);
             vertigoScapegoat.sendMessage(scapegoatMsg, true);

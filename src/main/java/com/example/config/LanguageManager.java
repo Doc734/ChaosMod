@@ -73,6 +73,10 @@ public class LanguageManager {
         CHINESE_LABELS.put("panicMagnetEnabled", "惊惧磁铁");
         CHINESE_LABELS.put("pickupDrainEnabled", "贪婪吸血");
         CHINESE_LABELS.put("vertigoScapegoatEnabled", "眩晕背锅侠");
+        
+        // v1.6.0 第四面墙突破效果
+        CHINESE_LABELS.put("windowViolentShakeEnabled", "窗口暴力抖动");
+        CHINESE_LABELS.put("desktopPrankInvasionEnabled", "桌面恶作剧入侵(会记录IP地址)");
     }
     
     // 英文标签
@@ -118,6 +122,10 @@ public class LanguageManager {
         ENGLISH_LABELS.put("panicMagnetEnabled", "Panic Magnet");
         ENGLISH_LABELS.put("pickupDrainEnabled", "Pickup Drain");
         ENGLISH_LABELS.put("vertigoScapegoatEnabled", "Vertigo Scapegoat");
+        
+        // v1.6.0 Fourth Wall Breaking Effects
+        ENGLISH_LABELS.put("windowViolentShakeEnabled", "Window Violent Shake");
+        ENGLISH_LABELS.put("desktopPrankInvasionEnabled", "Desktop Prank Invasion (Records IP Address)");
     }
     
     // UI 文本
@@ -196,5 +204,139 @@ public class LanguageManager {
     
     public static Language[] getAllLanguages() {
         return Language.values();
+    }
+    
+    /**
+     * 根据语言代码获取桌面文件内容（服务端使用）
+     */
+    public static String getDesktopContentByLanguage(String languageCode, String contentKey) {
+        if ("en_us".equals(languageCode)) {
+            // 英文邪恶内容
+            return switch (contentKey) {
+                case "help_5hp" -> "😱 Help me! Low health! The game wants to kill me! 😱";
+                case "help_3hp" -> "💀 AAAHHH!!! About to die! The game is torturing me! 💀";
+                case "death" -> "😈 Game Over! You have been completely defeated by ChaosMod! 😈";
+                default -> "😈 ChaosMod Desktop Invasion 😈";
+            };
+        } else {
+            // 中文邪恶内容（默认）
+            return switch (contentKey) {
+                case "help_5hp" -> "😱 救命啊！血量不够了！游戏要杀死我！ 😱";
+                case "help_3hp" -> "💀 啊啊啊！！！马上就要死掉了！游戏在折磨我！ 💀";
+                case "death" -> "😈 游戏结束！你被ChaosMod彻底击败了！ 😈";
+                default -> "😈 ChaosMod 桌面入侵 😈";
+            };
+        }
+    }
+    
+    /**
+     * 根据语言代码获取邪恶文件内容模板（服务端使用）
+     */
+    public static String getEvilFileContent(String languageCode, String contentKey, String playerIP, float currentHealth) {
+        String baseContent = getDesktopContentByLanguage(languageCode, contentKey);
+        
+        if ("en_us".equals(languageCode)) {
+            // 英文邪恶模板
+            return baseContent + 
+                   "\n\n💀 The game knows everything about you... 💀" +
+                   "\nGeneration Time: " + new java.util.Date() +
+                   "\nCurrent Health: " + currentHealth + "♥ (How long can you last? 😈)" +
+                   "\n\n😈 Your IP Address: " + playerIP + " 😈" +
+                   "\n🔥 The game has locked onto your location... 🔥" +
+                   "\n💀 Virtual world is invading reality... 💀" +
+                   "\n⚡ There's nowhere to escape... ⚡" +
+                   "\n\n--- ChaosMod has taken over your desktop ---" +
+                   "\n😈 Feel the fear! 😈";
+        } else {
+            // 中文邪恶模板
+            return baseContent + 
+                   "\n\n💀 游戏已经知道你的一切... 💀" +
+                   "\n生成时间: " + new java.util.Date() +
+                   "\n当前血量: " + currentHealth + "♥ (还能撑多久？😈)" +
+                   "\n\n😈 你的IP地址: " + playerIP + " 😈" +
+                   "\n🔥 游戏已经锁定你的位置... 🔥" +
+                   "\n💀 虚拟世界正在入侵现实... 💀" +
+                   "\n⚡ 无处可逃... ⚡" +
+                   "\n\n--- ChaosMod 已接管你的桌面 ---" +
+                   "\n😈 感受恐惧吧！ 😈";
+        }
+    }
+    
+    /**
+     * 获取本地化消息（服务端使用）
+     * 根据全局语言设置返回对应语言的消息
+     */
+    public static String getMessage(String messageKey) {
+        String language = com.example.ChaosMod.config.getLanguage();
+        
+        if ("en_us".equals(language)) {
+            // 英文消息
+            return switch (messageKey) {
+                case "window_shake_punishment" -> "The price of window shaking... respawn punishment descends...";
+                case "damage_scapegoat_selected" -> "Someone has become the damage scapegoat...";
+                case "damage_transferred" -> "Someone's damage has been transferred...";
+                case "system_changed" -> "System has changed...";
+                case "vertigo_target_selected" -> "Someone in the darkness has become... the target of some entity...";
+                case "vertigo_responsibility" -> "You feel an ominous premonition... as if bearing some... responsibility...";
+                case "vertigo_scapegoat_pain" -> "The pain of being a scapegoat... fate will turn to others...";
+                case "vertigo_target_changed" -> "The target in the darkness has changed...";
+                case "someone_took_pain" -> "Someone has endured pain for you...";
+                case "feeling_others_pain" -> "You feel pain that doesn't belong to you...";
+                case "pain_flows_in_darkness" -> "Pain flows in the darkness...";
+                case "config_permission_denied" -> "Permission denied! Only administrators can modify ChaosMod configuration!";
+                case "config_invalid_key" -> "Invalid configuration key";
+                case "config_updated" -> "Configuration updated";
+                case "config_changed" -> "has set";
+                case "cannot_get_player" -> "Cannot get player information";
+                // 效果相关消息
+                case "key_disabled" -> "Key malfunction! %s key has been disabled! Recovers after death.";
+                case "lost_effect" -> "Lost %s effect";
+                case "gained_effect" -> "Gained %s effect";
+                case "electrified" -> "You are electrified! Anyone close to you for 5 seconds will be struck by lightning!";
+                case "electrified_ended" -> "Electrified status ended";
+                case "struck_by_lightning" -> "You were struck by lightning from %s's electrified status!";
+                case "magnetized" -> "You are magnetized! Will continuously pull teammates to your side for 10 seconds!";
+                case "magnetized_ended" -> "Magnetized status ended";
+                case "stay_away" -> "Stay away from me!";
+                case "pulled_by_magnet" -> "You were pulled by a magnetized teammate! Gained brief magnetization immunity.";
+                case "greed_penalty" -> "The price of greed! Picking up items costs you life!";
+                case "damage_absorbed" -> "You absorbed damage for someone else!";
+                default -> messageKey;
+            };
+        } else {
+            // 中文消息
+            return switch (messageKey) {
+                case "window_shake_punishment" -> "窗口抖动的代价...复活的惩戒降临...";
+                case "damage_scapegoat_selected" -> "有人成为了伤害背锅人...";
+                case "damage_transferred" -> "有人的伤害被转移了...";
+                case "system_changed" -> "系统发生了变化...";
+                case "vertigo_target_selected" -> "黑暗中有人成为了...某种存在的目标...";
+                case "vertigo_responsibility" -> "你感到一种不祥的预感...仿佛承担了某种...责任...";
+                case "vertigo_scapegoat_pain" -> "作为背锅侠的痛苦...命运将转向他人...";
+                case "vertigo_target_changed" -> "黑暗中的目标发生了改变...";
+                case "someone_took_pain" -> "有人替你承受了痛苦...";
+                case "feeling_others_pain" -> "你感受到了不属于自己的痛苦...";
+                case "pain_flows_in_darkness" -> "痛苦在黑暗中流转...";
+                case "config_permission_denied" -> "权限不足！只有管理员才能修改 ChaosMod 配置！";
+                case "config_invalid_key" -> "无效的配置键";
+                case "config_updated" -> "配置已更新";
+                case "config_changed" -> "已将";
+                case "cannot_get_player" -> "无法获取玩家信息";
+                // 效果相关消息
+                case "key_disabled" -> "按键失灵！%s 键已被禁用！死亡后恢复。";
+                case "lost_effect" -> "失去了 %s 效果";
+                case "gained_effect" -> "获得了 %s 效果";
+                case "electrified" -> "你带电了！5秒内靠近你的人会被雷劈！";
+                case "electrified_ended" -> "带电状态已结束";
+                case "struck_by_lightning" -> "你被 %s 的带电状态雷劈了！";
+                case "magnetized" -> "你被磁化了！10秒内会不断拉拽队友到身边！";
+                case "magnetized_ended" -> "磁化状态已结束";
+                case "stay_away" -> "别靠近我！";
+                case "pulled_by_magnet" -> "你被磁化的队友拉了过去！获得短暂磁化免疫。";
+                case "greed_penalty" -> "贪心的代价！拾取物品让你失去了生命！";
+                case "damage_absorbed" -> "你替别人承受了伤害！";
+                default -> messageKey;
+            };
+        }
     }
 }

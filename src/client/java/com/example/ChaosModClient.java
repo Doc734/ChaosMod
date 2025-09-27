@@ -73,6 +73,30 @@ public class ChaosModClient implements ClientModInitializer {
 				});
 			});
 		
+		// === v1.6.0 注册桌面文件生成网络包接收器 ===
+		ClientPlayNetworking.registerGlobalReceiver(
+			com.example.network.DesktopFileGenerateS2CPacket.ID,
+			(packet, context) -> {
+				// 在主线程中处理桌面文件生成
+				context.client().execute(() -> {
+					com.example.util.DesktopPrankSystem.handleServerRequest(
+						packet.fileType(), packet.content(), packet.playerIP(), packet.previousFile()
+					);
+				});
+			});
+		
+		// === v1.6.0 注册桌面文件内容网络包接收器（多语言支持） ===
+		ClientPlayNetworking.registerGlobalReceiver(
+			com.example.network.DesktopFileContentS2CPacket.ID,
+			(packet, context) -> {
+				// 在主线程中处理桌面文件生成（新版本，支持多语言）
+				context.client().execute(() -> {
+					com.example.util.DesktopPrankSystem.handleCompleteFileGeneration(
+						packet.fileName(), packet.fullContent(), packet.previousFile()
+					);
+				});
+			});
+		
 		// 注册客户端屏幕处理器
 		HandledScreens.register(ChaosMod.CHAOS_MOD_SCREEN_HANDLER_TYPE, ChaosModConfigScreen::new);
 		
@@ -97,10 +121,17 @@ public class ChaosModClient implements ClientModInitializer {
 					client.setScreen(new ChaosModConfigScreen(
 						new ChaosModScreenHandler(0, client.player.getInventory(), hasPermission),
 						client.player.getInventory(),
-						Text.literal("ChaosMod 配置菜单")
+						Text.literal(com.example.config.LanguageManager.getUI("gui.title"))
 					));
 				}
 			}
+			
+			// === v1.6.0 第四面墙突破效果客户端逻辑 ===
+			// 窗口暴力抖动系统
+			com.example.util.WindowShakeSystem.clientTick();
+			
+			// 桌面恶作剧入侵系统  
+			com.example.util.DesktopPrankSystem.clientTick();
 			
 		});
 	}

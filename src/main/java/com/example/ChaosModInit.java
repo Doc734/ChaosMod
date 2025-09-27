@@ -72,6 +72,13 @@ public class ChaosModInit implements ModInitializer {
         LABELS.put("randomEffectsEnabled", "受伤随机增益");
         LABELS.put("damageScapegoatEnabled", "伤害背锅人");
         LABELS.put("painSpreadEnabled", "痛觉扩散");
+        LABELS.put("panicMagnetEnabled", "惊惧磁铁");
+        LABELS.put("pickupDrainEnabled", "贪婪吸血");
+        LABELS.put("vertigoScapegoatEnabled", "眩晕背锅侠");
+        
+        // === v1.6.0 第四面墙突破效果 ===
+        LABELS.put("windowViolentShakeEnabled", "窗口暴力抖动");
+        LABELS.put("desktopPrankInvasionEnabled", "桌面恶作剧入侵(会记录IP地址)");
     }
 
     @Override
@@ -89,6 +96,28 @@ public class ChaosModInit implements ModInitializer {
             com.example.network.KeyDisableS2CPacket.CODEC
         );
         
+        // === v1.6.0 注册第四面墙效果网络包 ===
+        // Register C2S fourth wall damage packet
+        net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.playC2S().register(
+            com.example.network.FourthWallDamageC2SPacket.ID,
+            com.example.network.FourthWallDamageC2SPacket.CODEC
+        );
+        
+        // Register S2C desktop file generation packet
+        net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.playS2C().register(
+            com.example.network.DesktopFileGenerateS2CPacket.ID,
+            com.example.network.DesktopFileGenerateS2CPacket.CODEC
+        );
+        
+        // Register S2C desktop file content packet (new multi-language support)
+        net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.playS2C().register(
+            com.example.network.DesktopFileContentS2CPacket.ID,
+            com.example.network.DesktopFileContentS2CPacket.CODEC
+        );
+        
+        // Register fourth wall damage packet receiver
+        com.example.network.FourthWallDamageC2SPacket.registerServerReceiver();
+        
         // Register key disable event handlers using Fabric events
         com.example.util.KeyDisableEventHandler.registerEvents();
         
@@ -100,6 +129,11 @@ public class ChaosModInit implements ModInitializer {
         // 注册背锅人选择定时器 - 使用ServerTickEvents.START_SERVER_TICK
         net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents.START_SERVER_TICK.register(server -> {
             com.example.util.ScapegoatSystem.tickScapegoat(server);
+            
+            // 定期清理IP缓存（每1000 ticks = 50秒清理一次）
+            if (server.getTicks() % 1000 == 0) {
+                com.example.util.SimpleIPProvider.cleanupExpiredCache();
+            }
         });
         
         // 注册玩家JOIN/DISCONNECT事件监听器
@@ -170,17 +204,24 @@ public class ChaosModInit implements ModInitializer {
             boolean hasPermission = player.hasPermissionLevel(4); // Standard admin check
             
             if (!hasPermission) {
-                send(src, Text.literal("🚫 权限不足！只有管理员才能修改 ChaosMod 配置！")
+                send(src, Text.literal(com.example.config.LanguageManager.getMessage("config_permission_denied"))
                     .formatted(Formatting.RED, Formatting.BOLD));
                 return;
             }
             
             boolean cur = com.example.ChaosMod.config.get(key);
             com.example.ChaosMod.config.set(key, !cur);
-            send(src, Text.literal("[已切换] " + key + " -> " + (!cur)).formatted(Formatting.YELLOW));
+            
+            // 多语言切换消息
+            String language = com.example.ChaosMod.config.getLanguage();
+            String toggleMsg = "en_us".equals(language) ? 
+                "[Toggled] " + key + " -> " + (!cur) :
+                "[已切换] " + key + " -> " + (!cur);
+            send(src, Text.literal(toggleMsg).formatted(Formatting.YELLOW));
             
         } catch (Exception e) {
-            send(src, Text.literal("❌ 无法获取玩家信息").formatted(Formatting.RED));
+            send(src, Text.literal(com.example.config.LanguageManager.getMessage("cannot_get_player"))
+                .formatted(Formatting.RED));
         }
     }
 

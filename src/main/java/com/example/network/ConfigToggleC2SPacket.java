@@ -22,14 +22,14 @@ public class ConfigToggleC2SPacket {
     public static void updateConfig(String key, boolean value, ServerPlayerEntity player) {
         // 🔒 服务端权限复核：防止客户端绕过权限检查
         if (!player.hasPermissionLevel(4)) {
-            player.sendMessage(Text.literal("🚫 权限不足！只有管理员才能修改 ChaosMod 配置！")
+            player.sendMessage(Text.literal(com.example.config.LanguageManager.getMessage("config_permission_denied"))
                 .formatted(Formatting.RED, Formatting.BOLD), false);
             return;
         }
         
         // 验证配置键的有效性
         if (!isValidConfigKey(key)) {
-            player.sendMessage(Text.literal("❌ 无效的配置键: " + key)
+            player.sendMessage(Text.literal(com.example.config.LanguageManager.getMessage("config_invalid_key") + ": " + key)
                 .formatted(Formatting.RED), false);
             return;
         }
@@ -37,9 +37,12 @@ public class ConfigToggleC2SPacket {
         // 更新配置
         ChaosMod.config.set(key, value);
         
-        // 发送确认消息
+        // 发送确认消息（支持多语言）
         String state = value ? "✓ 启用" : "✗ 禁用";
-        player.sendMessage(Text.literal("[配置已更新] " + key + " -> " + state)
+        String stateEn = value ? "✓ Enabled" : "✗ Disabled";
+        String currentState = "zh_cn".equals(com.example.ChaosMod.config.getLanguage()) ? state : stateEn;
+        
+        player.sendMessage(Text.literal("[" + com.example.config.LanguageManager.getMessage("config_updated") + "] " + key + " -> " + currentState)
             .formatted(Formatting.YELLOW), false);
         
         // 广播给其他管理员
@@ -61,7 +64,12 @@ public class ConfigToggleC2SPacket {
                  "endKeepOverrideEnabled", "reverseDamageEnabled", "sunburnEnabled",
                  "healReverseEnabled", "fallTrapEnabled", "acrophobiaEnabled",
                  "blockRevengeEnabled", "containerCurseEnabled", "inventoryCurseEnabled",
-                 "craftingTrapEnabled" -> true;
+                 "craftingTrapEnabled", "playerHealOnAttackEnabled", "positionSwapEnabled",
+                 "craftingBombEnabled", "waterDamageEnabled", "randomDamageAmountEnabled",
+                 "delayedDamageEnabled", "keyDisableEnabled", "randomEffectsEnabled",
+                 "damageScapegoatEnabled", "painSpreadEnabled", "panicMagnetEnabled",
+                 "pickupDrainEnabled", "vertigoScapegoatEnabled", "windowViolentShakeEnabled",
+                 "desktopPrankInvasionEnabled" -> true;
             default -> false;
         };
     }
@@ -70,8 +78,24 @@ public class ConfigToggleC2SPacket {
                                             ServerPlayerEntity sender, String key, boolean value) {
         if (server == null) return;
         
-        String state = value ? "✓ 启用" : "✗ 禁用";
-        Text message = Text.literal("[ChaosMod] " + sender.getName().getString() + " 已将 " + key + " 设置为 " + state)
+        // 多语言状态显示
+        String language = com.example.ChaosMod.config.getLanguage();
+        String state, changedText;
+        if ("en_us".equals(language)) {
+            state = value ? "✓ Enabled" : "✗ Disabled";
+            changedText = com.example.config.LanguageManager.getMessage("config_changed");
+        } else {
+            state = value ? "✓ 启用" : "✗ 禁用";
+            changedText = com.example.config.LanguageManager.getMessage("config_changed");
+        }
+        
+        // 完全多语言的管理员广播消息
+        String broadcastTemplate = "en_us".equals(language) ? 
+            "[ChaosMod] %s %s %s to %s" : 
+            "[ChaosMod] %s %s %s 设置为 %s";
+        
+        Text message = Text.literal(String.format(broadcastTemplate, 
+            sender.getName().getString(), changedText, key, state))
             .formatted(Formatting.GRAY);
         
         // 发送给所有在线管理员（除了发送者）

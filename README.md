@@ -1,4 +1,4 @@
-# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.5.5-Release
+# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.6.0-Release
 
 **Language**: [🇺🇸 English](README.md) | [🇨🇳 中文](README_CN.md)
 
@@ -10,7 +10,7 @@ This is a **ultimate torture mod specifically designed to work with DG_LAB X Min
 
 ---
 
-## 💀 38 Evil Effects - Your Nightmare Checklist
+## 💀 40 Evil Effects - Your Nightmare Checklist
 
 ### 🎯 Basic Torture Kit
 1. **🔴 All Mobs Hostile** - Even chickens want to kill you! No safe zones!
@@ -65,6 +65,19 @@ This is a **ultimate torture mod specifically designed to work with DG_LAB X Min
 36. **🧲 Panic Magnet** - Enter **10-second magnetization** after injury! Every 2 seconds, **teleport the nearest teammate within 30 blocks** through walls, dealing 0.5♥ damage and granting **magnetization immunity**! Magnetized player sees "Don't come near me!", pulled player sees "PlayerName: Don't come near me!" **Precise fear transmission**!
 37. **🩸 Pickup Drain** - **Picking up any item instantly costs 0.5♥**! Let greedy teammates **suffer electric torture** while collecting items! Every act of greed requires **paying the blood price**!
 38. **😵 Vertigo Scapegoat** - Server randomly selects a **scapegoat every 5 minutes** (rotating, no repeats)! When normal players get hurt, scapegoat instantly suffers **10-second blindness + nausea**; when scapegoat gets hurt, also **10 seconds debuff plus reselection**! System sends **mysterious vague warnings**, scapegoat and others receive **different hints**!
+
+### 💀 v1.6.0 Ultimate Fourth Wall Breaking - Transcend 40 Effects!
+39. **🪟 Window Violent Shake** - **Game breaks through screen limitations**! When you die, your game window will **violently shake for 10 seconds**, physically attacking the real world! After respawn, immediately receive **Poison II effect for 10 seconds** as punishment! Feel the horror of game truly **jumping out of virtual world**! **Best combined with Acrophobia and Random Damage Value effects**!
+40. **📁 Desktop Prank Invasion** - **Game invades real desktop**! When health drops below 5♥, generates "Help me! I'm going to die!!!.txt" on desktop, below 3♥ generates more urgent rescue files, and generates final file upon death! Files contain **your real IP address, current health, generation time** and other info! Each generation costs additional 1♥! **Best combined with Window Shake and Key Malfunction effects for more thorough reality invasion**!
+
+> ⚠️ **IMPORTANT SECURITY NOTICE**: The 40th effect "Desktop Prank Invasion" will **record and display player's real IP address** in desktop generated files. We **DO NOT collect, store, or transmit** any player IP information in the background. All IP retrieval is **local real-time operation** and only written to **your own computer's desktop files**. Please **use this effect with caution** and ensure your gaming environment is secure and trustworthy. If you decide to use this feature, please ensure:
+> - **DO NOT enable this effect in public network environments**
+> - **Clean up generated desktop files promptly** (files auto-overwrite, but manual cleanup recommended)
+> - **Ensure your computer has no malware** monitoring desktop files
+> - **Only use on trusted servers**
+> - **This is an entertainment feature**, we take **NO RESPONSIBILITY** for any potential information leakage
+> 
+> **🛡️ LIABILITY DISCLAIMER**: This feature is purely for entertainment purposes to enhance gaming experience. ChaosMod and its developers **DO NOT collect, DO NOT store, DO NOT transmit** any player personal information. All IP address retrieval is **local temporary operation** only for writing to player's own desktop files. Using this feature indicates **you fully understand and agree to assume related risks**.
 
 ---
 
@@ -175,7 +188,7 @@ Press 'P' Key   # Open bilingual config GUI (Admin only)
 
 ### 📋 **Method 1: Manual Effect Selection**
 1. Press `P` key to open config GUI
-2. Browse through 38 evil effects list
+2. Browse through 40 evil effects list
 3. Click the effect switches you want
 4. Enjoy the pain experience!
 
@@ -225,9 +238,9 @@ This mod's creativity comes from two **shocking** gaming videos:
 
 ### 🎯 **From Concept to Reality - Our Insane Expansion**
 
-After watching these two videos, we were inspired but found **they were too conservative**! We decided to explosively expand these **5 basic effects** into **38 ultimate tortures**:
+After watching these two videos, we were inspired but found **they were too conservative**! We decided to explosively expand these **5 basic effects** into **40 ultimate tortures**:
 
-### 🔥 **From 5 Effects to 38 Effects - 760% Evil Growth!**
+### 🔥 **From 5 Effects to 40 Effects - 800% Evil Growth!**
 
 #### 📹 **Original Video Effect Analysis**
 **First video had only 3 effects:**
@@ -240,7 +253,7 @@ After watching these two videos, we were inspired but found **they were too cons
 - 🥛 Ender dragon steals water buckets (1 effect)
 
 #### 🚀 **Our Insane Breakthrough**
-**We explosively expanded these 5 effects into 38! What does this mean?**
+**We explosively expanded these 5 effects into 40! What does this mean?**
 
 🎲 **Damage System Expansion** (1→8)
 - Original: Only random damage transfer
@@ -258,9 +271,16 @@ After watching these two videos, we were inspired but found **they were too cons
 - Original: These concepts didn't exist at all
 - **Our Innovation**: Position swap + crafting bombs + panic magnet + pickup drain + vertigo scapegoat + pain spreading + random status effects + fall traps + attack healing + water to lava + AI smart recommendations!
 
+🚀 **Fourth Wall Breaking Revolution** (0→2)
+- Original: **Games forever trapped inside screens**, clear boundaries between virtual and reality
+- **Our Breakthrough**: **Game breaks through screen limitations**! Truly shatter virtual-reality boundaries!
+  - 🪟 **Window Violent Shake**: Physically control real hardware upon death, making game window **violently shake and attack the real world**!
+  - 📁 **Desktop Prank Invasion**: Game directly **invades real file system**, generating evil files on your desktop containing **real IP address**!
+- **Revolutionary Significance**: This is no longer an ordinary "game", but a **completely new experience where reality and virtual merge**! The game can control your hardware, file system, truly **transcending traditional gaming concepts**!
+
 ### 💀 **Qualitative Leap - From Simple to Complex**
 - **Original Videos**: 5 independent effects, fighting separately
-- **Our Breakthrough**: 38 effects **interact with each other**, forming a **complete torture ecosystem**!
+- **Our Breakthrough**: 40 effects **interact with each other**, forming a **complete torture ecosystem**!
 
 - **Original Videos**: Only basic damage
 - **Our Breakthrough**: **Physical + psychological dual devastation**, making pain penetrate the soul!
@@ -271,14 +291,18 @@ After watching these two videos, we were inspired but found **they were too cons
 - **Original Videos**: Fixed effect combinations
 - **Our Breakthrough**: **AI smart recommendations** with 20 professional combinations, each player gets customized hell!
 
+- **Original Videos**: Games can only affect the in-game world
+- **Our Breakthrough**: **Fourth wall completely shattered**! Game can control real hardware, invade desktop file system, obtain real IP addresses!
+
 ### 🎭 **Revolutionary Innovation Summary**
-From the original videos' **5 basic effects** to our **38 ultimate tortures**, this isn't just numerical growth, but **qualitative revolution**:
+From the original videos' **5 basic effects** to our **40 ultimate tortures**, this isn't just numerical growth, but **qualitative revolution**:
 - 🧠 **Psychological Tactics**: Make fear the greatest enemy
 - ⏰ **Time Torture**: Waiting is more painful than damage  
 - 🌍 **Environmental Hostility**: The entire world fights against you
 - 👥 **Social Betrayal**: Friends become the greatest threat source
 - 🎰 **Random Terror**: Never knowing what happens next
-- 🔗 **Effect Chaining**: 38 tortures form perfect loops of agony
+- 🔗 **Effect Chaining**: 40 tortures form perfect loops of agony
+- 🚀 **Fourth Wall Breaking**: Games transcend virtual limitations, directly controlling reality!
 
 ---
 
@@ -299,7 +323,7 @@ Every effect in this mod is carefully calibrated to perfectly integrate with sho
 - 🥈 **Intermediate Challenger**: Enable 15 effects and play for 30 minutes  
 - 🥇 **Advanced Challenger**: Enable 25 effects and play for 10 minutes
 - 👑 **Master Builder**: Enable acrophobia and build at Y=200
-- 💀 **Ultimate Challenger**: Enable all 38 effects simultaneously and survive
+- 💀 **Ultimate Challenger**: Enable all 40 effects simultaneously and survive
 - 🎰 **Random Master**: Enable random damage values and survive for 1 hour
 
 ---
@@ -315,7 +339,7 @@ Enable: Basic effects + `acrophobiaEnabled` + `reverseDamageEnabled` + `healReve
 > Classic challenge experience, suitable for experienced players
 
 ### 👹 **Ultimate Challenge Package** (Difficulty: Hard)
-Enable: **All 38 effects**
+Enable: **All 40 effects**
 > Only true warriors dare to try! Prepare for the ultimate challenge!
 
 ### 🔥 **Electric Shock Special Package** (Recommended)
@@ -367,7 +391,7 @@ Enable: `reverseDamageEnabled` + `healReverseEnabled` + `fallTrapEnabled`
 
 - 🥉 **Teamwork**: Play with friends with 5 effects enabled for 1 hour
 - 🥈 **Challengers**: Enable 15 effects in multiplayer environment
-- 🥇 **Brave Team**: All members enable 38 effects and persist in gaming
+- 🥇 **Brave Team**: All members enable 40 effects and persist in gaming
 - 👑 **Server Legend**: Become the most daring challenger on the server
 
 #### 💬 **Common Multiplayer Situations**
@@ -444,6 +468,18 @@ When multiple people play together with shock devices:
 ---
 
 ## 📝 Update Log
+
+### v1.6.0-Release - "Fourth Wall Shatter: Ultimate 40 Effects Edition!" 🪟📁💀
+- 🪟 **NEW: Window Violent Shake** - Game breaks through screen limitations! Window violently shakes for 10 seconds upon death, physically attacking reality! Poison II punishment after respawn!
+- 📁 **NEW: Desktop Prank Invasion** - Game invades real desktop! Generates evil rescue files containing real IP address! Lower health means more terrifying files!
+- 💀 **BREAKTHROUGH: True Fourth Wall Breaking** - Game no longer confined to screen, can control real hardware and file system!
+- 🔐 **SECURITY: Complete IP Privacy Protection** - All IP retrieval is local temporary operation, no collection, no storage, no transmission!
+- 🌐 **PERFECTED: Full Multilingual Support** - All 40 effects' text output completely supports Chinese/English switching!
+- ⚡ **OPTIMIZED: HTTP Public IP Detection** - Smart real external IP address retrieval with multiple endpoint backup!
+- 🎮 **ENHANCED: AI Recommendation Combinations** - New "Fourth Wall Shatter", "Shock Ultimate", "Reality Invasion Package" combinations!
+- 🛡️ **STABLE: Multi-player Caching System** - Independent IP cache per player, auto-cleanup on disconnect, prevents memory leaks!
+- 📱 **EXPERIENCE: Generate-Once Mechanism** - File generation optimized, prevents desktop clutter, resets state after respawn!
+- 😈 **HORROR: Evil File Content** - Desktop files contain demonic text, IP address, health info, true reality horror!
 
 ### v1.5.5-Release - "Ultimate Evil Trilogy: Complete 38 Effects Edition!" 🧲🩸😵
 - 🧲 **NEW: Panic Magnet** - 10-second magnetization after injury! Every 2 seconds teleport teammates within 30 blocks through walls, precise fear transmission system!
@@ -645,7 +681,7 @@ When multiple people play together with shock devices:
 ChaosMod
 ├── 🎯 DamageRouting.java     # Damage routing system
 ├── 🎭 ThreatProfiles.java    # Threat parameter configuration
-├── ⚙️ ChaosModConfig.java    # 38 evil switches
+├── ⚙️ ChaosModConfig.java    # 40 evil switches
 └── 😈 ServerPlayerEntityTickMixin.java  # Acrophobia core
 ```
 

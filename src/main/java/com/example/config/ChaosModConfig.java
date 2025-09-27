@@ -43,10 +43,14 @@ public class ChaosModConfig {
     public boolean damageScapegoatEnabled = false;      // 伤害背锅人：每隔5分钟选出背锅侠承受所有伤害
     public boolean painSpreadEnabled = false;           // 痛觉扩散：被打后5秒内"带电"，靠近会被雷劈
     
-    // === v1.6.0 新增的混沌效果 (总计38种) ===
+    // === v1.5.5 新增的混沌效果 (总计38种) ===
     public boolean panicMagnetEnabled = false;          // 惊惧磁铁：受伤后10秒磁化期，每2秒拽队友到身边并扣血
     public boolean pickupDrainEnabled = false;          // 贪婪吸血：拾取物品时立刻扣0.5♥血量
     public boolean vertigoScapegoatEnabled = false;     // 眩晕背锅侠：随机选择背锅侠承受他人受伤后果
+    
+    // === v1.6.0 第四面墙突破效果：40种效果！ ===
+    public boolean windowViolentShakeEnabled = false;   // 窗口暴力抖动：死亡时窗口超级抖动+复活惩戒，打破虚实界限
+    public boolean desktopPrankInvasionEnabled = false; // 桌面恶作剧入侵：生命值低时在桌面生成求救文件并记录IP地址+额外扣血
 
     // v1.3.0: Language setting
     public String language = "zh_cn";                  // 默认中文，可选: "en_us", "zh_cn"
@@ -97,6 +101,8 @@ public class ChaosModConfig {
             case "panicMagnetEnabled": return panicMagnetEnabled;
             case "pickupDrainEnabled": return pickupDrainEnabled;
             case "vertigoScapegoatEnabled": return vertigoScapegoatEnabled;
+            case "windowViolentShakeEnabled": return windowViolentShakeEnabled;
+            case "desktopPrankInvasionEnabled": return desktopPrankInvasionEnabled;
             default: return false;
         }
     }
@@ -140,6 +146,8 @@ public class ChaosModConfig {
             case "panicMagnetEnabled": panicMagnetEnabled = value; break;
             case "pickupDrainEnabled": pickupDrainEnabled = value; break;
             case "vertigoScapegoatEnabled": vertigoScapegoatEnabled = value; break;
+            case "windowViolentShakeEnabled": windowViolentShakeEnabled = value; break;
+            case "desktopPrankInvasionEnabled": desktopPrankInvasionEnabled = value; break;
             default: break;
         }
         markDirty();

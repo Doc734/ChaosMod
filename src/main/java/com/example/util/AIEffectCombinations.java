@@ -239,5 +239,27 @@ public class AIEffectCombinations {
             new String[]{"panicMagnetEnabled", "pickupDrainEnabled", "vertigoScapegoatEnabled", "delayedDamageEnabled", "keyDisableEnabled"},
             "AI为你推荐：新时代混沌 - 体验最新的痛苦科技！"
         ));
+        
+        // === v1.6.0 第四面墙突破组合 ===
+        ALL_COMBINATIONS.add(new EffectCombination(
+            "[第四面墙粉碎] 第四面墙粉碎",
+            "💀游戏突破虚拟界限！",
+            new String[]{"windowViolentShakeEnabled", "desktopPrankInvasionEnabled", "randomDamageAmountEnabled", "acrophobiaEnabled"},
+            "AI为你推荐：第四面墙粉碎 - 窗口抖动+桌面入侵，游戏真正突破屏幕！💀⚡"
+        ));
+        
+        ALL_COMBINATIONS.add(new EffectCombination(
+            "[电击终极版] 电击终极版",
+            "为电击设备量身定制！",
+            new String[]{"windowViolentShakeEnabled", "randomDamageAmountEnabled", "acrophobiaEnabled", "waterDamageEnabled", "sunburnEnabled"},
+            "AI为你推荐：电击终极版 - 窗口抖动+持续扣血，电击设备永不停歇！⚡💀"
+        ));
+        
+        ALL_COMBINATIONS.add(new EffectCombination(
+            "[现实入侵套餐] 现实入侵套餐", 
+            "虚拟世界入侵现实！",
+            new String[]{"desktopPrankInvasionEnabled", "windowViolentShakeEnabled", "keyDisableEnabled", "painSpreadEnabled"},
+            "AI为你推荐：现实入侵套餐 - 桌面文件+窗口控制+按键失灵，全方位现实攻击！💀"
+        ));
     }
 }

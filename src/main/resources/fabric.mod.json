@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "chaosmod",
-  "version": "1.5.5-Release",
+  "version": "1.6.0-Release",
   "name": "Chaos Mod 1.21",
-  "description": "38 evil effects including panic magnet, pickup drain, vertigo scapegoat + all previous 35 effects + admin permission system.",
+  "description": "40 evil effects including window violent shake, desktop prank invasion (with IP recording), fourth wall breaking + all previous 38 effects + full multilingual support + admin permission system.",
   "environment": "*",
   "entrypoints": {
     "main": [

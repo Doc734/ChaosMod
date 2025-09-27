@@ -38,7 +38,7 @@ public class PainSpreadSystem {
         ELECTRIFIED_PLAYERS.put(player, currentTime + ELECTRIFIED_DURATION);
         
         if (player instanceof ServerPlayerEntity serverPlayer) {
-            serverPlayer.sendMessage(Text.literal("⚡ 你带电了！5秒内靠近你的人会被雷劈！")
+            serverPlayer.sendMessage(Text.literal("⚡ " + com.example.config.LanguageManager.getMessage("electrified"))
                 .formatted(Formatting.YELLOW, Formatting.BOLD), true);
         }
     }
@@ -60,7 +60,7 @@ public class PainSpreadSystem {
         if (currentTime >= electrifiedUntil) {
             ELECTRIFIED_PLAYERS.remove(owner);
             LIGHTNING_COOLDOWNS.remove(owner);
-            serverOwner.sendMessage(Text.literal("✅ 带电状态已结束")
+            serverOwner.sendMessage(Text.literal("✅ " + com.example.config.LanguageManager.getMessage("electrified_ended"))
                 .formatted(Formatting.GREEN), true);
             return;
         }
@@ -98,7 +98,9 @@ public class PainSpreadSystem {
             }
             
             // 发送消息
-            other.sendMessage(Text.literal("⚡ 你被 " + owner.getName().getString() + " 的带电状态雷劈了！")
+            other.sendMessage(Text.literal("⚡ " + 
+                String.format(com.example.config.LanguageManager.getMessage("struck_by_lightning"), 
+                owner.getName().getString()))
                 .formatted(Formatting.RED), true);
         }
 

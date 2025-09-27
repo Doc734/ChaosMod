@@ -435,7 +435,8 @@ public class ScapegoatSystem {
             }
             
             // 只保留核心伤害转移提示（背锅人只在承受伤害时才知道）
-            currentScapegoat.sendMessage(Text.literal("[ChaosMod] 💥 你替别人承受了伤害！")
+            currentScapegoat.sendMessage(Text.literal("[ChaosMod] 💥 " + 
+                com.example.config.LanguageManager.getMessage("damage_absorbed"))
                 .formatted(Formatting.GOLD), true);
             
             // 只给其他人（非背锅人）发送模糊警告
@@ -456,12 +457,12 @@ public class ScapegoatSystem {
      */
     private static void broadcastScapegoatWarning(MinecraftServer server) {
         Text titleWarning = Text.literal("⚡").formatted(Formatting.RED, Formatting.BOLD);
-        Text actionBarWarning = Text.literal("[ChaosMod] 有人的伤害被转移了...")
+        Text actionBarWarning = Text.literal("[ChaosMod] " + com.example.config.LanguageManager.getMessage("damage_transferred"))
             .formatted(Formatting.DARK_GRAY);
         
         // 给背锅人的特殊模糊警告（不让他知道是自己）
         Text scapegoatTitleWarning = Text.literal("!").formatted(Formatting.YELLOW, Formatting.BOLD);
-        Text scapegoatActionBarWarning = Text.literal("[ChaosMod] 系统发生了变化...")
+        Text scapegoatActionBarWarning = Text.literal("[ChaosMod] " + com.example.config.LanguageManager.getMessage("system_changed"))
             .formatted(Formatting.GRAY);
         
         for (ServerPlayerEntity player : server.getPlayerManager().getPlayerList()) {

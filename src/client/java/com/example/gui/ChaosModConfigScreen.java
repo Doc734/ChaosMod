@@ -187,7 +187,9 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
             "delayedDamageEnabled", "keyDisableEnabled", "randomEffectsEnabled",
             "damageScapegoatEnabled", "painSpreadEnabled",
             // v1.6.0 新增效果
-            "panicMagnetEnabled", "pickupDrainEnabled", "vertigoScapegoatEnabled"
+            "panicMagnetEnabled", "pickupDrainEnabled", "vertigoScapegoatEnabled",
+            // v1.6.0 第四面墙突破效果
+            "windowViolentShakeEnabled", "desktopPrankInvasionEnabled"
         };
         
         for (String key : keys) {
@@ -284,8 +286,17 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
                 String targetEffectName = getCurrentLabels().get(key);
                 
                 if (this.client != null && this.client.player != null) {
+                    // 多语言效果冲突警告
+                    String language = com.example.config.LanguageManager.getCurrentLanguage().code;
+                    String warningMsg;
+                    if ("en_us".equals(language)) {
+                        warningMsg = String.format("You have enabled '%s' and cannot enable '%s'", currentEffectName, targetEffectName);
+                    } else {
+                        warningMsg = String.format("当前你开启了「%s」无法开启「%s」", currentEffectName, targetEffectName);
+                    }
+                    
                     this.client.player.sendMessage(
-                        Text.literal("[警告] 当前你开启了「" + currentEffectName + "」无法开启「" + targetEffectName + "」")
+                        Text.literal("[" + ("en_us".equals(language) ? "Warning" : "警告") + "] " + warningMsg)
                             .formatted(Formatting.RED, Formatting.BOLD),
                         false
                     );
