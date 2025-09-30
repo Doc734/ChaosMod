@@ -75,10 +75,18 @@ public class ChaosModInit implements ModInitializer {
         LABELS.put("panicMagnetEnabled", "惊惧磁铁");
         LABELS.put("pickupDrainEnabled", "贪婪吸血");
         LABELS.put("vertigoScapegoatEnabled", "眩晕背锅侠");
-        
-        // === v1.6.0 第四面墙突破效果 ===
         LABELS.put("windowViolentShakeEnabled", "窗口暴力抖动");
         LABELS.put("desktopPrankInvasionEnabled", "桌面恶作剧入侵(会记录IP地址)");
+        LABELS.put("randomKeyPressEnabled", "电击中毒癫痫");
+        LABELS.put("touchHellEnabled", "触控地狱");
+        LABELS.put("movementTaxEnabled", "移动税");
+        LABELS.put("controlSeizurePlusEnabled", "控制癫痫Plus");
+        LABELS.put("jumpTaxEnabled", "跳跃税");
+        LABELS.put("forcedTetherEnabled", "强制捆绑");
+        LABELS.put("hpAveragingEnabled", "血量平均");
+        LABELS.put("multiplayerRouletteEnabled", "死亡轮盘(多人版)");
+        LABELS.put("timedPositionSwapEnabled", "定时位置互换");
+        LABELS.put("forcedSprintEnabled", "强制奔跑");
     }
 
     @Override
@@ -115,11 +123,22 @@ public class ChaosModInit implements ModInitializer {
             com.example.network.DesktopFileContentS2CPacket.CODEC
         );
         
+        // 控制癫痫Plus现在使用现有的KeyDisableS2CPacket系统，无需新网络包
+        
         // Register fourth wall damage packet receiver
         com.example.network.FourthWallDamageC2SPacket.registerServerReceiver();
         
         // Register key disable event handlers using Fabric events
         com.example.util.KeyDisableEventHandler.registerEvents();
+        
+        // Register RandomKeyPress C2S packet payload type
+        net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.playC2S().register(
+            com.example.network.RandomKeyPressC2SPacket.ID,
+            com.example.network.RandomKeyPressC2SPacket.CODEC
+        );
+        
+        // Register RandomKeyPress C2S packet receiver
+        com.example.network.RandomKeyPressC2SPacket.registerServerReceiver();
         
         // Initialize scapegoat system on server start
         net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents.SERVER_STARTED.register(server -> {
@@ -129,6 +148,13 @@ public class ChaosModInit implements ModInitializer {
         // 注册背锅人选择定时器 - 使用ServerTickEvents.START_SERVER_TICK
         net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents.START_SERVER_TICK.register(server -> {
             com.example.util.ScapegoatSystem.tickScapegoat(server);
+            
+            // v1.8.0: 注册多人互坑效果tick处理
+            com.example.util.MultiplayerChaosEffects.tickForcedTether(server);
+            com.example.util.MultiplayerChaosEffects.tickHPAveraging(server);
+            com.example.util.MultiplayerChaosEffects.tickMultiplayerRoulette(server);
+            com.example.util.MultiplayerChaosEffects.tickTimedPositionSwap(server);
+            com.example.util.MultiplayerChaosEffects.tickForcedSprint(server);
             
             // 定期清理IP缓存（每1000 ticks = 50秒清理一次）
             if (server.getTicks() % 1000 == 0) {
@@ -145,6 +171,9 @@ public class ChaosModInit implements ModInitializer {
         net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
             // DISCONNECT即时重算
             com.example.util.ScapegoatSystem.onPlayerDisconnect(handler.getPlayer(), server);
+            
+            // v1.8.0: 清理多人互坑效果数据
+            com.example.util.MultiplayerChaosEffects.cleanupPlayerData(handler.getPlayer());
         });
         
         // Commands with Admin Permission Check (keeping only toggle command)

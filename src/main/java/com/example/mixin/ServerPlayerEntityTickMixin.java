@@ -48,6 +48,13 @@ public class ServerPlayerEntityTickMixin {
         
         // 痛觉扩散：处理带电状态的tick逻辑（原有）
         com.example.util.ChaosEffects.tickElectrified(player);
+        
+        // === v1.7.0 电击地狱级效果 ===
+        // 移动税：处理玩家移动累计
+        com.example.util.ChaosEffects.handleMovementTax(player);
+        
+        // 控制癫痫Plus：每5秒扣血处理
+        com.example.util.ChaosEffects.tickControlSeizurePlus(player);
     }
     
     private void chaos$tickAcrophobia(ServerPlayerEntity player) {

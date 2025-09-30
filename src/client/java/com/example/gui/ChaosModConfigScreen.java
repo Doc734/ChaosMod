@@ -10,6 +10,7 @@ import com.example.util.AIEffectCombinationsEN;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
+import net.minecraft.client.gui.tooltip.Tooltip;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -114,6 +115,7 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
                 btn -> toggleConfig(key)
             )
             .dimensions(centerX - BUTTON_WIDTH / 2, yPos, BUTTON_WIDTH, BUTTON_HEIGHT)
+            .tooltip(Tooltip.of(Text.literal(getTooltipText(key)).formatted(Formatting.WHITE)))
             .build();
             
             this.addDrawableChild(button);
@@ -189,7 +191,13 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
             // v1.6.0 新增效果
             "panicMagnetEnabled", "pickupDrainEnabled", "vertigoScapegoatEnabled",
             // v1.6.0 第四面墙突破效果
-            "windowViolentShakeEnabled", "desktopPrankInvasionEnabled"
+            "windowViolentShakeEnabled", "desktopPrankInvasionEnabled",
+            // v1.7.0 电击地狱级效果
+            "randomKeyPressEnabled", "touchHellEnabled", "movementTaxEnabled",
+            "controlSeizurePlusEnabled", "jumpTaxEnabled",
+            // v1.8.0 多人互坑效果
+            "forcedTetherEnabled", "hpAveragingEnabled", "multiplayerRouletteEnabled",
+            "timedPositionSwapEnabled", "forcedSprintEnabled"
         };
         
         for (String key : keys) {
@@ -464,4 +472,122 @@ public class ChaosModConfigScreen extends HandledScreen<ChaosModScreenHandler> {
         // 更新按钮显示
         updateButtonTexts();
     }
+    
+    /**
+     * 获取简洁的Tooltip文本
+     */
+    private String getTooltipText(String key) {
+        String language = com.example.config.LanguageManager.getCurrentLanguage().code;
+        
+        if ("en_us".equals(language)) {
+            return switch (key) {
+                case "allHostileEnabled" -> "All mobs attack players";
+                case "mobIgniteEnabled" -> "Mob hits set on fire";
+                case "mobSlownessEnabled" -> "Mob hits give slowness";
+                case "mobBlindnessEnabled" -> "Mob hits give blindness";
+                case "mobThornsEnabled" -> "Attack mobs = 50% reflect damage";
+                case "foodPoisonEnabled" -> "Eating food = poison chance";
+                case "enderDragonBucketEnabled" -> "Dragon turns water→milk";
+                case "enderDragonKillEnabled" -> "Kill dragon = suicide";
+                case "playerDamageShareEnabled" -> "Share damage with nearby players";
+                case "sharedHealthEnabled" -> "One dies = all die";
+                case "sharedDamageSplitEnabled" -> "All damage split server-wide";
+                case "randomDamageEnabled" -> "Damage transfers randomly";
+                case "shieldNerfEnabled" -> "Shield blocks only 80%";
+                case "lowHealthNoHealEnabled" -> "≤1 heart = no heal 10s";
+                case "waterToLavaEnabled" -> "Water 50% becomes lava";
+                case "endKeepOverrideEnabled" -> "End drops, others keep";
+                case "reverseDamageEnabled" -> "Safe=damage, hurt=stop";
+                case "sunburnEnabled" -> "Sunlight = auto fire";
+                case "healReverseEnabled" -> "Heal 50% becomes damage";
+                case "fallTrapEnabled" -> "Jump land 20% damage";
+                case "acrophobiaEnabled" -> "High altitude = more damage";
+                case "blockRevengeEnabled" -> "Break blocks = revenge";
+                case "containerCurseEnabled" -> "Open containers = damage";
+                case "inventoryCurseEnabled" -> "Switch items = damage";
+                case "craftingTrapEnabled" -> "Craft items = damage";
+                case "playerHealOnAttackEnabled" -> "Attack players = heal self";
+                case "positionSwapEnabled" -> "Hurt = swap with teammate";
+                case "craftingBombEnabled" -> "Workbench = bomb after 5s";
+                case "waterDamageEnabled" -> "Water = continuous damage";
+                case "randomDamageAmountEnabled" -> "Damage = random amount";
+                case "delayedDamageEnabled" -> "Damage delayed 0-5s";
+                case "keyDisableEnabled" -> "10 hits = disable key";
+                case "randomEffectsEnabled" -> "Hurt = random effects";
+                case "damageScapegoatEnabled" -> "Random scapegoat takes damage";
+                case "painSpreadEnabled" -> "Hurt = electrify nearby";
+                case "panicMagnetEnabled" -> "Hurt = magnetize teammates";
+                case "pickupDrainEnabled" -> "Pickup = health cost";
+                case "vertigoScapegoatEnabled" -> "Random suffers others' pain";
+                case "windowViolentShakeEnabled" -> "Death = window shake";
+                case "desktopPrankInvasionEnabled" -> "Low health = desktop files";
+                case "randomKeyPressEnabled" -> "2min = poison II + damage + shock";
+                case "touchHellEnabled" -> "Right-click = lava teleport";
+                case "movementTaxEnabled" -> "10 blocks = damage";
+                case "controlSeizurePlusEnabled" -> "Death = disable WASD key";
+                case "jumpTaxEnabled" -> "Jump = damage";
+                case "forcedTetherEnabled" -> "120s = random bind two players for 90s";
+                case "hpAveragingEnabled" -> "60s = random two players HP average";
+                case "multiplayerRouletteEnabled" -> "90s = random lottery punishment";
+                case "timedPositionSwapEnabled" -> "60s = random swap positions";
+                case "forcedSprintEnabled" -> "90s = one must keep moving";
+                default -> "Unknown effect";
+            };
+        } else {
+            return switch (key) {
+                case "allHostileEnabled" -> "所有生物攻击玩家";
+                case "mobIgniteEnabled" -> "被怪物命中着火";
+                case "mobSlownessEnabled" -> "被怪物命中缓慢";
+                case "mobBlindnessEnabled" -> "被怪物命中失明";
+                case "mobThornsEnabled" -> "攻击怪物=50%反伤";
+                case "foodPoisonEnabled" -> "吃食物=中毒概率";
+                case "enderDragonBucketEnabled" -> "龙把水桶变牛奶";
+                case "enderDragonKillEnabled" -> "杀龙=自杀";
+                case "playerDamageShareEnabled" -> "与附近玩家分担伤害";
+                case "sharedHealthEnabled" -> "一人死=全员死";
+                case "sharedDamageSplitEnabled" -> "全服分担伤害";
+                case "randomDamageEnabled" -> "伤害随机转移";
+                case "shieldNerfEnabled" -> "盾牌只挡80%";
+                case "lowHealthNoHealEnabled" -> "≤1心=禁回血10秒";
+                case "waterToLavaEnabled" -> "放水50%变岩浆";
+                case "endKeepOverrideEnabled" -> "末地掉落，其他保留";
+                case "reverseDamageEnabled" -> "安全=扣血，受伤=停止";
+                case "sunburnEnabled" -> "阳光=自动着火";
+                case "healReverseEnabled" -> "回血50%变扣血";
+                case "fallTrapEnabled" -> "跳跃落地=伤害概率";
+                case "acrophobiaEnabled" -> "高度=更多伤害";
+                case "blockRevengeEnabled" -> "破坏方块=反伤";
+                case "containerCurseEnabled" -> "开容器=伤害";
+                case "inventoryCurseEnabled" -> "切换物品=伤害";
+                case "craftingTrapEnabled" -> "合成物品=伤害";
+                case "playerHealOnAttackEnabled" -> "攻击玩家=自己回血";
+                case "positionSwapEnabled" -> "受伤=与队友换位";
+                case "craftingBombEnabled" -> "工作台=5秒后爆炸";
+                case "waterDamageEnabled" -> "水=持续伤害";
+                case "randomDamageAmountEnabled" -> "伤害=随机数值";
+                case "delayedDamageEnabled" -> "伤害延迟0-5秒";
+                case "keyDisableEnabled" -> "10次受伤=禁用按键";
+                case "randomEffectsEnabled" -> "受伤=随机状态效果";
+                case "damageScapegoatEnabled" -> "随机背锅人承受伤害";
+                case "painSpreadEnabled" -> "受伤=电击附近队友";
+                case "panicMagnetEnabled" -> "受伤=磁化拉拽队友";
+                case "pickupDrainEnabled" -> "拾取=扣血";
+                case "vertigoScapegoatEnabled" -> "随机承受他人痛苦";
+                case "windowViolentShakeEnabled" -> "死亡=窗口抖动";
+                case "desktopPrankInvasionEnabled" -> "低血量=桌面文件";
+                case "randomKeyPressEnabled" -> "2分钟=中毒2+扣血+电击";
+                case "touchHellEnabled" -> "右键=岩浆传送";
+                case "movementTaxEnabled" -> "10格移动=扣血";
+                case "controlSeizurePlusEnabled" -> "死亡=禁用WASD键";
+                case "jumpTaxEnabled" -> "跳跃=扣血";
+                case "forcedTetherEnabled" -> "120秒=随机绑定两人90秒";
+                case "hpAveragingEnabled" -> "60秒=随机两人血量平均";
+                case "multiplayerRouletteEnabled" -> "90秒=随机抽奖惩罚";
+                case "timedPositionSwapEnabled" -> "60秒=随机交换位置";
+                case "forcedSprintEnabled" -> "90秒=一人必须持续移动";
+                default -> "未知效果";
+            };
+        }
+    }
+    
 }

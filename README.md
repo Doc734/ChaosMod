@@ -1,4 +1,4 @@
-# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.6.0-Release
+# 🔥 ChaosMod for Minecraft 1.21 - DG_LAB Special Edition ⚡ v1.7.0-Release
 
 **Language**: [🇺🇸 English](README.md) | [🇨🇳 中文](README_CN.md)
 
@@ -10,7 +10,7 @@ This is a **ultimate torture mod specifically designed to work with DG_LAB X Min
 
 ---
 
-## 💀 40 Evil Effects - Your Nightmare Checklist
+## 💀 50 Evil Effects - Your Nightmare Checklist
 
 ### 🎯 Basic Torture Kit
 1. **🔴 All Mobs Hostile** - Even chickens want to kill you! No safe zones!
@@ -66,9 +66,21 @@ This is a **ultimate torture mod specifically designed to work with DG_LAB X Min
 37. **🩸 Pickup Drain** - **Picking up any item instantly costs 0.5♥**! Let greedy teammates **suffer electric torture** while collecting items! Every act of greed requires **paying the blood price**!
 38. **😵 Vertigo Scapegoat** - Server randomly selects a **scapegoat every 5 minutes** (rotating, no repeats)! When normal players get hurt, scapegoat instantly suffers **10-second blindness + nausea**; when scapegoat gets hurt, also **10 seconds debuff plus reselection**! System sends **mysterious vague warnings**, scapegoat and others receive **different hints**!
 
-### 💀 v1.6.0 Ultimate Fourth Wall Breaking - Transcend 40 Effects!
+### 💀 v1.6.0 Ultimate Fourth Wall Breaking - Transcend 45 Effects!
 39. **🪟 Window Violent Shake** - **Game breaks through screen limitations**! When you die, your game window will **violently shake for 10 seconds**, physically attacking the real world! After respawn, immediately receive **Poison II effect for 10 seconds** as punishment! Feel the horror of game truly **jumping out of virtual world**! **Best combined with Acrophobia and Random Damage Value effects**!
 40. **📁 Desktop Prank Invasion** - **Game invades real desktop**! When health drops below 5♥, generates "Help me! I'm going to die!!!.txt" on desktop, below 3♥ generates more urgent rescue files, and generates final file upon death! Files contain **your real IP address, current health, generation time** and other info! Each generation costs additional 1♥! **Best combined with Window Shake and Key Malfunction effects for more thorough reality invasion**!
+
+### ⚡ v1.7.0 Electric Hell-Grade + Multiplayer Betrayal Innovation - Break Through 50 Limits!
+41. **💜 Electric Poison Seizure** - **Fixed trigger every 2 minutes**! Automatically applies **Poison II effect for 10 seconds** and costs **0.5♥ health**! Features **dark purple bold chat notification**: "Enjoy the shock treatment!" Let you **feel real electric pleasure** in timed torture! **The most stable electric rhythm device**!
+42. **🔥 Touch Hell** - **Right-click any block to instantly teleport to lava pool**! Every right-click interaction is **life-or-death gambling**! Teleports to **random lava lake center** and immediately burns! Makes basic operations become **hellish journeys**! **One-click direct to hell**!
+43. **🚶 Movement Tax** - **Every 10 blocks moved costs 0.5♥ health**! Even basic movement requires **paying the blood price**! Makes exploration a **painful journey**! Walking gets **electric shock reminders**! **Step-by-step movement punishment**!
+44. **🎮 Control Seizure Plus** - **Death randomly disables one WASD key for 60 seconds**! Makes post-revival **movement impossible**! WASD malfunction makes combat and escape **extremely difficult**! Each death requires **adapting to new disabled controls**! **Most malicious control destruction**!
+45. **🦘 Jump Tax** - **Every jump costs 0.5♥ health**! Even the most basic jumping requires **paying tax to the reaper**! Makes vertical movement **self-harmful behavior**! Want to jump? **Endure electric shock first**! **Jump once, shock once**!
+46. **⛓️ Forced Tether** - **Every 120 seconds randomly bind two players for 90 seconds**! Distance >15 blocks both **take 0.5♥ damage every 2 seconds**! **Cross-death persistent binding**, remains effective after death and respawn! One runs, both suffer! **Most malicious team torture**!
+47. **⚖️ HP Averaging** - **Every 60 seconds randomly average two players' HP instantly**! Full HP players become low HP, low HP players steal teammates' health! **Robin Hood communism**! **HP shuffle**!
+48. **🎰 Multiplayer Roulette** - **Every 90 seconds one player triggers Russian roulette**! 5-second countdown then lottery: 60% safe, 25% self-damage 3♥, 10% random other 5♥, 5% **everyone takes 2♥**! **Collective gambling game**!
+49. **🔄 Timed Position Swap** - **Every 60 seconds two players swap positions after 5-second warning**! Can run to lava edge during warning to trap others! **Tactical position trap**!
+50. **🏃 Forced Sprint** - **Every 90 seconds one player must keep moving for 60 seconds**! Stop >3 seconds starts **0.5♥ damage every 2 seconds**! Can't mine, open chests, or craft while stationary! **Forced movement punishment**!
 
 > ⚠️ **IMPORTANT SECURITY NOTICE**: The 40th effect "Desktop Prank Invasion" will **record and display player's real IP address** in desktop generated files. We **DO NOT collect, store, or transmit** any player IP information in the background. All IP retrieval is **local real-time operation** and only written to **your own computer's desktop files**. Please **use this effect with caution** and ensure your gaming environment is secure and trustworthy. If you decide to use this feature, please ensure:
 > - **DO NOT enable this effect in public network environments**
@@ -183,6 +195,16 @@ Press 'P' Key   # Open bilingual config GUI (Admin only)
 | `vertigoScapegoatEnabled` | 😵 **Vertigo Scapegoat** | 🌟🌟🌟🌟🌟 |
 | `windowViolentShakeEnabled` | 🪟 **Window Violent Shake** | 💀💀💀💀💀 |
 | `desktopPrankInvasionEnabled` | 📁 **Desktop Prank Invasion** | 💀💀💀💀💀 |
+| `randomKeyPressEnabled` | 💜 **Electric Poison Seizure** | ⚡⚡⚡⚡⚡ |
+| `touchHellEnabled` | 🔥 **Touch Hell** | ⚡⚡⚡⚡⚡ |
+| `movementTaxEnabled` | 🚶 **Movement Tax** | ⚡⚡⚡⚡⚡ |
+| `controlSeizurePlusEnabled` | 🎮 **Control Seizure Plus** | ⚡⚡⚡⚡⚡ |
+| `jumpTaxEnabled` | 🦘 **Jump Tax** | ⚡⚡⚡⚡⚡ |
+| `forcedTetherEnabled` | ⛓️ **Forced Tether** | ⚡⚡⚡⚡⚡ |
+| `hpAveragingEnabled` | ⚖️ **HP Averaging** | ⚡⚡⚡⚡⚡ |
+| `multiplayerRouletteEnabled` | 🎰 **Multiplayer Roulette** | ⚡⚡⚡⚡⚡ |
+| `timedPositionSwapEnabled` | 🔄 **Timed Position Swap** | ⚡⚡⚡⚡⚡ |
+| `forcedSprintEnabled` | 🏃 **Forced Sprint** | ⚡⚡⚡⚡⚡ |
 
 ---
 
@@ -190,7 +212,7 @@ Press 'P' Key   # Open bilingual config GUI (Admin only)
 
 ### 📋 **Method 1: Manual Effect Selection**
 1. Press `P` key to open config GUI
-2. Browse through 40 evil effects list
+2. Browse through 50 evil effects list
 3. Click the effect switches you want
 4. Enjoy the pain experience!
 
@@ -240,9 +262,9 @@ This mod's creativity comes from two **shocking** gaming videos:
 
 ### 🎯 **From Concept to Reality - Our Insane Expansion**
 
-After watching these two videos, we were inspired but found **they were too conservative**! We decided to explosively expand these **5 basic effects** into **40 ultimate tortures**:
+After watching these two videos, we were inspired but found **they were too conservative**! We decided to explosively expand these **5 basic effects** into **50 ultimate tortures**:
 
-### 🔥 **From 5 Effects to 40 Effects - 800% Evil Growth!**
+### 🔥 **From 5 Effects to 50 Effects - 1000% Evil Growth!**
 
 #### 📹 **Original Video Effect Analysis**
 **First video had only 3 effects:**
@@ -255,7 +277,7 @@ After watching these two videos, we were inspired but found **they were too cons
 - 🥛 Ender dragon steals water buckets (1 effect)
 
 #### 🚀 **Our Insane Breakthrough**
-**We explosively expanded these 5 effects into 40! What does this mean?**
+**We explosively expanded these 5 effects into 50! What does this mean?**
 
 🎲 **Damage System Expansion** (1→8)
 - Original: Only random damage transfer
@@ -280,9 +302,24 @@ After watching these two videos, we were inspired but found **they were too cons
   - 📁 **Desktop Prank Invasion**: Game directly **invades real file system**, generating evil files on your desktop containing **real IP address**!
 - **Revolutionary Significance**: This is no longer an ordinary "game", but a **completely new experience where reality and virtual merge**! The game can control your hardware, file system, truly **transcending traditional gaming concepts**!
 
+⚡ **v1.7.0 Electric Hell-Grade + Multiplayer Betrayal Innovation** (0→10)
+- Original: **Completely no such malicious level effects**
+- **Our Ultimate Breakthrough**: **From 40 to 50 effects!** Added 10 electric hell-grade + multiplayer betrayal innovation effects!
+  - 💜 **Electric Poison Seizure**: Fixed trigger every 2 minutes! Poison II effect 10s + damage! **Most stable electric rhythm device**!
+  - 🔥 **Touch Hell**: Right-click any block to instantly teleport to lava pool! **One-click direct to hell**!
+  - 🚶 **Movement Tax**: Every 10 blocks moved costs health! **Step-by-step movement punishment**!
+  - 🎮 **Control Seizure Plus**: Death randomly disables WASD key for 60 seconds! **Most malicious control destruction**!
+  - 🦘 **Jump Tax**: Every jump costs health! **Jump once, shock once**!
+  - ⛓️ **Forced Tether**: Every 120 seconds bind two players for 90 seconds! Distance >15 blocks continuous damage! **Cross-death persistent**!
+  - ⚖️ **HP Averaging**: Every 60 seconds randomly average two players' HP! **Robin Hood communism**!
+  - 🎰 **Multiplayer Roulette**: Every 90 seconds random lottery! May damage entire server! **Collective gambling**!
+  - 🔄 **Timed Position Swap**: Every 60 seconds swap positions! **Tactical trap**!
+  - 🏃 **Forced Sprint**: One must keep moving for 60 seconds! **Forced movement punishment**!
+- **Breakthrough Significance**: This is **dual optimization for electric devices + multiplayer betrayal**! Each effect carefully designed to ensure **continuous stable electric output** and **friendship destruction**!
+
 ### 💀 **Qualitative Leap - From Simple to Complex**
 - **Original Videos**: 5 independent effects, fighting separately
-- **Our Breakthrough**: 40 effects **interact with each other**, forming a **complete torture ecosystem**!
+- **Our Breakthrough**: 50 effects **interact with each other**, forming a **complete torture ecosystem**!
 
 - **Original Videos**: Only basic damage
 - **Our Breakthrough**: **Physical + psychological dual devastation**, making pain penetrate the soul!
@@ -297,13 +334,13 @@ After watching these two videos, we were inspired but found **they were too cons
 - **Our Breakthrough**: **Fourth wall completely shattered**! Game can control real hardware, invade desktop file system, obtain real IP addresses!
 
 ### 🎭 **Revolutionary Innovation Summary**
-From the original videos' **5 basic effects** to our **40 ultimate tortures**, this isn't just numerical growth, but **qualitative revolution**:
+From the original videos' **5 basic effects** to our **50 ultimate tortures**, this isn't just numerical growth, but **qualitative revolution**:
 - 🧠 **Psychological Tactics**: Make fear the greatest enemy
 - ⏰ **Time Torture**: Waiting is more painful than damage  
 - 🌍 **Environmental Hostility**: The entire world fights against you
 - 👥 **Social Betrayal**: Friends become the greatest threat source
 - 🎰 **Random Terror**: Never knowing what happens next
-- 🔗 **Effect Chaining**: 40 tortures form perfect loops of agony
+- 🔗 **Effect Chaining**: 50 tortures form perfect loops of agony
 - 🚀 **Fourth Wall Breaking**: Games transcend virtual limitations, directly controlling reality!
 
 ---
@@ -325,7 +362,7 @@ Every effect in this mod is carefully calibrated to perfectly integrate with sho
 - 🥈 **Intermediate Challenger**: Enable 15 effects and play for 30 minutes  
 - 🥇 **Advanced Challenger**: Enable 25 effects and play for 10 minutes
 - 👑 **Master Builder**: Enable acrophobia and build at Y=200
-- 💀 **Ultimate Challenger**: Enable all 40 effects simultaneously and survive
+- 💀 **Ultimate Challenger**: Enable all 50 effects simultaneously and survive
 - 🎰 **Random Master**: Enable random damage values and survive for 1 hour
 
 ---
@@ -341,7 +378,7 @@ Enable: Basic effects + `acrophobiaEnabled` + `reverseDamageEnabled` + `healReve
 > Classic challenge experience, suitable for experienced players
 
 ### 👹 **Ultimate Challenge Package** (Difficulty: Hard)
-Enable: **All 40 effects**
+Enable: **All 50 effects**
 > Only true warriors dare to try! Prepare for the ultimate challenge!
 
 ### 🔥 **Electric Shock Special Package** (Recommended)
@@ -393,7 +430,7 @@ Enable: `reverseDamageEnabled` + `healReverseEnabled` + `fallTrapEnabled`
 
 - 🥉 **Teamwork**: Play with friends with 5 effects enabled for 1 hour
 - 🥈 **Challengers**: Enable 15 effects in multiplayer environment
-- 🥇 **Brave Team**: All members enable 40 effects and persist in gaming
+- 🥇 **Brave Team**: All members enable 50 effects and persist in gaming
 - 👑 **Server Legend**: Become the most daring challenger on the server
 
 #### 💬 **Common Multiplayer Situations**
@@ -470,6 +507,24 @@ When multiple people play together with shock devices:
 ---
 
 ## 📝 Update Log
+
+### v1.7.0-Release - "Electric Hell-Grade + Multiplayer Betrayal Innovation: 50 Effects Ultimate Breakthrough!" ⚡💜🔥
+- 💜 **NEW: Electric Poison Seizure** - Fixed trigger every 2 minutes! Poison II effect 10s + 0.5♥ damage! Dark purple bold chat notification! Most stable electric rhythm device!
+- 🔥 **NEW: Touch Hell** - Right-click any block to instantly teleport to lava pool! Every right-click is life-or-death gambling! One-click direct to hell!
+- 🚶 **NEW: Movement Tax** - Every 10 blocks moved costs 0.5♥ health! Step-by-step movement punishment! Walking gets electric shock reminders!
+- 🎮 **NEW: Control Seizure Plus** - Death randomly disables WASD key for 60 seconds! Most malicious control destruction! Post-revival movement impossible!
+- 🦘 **NEW: Jump Tax** - Every jump costs 0.5♥ health! Jump once, shock once! Makes vertical movement self-harmful behavior!
+- ⛓️ **NEW: Forced Tether** - Every 120 seconds bind two players for 90 seconds! Distance >15 blocks continuous damage! Cross-death persistent! Most malicious team torture!
+- ⚖️ **NEW: HP Averaging** - Every 60 seconds randomly average two players' HP! Full HP becomes low HP! Robin Hood communism!
+- 🎰 **NEW: Multiplayer Roulette** - Every 90 seconds random lottery punishment! May damage entire server! Collective gambling!
+- 🔄 **NEW: Timed Position Swap** - Every 60 seconds swap positions! 5-second warning to trap others! Tactical position trap!
+- 🏃 **NEW: Forced Sprint** - One player must keep moving for 60 seconds! Stop >3s takes damage! Forced movement punishment!
+- ⚡ **BREAKTHROUGH: 50 Effects Limit** - Expanded from 40 to 50! Added 10 electric hell-grade + multiplayer betrayal innovation effects!
+- 🌐 **ENHANCED: Chat Message Localization** - All new effects' chat notifications fully support Chinese/English dynamic switching!
+- 🎨 **IMPROVED: Colored Message System** - Dark purple bold electric notifications with stronger visual impact!
+- 🔧 **OPTIMIZED: Effect Switch Completeness** - Added complete GUI configuration switches and multilingual labels for 10 new effects!
+- 🐛 **FIXED: All Mobs Hostile Distance Detection** - Fixed 3D distance check, mobs can't attack players at height!
+- 💪 **ENHANCED: Cross-Death Tether System** - Use UUID to persist binding relationship, remains effective after death and respawn!
 
 ### v1.6.0-Release - "Fourth Wall Shatter: Ultimate 40 Effects Edition!" 🪟📁💀
 - 🪟 **NEW: Window Violent Shake** - Game breaks through screen limitations! Window violently shakes for 10 seconds upon death, physically attacking reality! Poison II punishment after respawn!
@@ -683,7 +738,7 @@ When multiple people play together with shock devices:
 ChaosMod
 ├── 🎯 DamageRouting.java     # Damage routing system
 ├── 🎭 ThreatProfiles.java    # Threat parameter configuration
-├── ⚙️ ChaosModConfig.java    # 40 evil switches
+├── ⚙️ ChaosModConfig.java    # 50 evil switches
 └── 😈 ServerPlayerEntityTickMixin.java  # Acrophobia core
 ```
 

@@ -57,10 +57,11 @@ public abstract class MobEntityTickMixin {
             if (nav != null) nav.startMovingTo(target, speed);
         } catch (Throwable ignored) {}
 
-        // Melee range check
+        // Melee range check (3D distance including vertical)
         double dx = target.getX() - self.getX();
+        double dy = target.getY() - self.getY();
         double dz = target.getZ() - self.getZ();
-        double distSq = dx*dx + dz*dz;
+        double distSq = dx*dx + dy*dy + dz*dz;  // 3D距离平方
 
         double reach = (double)(self.getWidth() * 2.0f + 0.5f);
         double reachSq = reach * reach;
@@ -151,6 +152,7 @@ public abstract class MobEntityTickMixin {
         float contact = ThreatProfiles.contactDamage(self.getType());
         target.damage(sw.getDamageSources().mobAttack(self), contact);
 
+        // 水平方向的击退（不包括垂直）
         double dx = target.getX() - self.getX();
         double dz = target.getZ() - self.getZ();
         double len = Math.sqrt(dx*dx + dz*dz);

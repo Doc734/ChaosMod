@@ -95,6 +95,8 @@ public class ChaosModClient implements ClientModInitializer {
 				});
 			});
 		
+		// 控制癫痫Plus现在使用现有的KeyDisableS2CPacket系统，无需新网络包接收器
+		
 		// 注册客户端屏幕处理器
 		HandledScreens.register(ChaosMod.CHAOS_MOD_SCREEN_HANDLER_TYPE, ChaosModConfigScreen::new);
 		
@@ -131,8 +133,13 @@ public class ChaosModClient implements ClientModInitializer {
 			// 桌面恶作剧入侵已移至服务端控制，客户端只接收处理
 			// com.example.util.DesktopPrankSystem.clientTick(); // 禁用客户端主动文件生成
 			
-		});
-	}
+		// 控制癫痫Plus现在使用现有的按键失灵系统，无需额外客户端逻辑
+		
+	});
+	
+	// Initialize RandomKeyPressManager
+	com.example.util.RandomKeyPressManager.initialize();
+}
 	
 	/**
 	 * 检查指定按键是否被禁用

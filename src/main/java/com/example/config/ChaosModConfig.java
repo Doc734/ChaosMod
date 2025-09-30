@@ -51,6 +51,20 @@ public class ChaosModConfig {
     // === v1.6.0 第四面墙突破效果：40种效果！ ===
     public boolean windowViolentShakeEnabled = false;   // 窗口暴力抖动：死亡时窗口超级抖动+复活惩戒，打破虚实界限
     public boolean desktopPrankInvasionEnabled = false; // 桌面恶作剧入侵：生命值低时在桌面生成求救文件并记录IP地址+额外扣血
+    
+    // === v1.7.0 电击地狱级效果：45种终极邪恶效果！ ===
+    public boolean randomKeyPressEnabled = false;       // 随机乱按键：随机按键+扣血+电击提醒
+    public boolean touchHellEnabled = false;            // 触控地狱：右键点击方块50%概率传送到地表岩浆池
+    public boolean movementTaxEnabled = false;          // 移动税：每移动10格扣0.5♥血
+    public boolean controlSeizurePlusEnabled = false;   // 控制癫痫Plus：死亡时WASD随机互换60秒+每5秒扣0.5♥血
+    public boolean jumpTaxEnabled = false;              // 跳跃税：每次跳跃必定扣0.5♥血
+
+    // === v1.8.0 多人互坑效果：50种终极效果！ ===
+    public boolean forcedTetherEnabled = false;         // 强制捆绑：两人距离>15格持续扣血
+    public boolean hpAveragingEnabled = false;          // 血量平均：随机两人血量强制平均
+    public boolean multiplayerRouletteEnabled = false;  // 死亡轮盘（多人版）：替换单人版，随机抽奖惩罚
+    public boolean timedPositionSwapEnabled = false;    // 定时位置互换：定时触发而非受伤触发
+    public boolean forcedSprintEnabled = false;         // 强制奔跑：必须持续移动否则扣血
 
     // v1.3.0: Language setting
     public String language = "zh_cn";                  // 默认中文，可选: "en_us", "zh_cn"
@@ -103,6 +117,16 @@ public class ChaosModConfig {
             case "vertigoScapegoatEnabled": return vertigoScapegoatEnabled;
             case "windowViolentShakeEnabled": return windowViolentShakeEnabled;
             case "desktopPrankInvasionEnabled": return desktopPrankInvasionEnabled;
+            case "randomKeyPressEnabled": return randomKeyPressEnabled;
+            case "touchHellEnabled": return touchHellEnabled;
+            case "movementTaxEnabled": return movementTaxEnabled;
+            case "controlSeizurePlusEnabled": return controlSeizurePlusEnabled;
+            case "jumpTaxEnabled": return jumpTaxEnabled;
+            case "forcedTetherEnabled": return forcedTetherEnabled;
+            case "hpAveragingEnabled": return hpAveragingEnabled;
+            case "multiplayerRouletteEnabled": return multiplayerRouletteEnabled;
+            case "timedPositionSwapEnabled": return timedPositionSwapEnabled;
+            case "forcedSprintEnabled": return forcedSprintEnabled;
             default: return false;
         }
     }
@@ -148,6 +172,16 @@ public class ChaosModConfig {
             case "vertigoScapegoatEnabled": vertigoScapegoatEnabled = value; break;
             case "windowViolentShakeEnabled": windowViolentShakeEnabled = value; break;
             case "desktopPrankInvasionEnabled": desktopPrankInvasionEnabled = value; break;
+            case "randomKeyPressEnabled": randomKeyPressEnabled = value; break;
+            case "touchHellEnabled": touchHellEnabled = value; break;
+            case "movementTaxEnabled": movementTaxEnabled = value; break;
+            case "controlSeizurePlusEnabled": controlSeizurePlusEnabled = value; break;
+            case "jumpTaxEnabled": jumpTaxEnabled = value; break;
+            case "forcedTetherEnabled": forcedTetherEnabled = value; break;
+            case "hpAveragingEnabled": hpAveragingEnabled = value; break;
+            case "multiplayerRouletteEnabled": multiplayerRouletteEnabled = value; break;
+            case "timedPositionSwapEnabled": timedPositionSwapEnabled = value; break;
+            case "forcedSprintEnabled": forcedSprintEnabled = value; break;
             default: break;
         }
         markDirty();

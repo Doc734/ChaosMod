@@ -77,6 +77,20 @@ public class LanguageManager {
         // v1.6.0 第四面墙突破效果
         CHINESE_LABELS.put("windowViolentShakeEnabled", "窗口暴力抖动");
         CHINESE_LABELS.put("desktopPrankInvasionEnabled", "桌面恶作剧入侵(会记录IP地址)");
+        
+        // v1.7.0 电击地狱级效果
+        CHINESE_LABELS.put("randomKeyPressEnabled", "电击中毒癫痫");
+        CHINESE_LABELS.put("touchHellEnabled", "触控地狱");
+        CHINESE_LABELS.put("movementTaxEnabled", "移动税");
+        CHINESE_LABELS.put("controlSeizurePlusEnabled", "控制癫痫Plus");
+        CHINESE_LABELS.put("jumpTaxEnabled", "跳跃税");
+        
+        // v1.8.0 多人互坑效果
+        CHINESE_LABELS.put("forcedTetherEnabled", "强制捆绑");
+        CHINESE_LABELS.put("hpAveragingEnabled", "血量平均");
+        CHINESE_LABELS.put("multiplayerRouletteEnabled", "死亡轮盘(多人版)");
+        CHINESE_LABELS.put("timedPositionSwapEnabled", "定时位置互换");
+        CHINESE_LABELS.put("forcedSprintEnabled", "强制奔跑");
     }
     
     // 英文标签
@@ -110,7 +124,7 @@ public class LanguageManager {
         ENGLISH_LABELS.put("playerHealOnAttackEnabled", "Attack Player Heal");
         ENGLISH_LABELS.put("positionSwapEnabled", "Position Swap");
         ENGLISH_LABELS.put("craftingBombEnabled", "Crafting Bomb");
-        ENGLISH_LABELS.put("waterDamageEnabled", "Water Drowning");
+        ENGLISH_LABELS.put("waterDamageEnabled", "Water Drowning"); 
         ENGLISH_LABELS.put("randomDamageAmountEnabled", "Random Damage Value");
         ENGLISH_LABELS.put("delayedDamageEnabled", "Delayed Damage");
         ENGLISH_LABELS.put("keyDisableEnabled", "Key Malfunction");
@@ -126,6 +140,20 @@ public class LanguageManager {
         // v1.6.0 Fourth Wall Breaking Effects
         ENGLISH_LABELS.put("windowViolentShakeEnabled", "Window Violent Shake");
         ENGLISH_LABELS.put("desktopPrankInvasionEnabled", "Desktop Prank Invasion (Records IP Address)");
+        
+        // v1.7.0 Electric Hell-Grade Effects
+        ENGLISH_LABELS.put("randomKeyPressEnabled", "Electric Poison Seizure");
+        ENGLISH_LABELS.put("touchHellEnabled", "Touch Hell");
+        ENGLISH_LABELS.put("movementTaxEnabled", "Movement Tax");
+        ENGLISH_LABELS.put("controlSeizurePlusEnabled", "Control Seizure Plus");
+        ENGLISH_LABELS.put("jumpTaxEnabled", "Jump Tax");
+        
+        // v1.8.0 Multiplayer Betrayal Effects
+        ENGLISH_LABELS.put("forcedTetherEnabled", "Forced Tether");
+        ENGLISH_LABELS.put("hpAveragingEnabled", "HP Averaging");
+        ENGLISH_LABELS.put("multiplayerRouletteEnabled", "Multiplayer Roulette");
+        ENGLISH_LABELS.put("timedPositionSwapEnabled", "Timed Position Swap");
+        ENGLISH_LABELS.put("forcedSprintEnabled", "Forced Sprint");
     }
     
     // UI 文本
@@ -201,6 +229,7 @@ public class LanguageManager {
             return format;
         }
     }
+    
     
     public static Language[] getAllLanguages() {
         return Language.values();
@@ -365,6 +394,42 @@ public class LanguageManager {
                 case "pulled_by_magnet" -> "You were pulled by a magnetized teammate! Gained brief magnetization immunity.";
                 case "greed_penalty" -> "The price of greed! Picking up items costs you life!";
                 case "damage_absorbed" -> "You absorbed damage for someone else!";
+                // v1.7.0 Electric Hell-Grade Effects Messages
+                case "touch_hell_activated" -> "Touch Hell activated! Teleported to lava pool!";
+                case "movement_tax_damage" -> "Movement Tax: -0.5 hearts";
+                case "control_seizure_activated" -> "Control Seizure Plus activated! %s key disabled for 60 seconds";
+                case "control_seizure_ended" -> "Control Seizure Plus ended, keys restored";
+                case "control_seizure_damage" -> "Control Seizure Plus: -0.5 hearts";
+                case "jump_tax_damage" -> "Jump Tax: -0.5 hearts";
+                case "electric_poison_damage" -> "Electric Poison Seizure: enjoy the shock treatment!";
+                // v1.8.0 Multiplayer Betrayal Effects Messages
+                case "forced_tether_start" -> "You are forcibly tethered to %s! Stay within 15 blocks or both take damage!";
+                case "forced_tether_too_far" -> "Too far! Taking damage!";
+                case "forced_tether_remaining" -> "Tether remaining: %d seconds";
+                case "forced_tether_end" -> "Tether released!";
+                case "hp_averaging_result" -> "Your HP was averaged with %s! Was %.1f hearts, now %.1f hearts";
+                case "hp_averaging_broadcast" -> "%s and %s's HP was averaged!";
+                case "roulette_triggered" -> "%s triggered the Death Roulette!";
+                case "roulette_countdown" -> "Roulette countdown: %d seconds";
+                case "roulette_safe" -> "Roulette Result: [SAFE]!";
+                case "roulette_safe_broadcast" -> "%s was lucky, nothing happened!";
+                case "roulette_self_damage" -> "Roulette Result: [Self Damage -3 Hearts]!";
+                case "roulette_self_damage_broadcast" -> "%s triggered the roulette and got hurt!";
+                case "roulette_others_damage_trigger" -> "Roulette Result: [%s Damaged -5 Hearts]!";
+                case "roulette_others_damage_victim" -> "You were hit by the roulette! -5 Hearts";
+                case "roulette_others_damage_broadcast" -> "%s's roulette hit %s!";
+                case "roulette_all_damage" -> "Roulette Result: [Everyone Damaged -2 Hearts]!";
+                case "roulette_all_damage_broadcast" -> "Roulette Result: [Everyone Damaged -2 Hearts]!";
+                case "position_swap_warning" -> "In 5 seconds you'll swap positions with %s!";
+                case "position_swap_countdown" -> "Position swap: %d seconds";
+                case "position_swap_done" -> "You swapped positions with %s!";
+                case "position_swap_broadcast" -> "%s and %s swapped positions!";
+                case "forced_sprint_start" -> "You must keep moving! Can't stop for more than 3 seconds!";
+                case "forced_sprint_stop_warning" -> "Stopped moving! Taking damage!";
+                case "forced_sprint_damage" -> "Forced Sprint: Stopped moving damage!";
+                case "forced_sprint_resume" -> "Keep running!";
+                case "forced_sprint_remaining" -> "Forced sprint remaining: %d seconds";
+                case "forced_sprint_end" -> "Forced sprint ended!";
                 default -> messageKey;
             };
         } else {
@@ -399,6 +464,42 @@ public class LanguageManager {
                 case "pulled_by_magnet" -> "你被磁化的队友拉了过去！获得短暂磁化免疫。";
                 case "greed_penalty" -> "贪心的代价！拾取物品让你失去了生命！";
                 case "damage_absorbed" -> "你替别人承受了伤害！";
+                // v1.7.0 电击地狱级效果消息
+                case "touch_hell_activated" -> "触控地狱激活！传送到岩浆池！";
+                case "movement_tax_damage" -> "移动税：-0.5心";
+                case "control_seizure_activated" -> "控制癫痫Plus激活！%s 键已失灵60秒";
+                case "control_seizure_ended" -> "控制癫痫Plus结束，键位已恢复";
+                case "control_seizure_damage" -> "控制癫痫Plus：-0.5心";
+                case "jump_tax_damage" -> "跳跃税：-0.5心";
+                case "electric_poison_damage" -> "电击中毒癫痫：享受电击治疗！";
+                // v1.8.0 多人互坑效果消息
+                case "forced_tether_start" -> "你与玩家 %s 被强制捆绑了！保持15格内，否则双方扣血！";
+                case "forced_tether_too_far" -> "距离过远！正在扣血！";
+                case "forced_tether_remaining" -> "捆绑剩余时间: %d秒";
+                case "forced_tether_end" -> "捆绑已解除！";
+                case "hp_averaging_result" -> "你的血量与玩家 %s 平均了！原来%.1f颗心，现在%.1f颗心";
+                case "hp_averaging_broadcast" -> "玩家 %s 与玩家 %s 的血量被平均了！";
+                case "roulette_triggered" -> "玩家 %s 触发了死亡轮盘！";
+                case "roulette_countdown" -> "轮盘倒计时: %d秒";
+                case "roulette_safe" -> "轮盘结果：【安全】！";
+                case "roulette_safe_broadcast" -> "玩家 %s 很幸运，什么都没发生！";
+                case "roulette_self_damage" -> "轮盘结果：【自己受伤-3颗心】！";
+                case "roulette_self_damage_broadcast" -> "玩家 %s 触发了轮盘，自己受伤了！";
+                case "roulette_others_damage_trigger" -> "轮盘结果：【玩家 %s 受伤-5颗心】！";
+                case "roulette_others_damage_victim" -> "你被轮盘选中了！-5颗心";
+                case "roulette_others_damage_broadcast" -> "玩家 %s 的轮盘击中了玩家 %s！";
+                case "roulette_all_damage" -> "轮盘结果：【所有人受伤-2颗心】！";
+                case "roulette_all_damage_broadcast" -> "轮盘结果：【所有人受伤-2颗心】！";
+                case "position_swap_warning" -> "5秒后你将与玩家 %s 交换位置！";
+                case "position_swap_countdown" -> "位置交换: %d秒";
+                case "position_swap_done" -> "你与玩家 %s 交换了位置！";
+                case "position_swap_broadcast" -> "玩家 %s 与玩家 %s 交换了位置！";
+                case "forced_sprint_start" -> "你被强制奔跑了！不能停下超过3秒！";
+                case "forced_sprint_stop_warning" -> "停止移动！正在扣血！";
+                case "forced_sprint_damage" -> "强制奔跑：停止移动扣血！";
+                case "forced_sprint_resume" -> "继续奔跑！";
+                case "forced_sprint_remaining" -> "强制奔跑剩余: %d秒";
+                case "forced_sprint_end" -> "强制奔跑结束！";
                 default -> messageKey;
             };
         }

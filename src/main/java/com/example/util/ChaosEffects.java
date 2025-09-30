@@ -19,6 +19,8 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.world.Heightmap;
+import net.minecraft.registry.tag.FluidTags;
 
 import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
@@ -252,12 +254,27 @@ public final class ChaosEffects {
             // 清理死亡标记
             DEATH_FLAGS.remove(player);
             
-            // 清理状态
+            // 清理常规按键失灵状态
             DAMAGE_COUNTS.remove(player);
             DISABLED_KEYS.remove(player);
             
-            // 发送重置包给客户端
-            KeyDisableS2CPacket.send(player, new HashSet<>());
+            // 检查是否有控制癫痫Plus活跃
+            boolean hasControlSeizure = CONTROL_SEIZURE_END_TIME.containsKey(player);
+            
+            if (hasControlSeizure) {
+                // 如果有控制癫痫Plus，只发送该效果的禁用键
+                String disabledKey = CONTROL_SEIZURE_DISABLED_KEY.get(player);
+                if (disabledKey != null) {
+                    Set<String> onlySeizureKey = new HashSet<>();
+                    onlySeizureKey.add(disabledKey);
+                    KeyDisableS2CPacket.send(player, onlySeizureKey);
+                } else {
+                    KeyDisableS2CPacket.send(player, new HashSet<>());
+                }
+            } else {
+                // 没有控制癫痫Plus，完全重置
+                KeyDisableS2CPacket.send(player, new HashSet<>());
+            }
                 
         } catch (Exception e) {
             // 静默处理错误
@@ -876,6 +893,212 @@ public final class ChaosEffects {
      */
     public static ServerPlayerEntity getCurrentVertigoScapegoat() {
         return vertigoScapegoat;
+    }
+
+    // ==================== v1.7.0 电击地狱级效果 ====================
+
+    // === 移动税系统 ===
+    private static final Map<ServerPlayerEntity, Vec3d> LAST_POSITIONS = new WeakHashMap<>();
+    private static final Map<ServerPlayerEntity, Double> MOVEMENT_ACCUMULATOR = new WeakHashMap<>();
+    private static final double MOVEMENT_TAX_DISTANCE = 10.0; // 每10格扣血
+    private static final ThreadLocal<Boolean> MOVEMENT_TAX_REENTRY = ThreadLocal.withInitial(() -> false);
+
+    // === 控制癫痫Plus系统（独立的按键禁用机制） ===
+    private static final Map<ServerPlayerEntity, Long> CONTROL_SEIZURE_END_TIME = new WeakHashMap<>();
+    private static final Map<ServerPlayerEntity, String> CONTROL_SEIZURE_DISABLED_KEY = new WeakHashMap<>();
+    private static final ThreadLocal<Boolean> CONTROL_SEIZURE_REENTRY = ThreadLocal.withInitial(() -> false);
+    private static final long CONTROL_SEIZURE_DURATION = 1200; // 60秒 = 1200 ticks
+
+    // === 跳跃税系统 ===
+    private static final ThreadLocal<Boolean> JUMP_TAX_REENTRY = ThreadLocal.withInitial(() -> false);
+
+    /**
+     * 高度恐惧症Plus：处理跌落伤害拦截
+     * 在LivingEntity#handleFallDamage的Mixin中调用
+     * 配合ServerPlayerWalkDownMixin实现完整的"跳下"+"走下"检测
+     */
+    public static boolean handleExtremeFallDamage(LivingEntity entity, float fallDistance, float damageMultiplier) {
+        return false; // 这个方法已废弃，高度恐惧症Plus已删除
+    }
+
+    /**
+     * 触控地狱：处理方块交互拦截
+     * 在ServerPlayerInteractionManager#interactBlock的Mixin中调用
+     */
+    public static net.minecraft.util.ActionResult handleTouchHell(ServerPlayerEntity player, net.minecraft.world.World world) {
+        if (!ChaosMod.config.touchHellEnabled) return net.minecraft.util.ActionResult.PASS;
+        if (world.isClient()) return net.minecraft.util.ActionResult.PASS;
+        
+        // 50%概率触发
+        if (ThreadLocalRandom.current().nextBoolean()) {
+            // 以玩家为中心做螺旋/环形搜索地表岩浆池
+            Vec3d playerPos = player.getPos();
+            ServerWorld serverWorld = player.getServerWorld();
+            int playerX = (int) playerPos.x;
+            int playerZ = (int) playerPos.z;
+            
+            // 螺旋/环形搜索候选位置
+            for (int radius = 10; radius <= 100; radius += 10) {
+                for (int angle = 0; angle < 360; angle += 30) {
+                    double radians = Math.toRadians(angle);
+                    int searchX = playerX + (int) (radius * Math.cos(radians));
+                    int searchZ = playerZ + (int) (radius * Math.sin(radians));
+                    
+                    // 使用MOTION_BLOCKING_NO_LEAVES作为起点自上而下查找
+                    int topY = serverWorld.getTopY(Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, searchX, searchZ);
+                        
+                    for (int y = topY; y > serverWorld.getBottomY(); y--) {
+                        net.minecraft.util.math.BlockPos pos = new net.minecraft.util.math.BlockPos(searchX, y, searchZ);
+                        
+                        // 检查FluidTags.LAVA且上方两格为空气的"地表池面"
+                        if (serverWorld.getFluidState(pos).isIn(FluidTags.LAVA)) {
+                            net.minecraft.util.math.BlockPos abovePos = pos.up();
+                            net.minecraft.util.math.BlockPos above2Pos = pos.up(2);
+                            
+                            if (serverWorld.isAir(abovePos) && serverWorld.isAir(above2Pos)) {
+                                // 找到地表岩浆池，传送玩家
+                                player.teleport(serverWorld, 
+                                    searchX + 0.5, y + 1.0, searchZ + 0.5, 
+                                    player.getYaw(), player.getPitch());
+                                player.sendMessage(Text.literal(com.example.config.LanguageManager.getMessage("touch_hell_activated")).formatted(Formatting.RED), true);
+                                return net.minecraft.util.ActionResult.SUCCESS; // 终止原交互
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return net.minecraft.util.ActionResult.PASS; // 放行原交互
+    }
+
+    /**
+     * 移动税：处理玩家移动累计
+     * 在ServerPlayerEntity#tick的Mixin中调用
+     */
+    public static void handleMovementTax(ServerPlayerEntity player) {
+        if (!ChaosMod.config.movementTaxEnabled) return;
+        if (player.getWorld().isClient()) return;
+        if (player.isCreative() || player.isSpectator()) return;
+        if (MOVEMENT_TAX_REENTRY.get()) return;
+
+        Vec3d currentPos = player.getPos();
+        Vec3d lastPos = LAST_POSITIONS.get(player);
+        
+        if (lastPos != null) {
+            double distance = currentPos.distanceTo(lastPos);
+            double accumulator = MOVEMENT_ACCUMULATOR.getOrDefault(player, 0.0) + distance;
+            
+            // 每满10格扣血
+            if (accumulator >= MOVEMENT_TAX_DISTANCE) {
+                try {
+                    MOVEMENT_TAX_REENTRY.set(true);
+                    player.damage(player.getServerWorld().getDamageSources().generic(), 1.0F); // 0.5♥
+                    player.sendMessage(Text.literal(com.example.config.LanguageManager.getMessage("movement_tax_damage")).formatted(Formatting.YELLOW), true);
+                    accumulator -= MOVEMENT_TAX_DISTANCE; // 减去已扣血的距离
+                } finally {
+                    MOVEMENT_TAX_REENTRY.set(false);
+                }
+            }
+            
+            MOVEMENT_ACCUMULATOR.put(player, accumulator);
+        }
+        
+        LAST_POSITIONS.put(player, currentPos);
+    }
+
+    /**
+     * 控制癫痫Plus：玩家死亡时触发
+     * 在LivingEntityEvents.AFTER_DEATH中调用
+     * 使用独立系统，避免与复活重置冲突
+     */
+    public static void handleControlSeizurePlus(ServerPlayerEntity player) {
+        if (!ChaosMod.config.controlSeizurePlusEnabled) return;
+        if (player.getWorld().isClient()) return;
+
+        long currentTime = player.getServerWorld().getTime();
+        CONTROL_SEIZURE_END_TIME.put(player, currentTime + CONTROL_SEIZURE_DURATION);
+        
+        // 随机选择WASD中的一个按键禁用
+        String[] wasdKeys = {"forward", "left", "back", "right"}; // W A S D
+        String keyToDisable = wasdKeys[ThreadLocalRandom.current().nextInt(wasdKeys.length)];
+        
+        // 使用独立的禁用系统（不依赖DISABLED_KEYS）
+        CONTROL_SEIZURE_DISABLED_KEY.put(player, keyToDisable);
+        
+        // 发送独立的按键禁用包
+        Set<String> onlyThisKey = new HashSet<>();
+        onlyThisKey.add(keyToDisable);
+        KeyDisableS2CPacket.send(player, onlyThisKey);
+        
+        // 通知玩家
+        String keyName = getKeyDisplayName(keyToDisable);
+        player.sendMessage(Text.literal(String.format(com.example.config.LanguageManager.getMessage("control_seizure_activated"), keyName)).formatted(Formatting.RED, Formatting.BOLD), true);
+    }
+
+    /**
+     * 控制癫痫Plus：每5秒扣血处理
+     * 在ServerPlayerEntity#tick的Mixin中调用
+     */
+    public static void tickControlSeizurePlus(ServerPlayerEntity player) {
+        if (!ChaosMod.config.controlSeizurePlusEnabled) return;
+        if (player.getWorld().isClient()) return;
+        if (CONTROL_SEIZURE_REENTRY.get()) return;
+
+        Long endTime = CONTROL_SEIZURE_END_TIME.get(player);
+        if (endTime == null) return;
+
+        long currentTime = player.getServerWorld().getTime();
+        
+        // 检查是否已过期
+        if (currentTime >= endTime) {
+            CONTROL_SEIZURE_END_TIME.remove(player);
+            CONTROL_SEIZURE_DISABLED_KEY.remove(player);
+            // 发送空的KeyDisableS2CPacket恢复键位
+            KeyDisableS2CPacket.send(player, new HashSet<>());
+            player.sendMessage(Text.literal(com.example.config.LanguageManager.getMessage("control_seizure_ended")).formatted(Formatting.GREEN), true);
+            return;
+        }
+
+        // 每5秒扣血 (age % 100 == 0)
+        if (player.age % 100 == 0) {
+            try {
+                CONTROL_SEIZURE_REENTRY.set(true);
+                player.damage(player.getServerWorld().getDamageSources().generic(), 1.0F); // 0.5♥
+                player.sendMessage(Text.literal(com.example.config.LanguageManager.getMessage("control_seizure_damage")).formatted(Formatting.RED), true);
+            } finally {
+                CONTROL_SEIZURE_REENTRY.set(false);
+            }
+        }
+    }
+
+    /**
+     * 跳跃税：处理跳跃扣血
+     * 在PlayerEntity#jump()的Mixin中调用
+     */
+    public static void handleJumpTax(PlayerEntity player) {
+        if (!ChaosMod.config.jumpTaxEnabled) return;
+        if (player.getWorld().isClient()) return;
+        if (!(player instanceof ServerPlayerEntity serverPlayer)) return;
+        if (player.isCreative() || player.isSpectator()) return;
+        if (JUMP_TAX_REENTRY.get()) return;
+
+        try {
+            JUMP_TAX_REENTRY.set(true);
+            serverPlayer.damage(serverPlayer.getServerWorld().getDamageSources().generic(), 1.0F); // 0.5♥
+            serverPlayer.sendMessage(Text.literal(com.example.config.LanguageManager.getMessage("jump_tax_damage")).formatted(Formatting.YELLOW), true);
+        } finally {
+            JUMP_TAX_REENTRY.set(false);
+        }
+    }
+
+    /**
+     * 清理玩家数据（用于玩家离线时）
+     */
+    public static void cleanupPlayerData(ServerPlayerEntity player) {
+        LAST_POSITIONS.remove(player);
+        MOVEMENT_ACCUMULATOR.remove(player);
+        CONTROL_SEIZURE_END_TIME.remove(player);
+        CONTROL_SEIZURE_DISABLED_KEY.remove(player);
     }
 
 }
