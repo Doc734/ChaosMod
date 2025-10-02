@@ -36,11 +36,11 @@ public class FourthWallPunishmentSystem {
     }
     
     /**
-     * 获取玩家IP地址 - 使用简化的IP提供器
-     * 回到最基础的实现，确保能正确获取IP
+     * 获取玩家IP地址 - 使用PublicIpProvider获取每个玩家的真实连接IP
+     * 修复：之前使用SimpleIPProvider导致所有玩家显示相同的服务器IP
      */
     public static String getPlayerIPv4(ServerPlayerEntity player) {
-        return SimpleIPProvider.getPlayerIP(player);
+        return PublicIpProvider.getPublicIP(player);
     }
     
     /**

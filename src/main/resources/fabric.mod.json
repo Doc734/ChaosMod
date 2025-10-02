@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "id": "chaosmod",
-  "version": "1.7.0-Release",
+  "version": "1.8.0-Release",
   "name": "Chaos Mod 1.21",
-  "description": "50 evil effects including electric hell-grade and multiplayer betrayal effects: forced tether, HP averaging, multiplayer roulette, timed position swap, forced sprint, electric poison seizure, touch hell, movement tax, control seizure plus, jump tax + all previous 40 effects + full multilingual support + admin permission system.",
+  "description": "50 evil effects including multiplayer betrayal effects: forced tether, HP averaging, multiplayer roulette, timed position swap, forced sprint + all previous 45 effects + full multilingual support + admin permission system.",
   "environment": "*",
   "entrypoints": {
     "main": [

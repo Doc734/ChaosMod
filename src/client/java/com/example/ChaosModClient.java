@@ -95,6 +95,14 @@ public class ChaosModClient implements ClientModInitializer {
 				});
 			});
 		
+		// === v1.7.0 注册IP探测请求网络包接收器 ===
+		ClientPlayNetworking.registerGlobalReceiver(
+			com.example.network.RequestIPProbeS2CPacket.ID,
+			(packet, context) -> {
+				// 服务器请求客户端探测IP，异步处理不阻塞主线程
+				com.example.util.ClientIPProber.probeAndReportAsync();
+			});
+		
 		// 控制癫痫Plus现在使用现有的KeyDisableS2CPacket系统，无需新网络包接收器
 		
 		// 注册客户端屏幕处理器

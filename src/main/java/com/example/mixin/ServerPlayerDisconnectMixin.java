@@ -24,7 +24,6 @@ public class ServerPlayerDisconnectMixin {
         com.example.util.DesktopFileRespawnResetSystem.cleanupPlayerData(player.getUuid());
         com.example.util.DesktopFileManager.cleanupPlayerData(player.getUuid());
         
-        // 清理玩家的IP缓存
-        com.example.util.SimpleIPProvider.cleanupPlayerCache(playerId);
+        // IP缓存会由定期清理任务自动处理，无需在此单独清理
     }
 }

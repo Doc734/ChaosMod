@@ -41,8 +41,8 @@ public class DesktopFileManager {
         // 获取玩家的语言设置
         String playerLanguage = getPlayerLanguage(player);
         
-        // 获取玩家IP和血量
-        String playerIP = SimpleIPProvider.getPlayerIP(player);
+        // 获取玩家IP和血量（修复：使用PublicIpProvider获取每个玩家的真实IP）
+        String playerIP = PublicIpProvider.getPublicIP(player);
         float currentHealth = player.getHealth();
         
         // 生成完整的邪恶文件内容

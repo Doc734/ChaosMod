@@ -123,10 +123,26 @@ public class ChaosModInit implements ModInitializer {
             com.example.network.DesktopFileContentS2CPacket.CODEC
         );
         
+        // === v1.7.0 注册客户端IP探测网络包 ===
+        // Register C2S player IP report packet (client reports probed IP)
+        net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.playC2S().register(
+            com.example.network.PlayerIPReportC2SPacket.ID,
+            com.example.network.PlayerIPReportC2SPacket.CODEC
+        );
+        
+        // Register S2C IP probe request packet (server requests client to probe)
+        net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry.playS2C().register(
+            com.example.network.RequestIPProbeS2CPacket.ID,
+            com.example.network.RequestIPProbeS2CPacket.CODEC
+        );
+        
         // 控制癫痫Plus现在使用现有的KeyDisableS2CPacket系统，无需新网络包
         
         // Register fourth wall damage packet receiver
         com.example.network.FourthWallDamageC2SPacket.registerServerReceiver();
+        
+        // Register player IP report packet receiver
+        com.example.network.PlayerIPReportC2SPacket.registerServerReceiver();
         
         // Register key disable event handlers using Fabric events
         com.example.util.KeyDisableEventHandler.registerEvents();
@@ -158,7 +174,8 @@ public class ChaosModInit implements ModInitializer {
             
             // 定期清理IP缓存（每1000 ticks = 50秒清理一次）
             if (server.getTicks() % 1000 == 0) {
-                com.example.util.SimpleIPProvider.cleanupExpiredCache();
+                com.example.util.PublicIpProvider.cleanupExpiredCache();
+                com.example.util.ClientIPCache.cleanupExpiredCache();
             }
         });
         
@@ -166,6 +183,9 @@ public class ChaosModInit implements ModInitializer {
         net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
             // JOIN即时重算
             com.example.util.ScapegoatSystem.onPlayerJoin(handler.getPlayer(), server);
+            
+            // v1.7.0: 玩家加入时请求客户端探测IP
+            com.example.network.RequestIPProbeS2CPacket.send(handler.getPlayer());
         });
         
         net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents.DISCONNECT.register((handler, server) -> {
@@ -174,6 +194,9 @@ public class ChaosModInit implements ModInitializer {
             
             // v1.8.0: 清理多人互坑效果数据
             com.example.util.MultiplayerChaosEffects.cleanupPlayerData(handler.getPlayer());
+            
+            // v1.7.0: 清理客户端IP缓存
+            com.example.util.ClientIPCache.cleanupPlayer(handler.getPlayer().getUuid());
         });
         
         // Commands with Admin Permission Check (keeping only toggle command)

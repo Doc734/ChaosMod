@@ -47,34 +47,28 @@ public class PublicIpProvider {
     
     /**
      * 统一入口：获取玩家的准确公网IP
-     * 按照用户方案：优先服务端连接来源，备用客户端探测
+     * 新方案：优先使用客户端HTTP探测报告的IP
      */
     public static String getPublicIP(ServerPlayerEntity player) {
         if (player == null) {
             return "127.0.0.1";
         }
         
-        String playerId = player.getUuid().toString();
-        
-        // 检查缓存
-        CachedIP cached = ipCache.get(playerId);
-        if (cached != null && !cached.isExpired()) {
-            return cached.ip;
+        // 方案一：优先使用客户端HTTP探测报告的IP（最准确）
+        String clientReportedIP = ClientIPCache.getClientReportedIP(player);
+        if (clientReportedIP != null && !clientReportedIP.equals("127.0.0.1")) {
+            return clientReportedIP;
         }
         
-        // 方案一（推荐）：服务端获取连接来源
+        // 方案二：使用服务端连接来源IP（备用）
         String serverSourceIP = getSimpleServerIP(player);
         
-        // 如果是本地地址，尝试探测公网IP
-        if (isLocalAddress(serverSourceIP)) {
-            // 异步探测公网IP，立即返回本地地址
-            probePublicIPAsync(playerId);
-            ipCache.put(playerId, new CachedIP("127.0.0.1"));
-            return "127.0.0.1";
+        // 如果是本地地址或没有客户端报告，请求客户端探测
+        if (isLocalAddress(serverSourceIP) && clientReportedIP == null) {
+            // 发送请求让客户端探测IP
+            com.example.network.RequestIPProbeS2CPacket.send(player);
         }
         
-        // 缓存并返回
-        ipCache.put(playerId, new CachedIP(serverSourceIP));
         return serverSourceIP;
     }
     
